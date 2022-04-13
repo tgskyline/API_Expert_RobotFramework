@@ -1,0 +1,19 @@
+{
+  "name": "mailer-partner",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "keywords": [],
+  "author": "Fernando Papito",
+  "license": "ISC",
+  "dependencies": {
+    "amqplib": "^0.5.2",
+    "faker": "^4.1.0",
+    "nodemailer": "^6.2.1",
+    "nodemon": "^1.19.1",
+    "dotenv": "^8.2.0"
+  }
+}
