@@ -1,5 +1,8 @@
-*** Settings ****
-Documentation    POST  /partners
+*** Settings ***
+Documentation       POST    /partners
+
+Library             RequestsLibrary
+
 
 *** Test Cases ***
 Should create a new partner
