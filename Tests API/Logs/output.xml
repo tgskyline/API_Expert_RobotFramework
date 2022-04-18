@@ -1,31 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 5.0 (Python 3.10.4 on win32)" generated="20220414 09:03:31.375" rpa="false" schemaversion="3">
+<robot generator="Robot 5.0 (Python 3.10.4 on win32)" generated="20220418 11:45:24.284" rpa="false" schemaversion="3">
 <suite id="s1" name="Post" source="C:\Users\tiago.santos\OneDrive\Documentos\Automação de Testes\RobotFramework\API_Expert\buger-eats-partner-ms\Tests API\post.robot">
-<test id="s1-t1" name="Should create a new partner" line="5">
-<kw name="Log" library="BuiltIn">
-<arg>Testando a suite e o caso de teste</arg>
-<doc>Logs the given message with the given level.</doc>
-<msg timestamp="20220414 09:03:31.401" level="INFO">Testando a suite e o caso de teste</msg>
-<status status="PASS" starttime="20220414 09:03:31.401" endtime="20220414 09:03:31.401"/>
+<test id="s1-t1" name="Should create a new partner" line="12">
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${PayLoad}</var>
+<arg>name= Pizzas Papito3</arg>
+<arg>email= contato3@papito.com.br</arg>
+<arg>whatsapp= 11999999999</arg>
+<arg>business= Restaurante</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20220418 11:45:24.455" level="INFO">${PayLoad} = {'name': ' Pizzas Papito3', 'email': ' contato3@papito.com.br', 'whatsapp': ' 11999999999', 'business': ' Restaurante'}</msg>
+<status status="PASS" starttime="20220418 11:45:24.455" endtime="20220418 11:45:24.456"/>
 </kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>Testando a suite e o caso de teste</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20220414 09:03:31.401" endtime="20220414 09:03:31.401"/>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${heaDers}</var>
+<arg>Content-Type= application/json,</arg>
+<arg>auth_user= qa,</arg>
+<arg>auth_password= ninja</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20220418 11:45:24.456" level="INFO">${heaDers} = {'Content-Type': ' application/json,', 'auth_user': ' qa,', 'auth_password': ' ninja'}</msg>
+<status status="PASS" starttime="20220418 11:45:24.456" endtime="20220418 11:45:24.456"/>
 </kw>
-<status status="PASS" starttime="20220414 09:03:31.400" endtime="20220414 09:03:31.402"/>
+<kw name="POST On Session" library="RequestsLibrary">
+<var>${reponse}</var>
+<arg>alias=Create new partner</arg>
+<arg>url=${BASE_URL}</arg>
+<arg>json=${payload}</arg>
+<arg>headers=${headers}</arg>
+<arg>expected_status=200</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<msg timestamp="20220418 11:45:24.458" level="FAIL">Non-existing index or alias 'Create new partner'.</msg>
+<status status="FAIL" starttime="20220418 11:45:24.456" endtime="20220418 11:45:24.476"/>
+</kw>
+<status status="FAIL" starttime="20220418 11:45:24.453" endtime="20220418 11:45:24.476">Non-existing index or alias 'Create new partner'.</status>
 </test>
 <doc>POST /partners</doc>
-<status status="PASS" starttime="20220414 09:03:31.377" endtime="20220414 09:03:31.403"/>
+<status status="FAIL" starttime="20220418 11:45:24.287" endtime="20220418 11:45:24.478"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Post">Post</stat>
+<stat pass="0" fail="1" skip="0" id="s1" name="Post">Post</stat>
 </suite>
 </statistics>
 <errors>
