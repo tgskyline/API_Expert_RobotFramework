@@ -9,6 +9,9 @@ ${BASE_URL}         http=//localhost=3000/partner
 
 
 *** Test Cases ***
+Conectar a minha API
+    Create Session    CreatePartner    ${BASE_URL}
+
 Should create a new partner
     ${PayLoad}    Create Dictionary
     ...    name= Pizzas Papito3
@@ -17,13 +20,13 @@ Should create a new partner
     ...    business= Restaurante
 
     ${heaDers}    Create Dictionary
-    ...    Content-Type= application/json,
-    ...    auth_user= qa,
-    ...    auth_password= ninja
+    ...    Content-Type=application/json
+    ...    auth_user=qa
+    ...    auth_password=ninja
 
     ${reponse}    POST On Session
-    ...    alias=Create new partner
-    ...    url=${BASE_URL}
+    ...    CreatePartner
+    ...    ${BASE_URL}
     ...    json=${payload}
     ...    headers=${headers}
     ...    expected_status=200

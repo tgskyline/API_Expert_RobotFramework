@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 5.0 (Python 3.10.4 on win32)" generated="20220418 11:45:24.284" rpa="false" schemaversion="3">
+<robot generator="Robot 5.0 (Python 3.10.4 on win32)" generated="20220418 13:33:09.896" rpa="false" schemaversion="3">
 <suite id="s1" name="Post" source="C:\Users\tiago.santos\OneDrive\Documentos\Automação de Testes\RobotFramework\API_Expert\buger-eats-partner-ms\Tests API\post.robot">
-<test id="s1-t1" name="Should create a new partner" line="12">
+<test id="s1-t1" name="Conectar a minha API" line="12">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>CreatePartner</arg>
+<arg>${BASE_URL}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20220418 13:33:10.033" level="INFO">Creating Session using : alias=CreatePartner, url=http=//localhost=3000/partner, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220418 13:33:10.033" endtime="20220418 13:33:10.033"/>
+</kw>
+<status status="PASS" starttime="20220418 13:33:10.032" endtime="20220418 13:33:10.034"/>
+</test>
+<test id="s1-t2" name="Should create a new partner" line="15">
 <kw name="Create Dictionary" library="BuiltIn">
 <var>${PayLoad}</var>
 <arg>name= Pizzas Papito3</arg>
@@ -9,42 +19,42 @@
 <arg>whatsapp= 11999999999</arg>
 <arg>business= Restaurante</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20220418 11:45:24.455" level="INFO">${PayLoad} = {'name': ' Pizzas Papito3', 'email': ' contato3@papito.com.br', 'whatsapp': ' 11999999999', 'business': ' Restaurante'}</msg>
-<status status="PASS" starttime="20220418 11:45:24.455" endtime="20220418 11:45:24.456"/>
+<msg timestamp="20220418 13:33:10.037" level="INFO">${PayLoad} = {'name': ' Pizzas Papito3', 'email': ' contato3@papito.com.br', 'whatsapp': ' 11999999999', 'business': ' Restaurante'}</msg>
+<status status="PASS" starttime="20220418 13:33:10.036" endtime="20220418 13:33:10.037"/>
 </kw>
 <kw name="Create Dictionary" library="BuiltIn">
 <var>${heaDers}</var>
-<arg>Content-Type= application/json,</arg>
-<arg>auth_user= qa,</arg>
-<arg>auth_password= ninja</arg>
+<arg>Content-Type=application/json</arg>
+<arg>auth_user=qa</arg>
+<arg>auth_password=ninja</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20220418 11:45:24.456" level="INFO">${heaDers} = {'Content-Type': ' application/json,', 'auth_user': ' qa,', 'auth_password': ' ninja'}</msg>
-<status status="PASS" starttime="20220418 11:45:24.456" endtime="20220418 11:45:24.456"/>
+<msg timestamp="20220418 13:33:10.038" level="INFO">${heaDers} = {'Content-Type': 'application/json', 'auth_user': 'qa', 'auth_password': 'ninja'}</msg>
+<status status="PASS" starttime="20220418 13:33:10.037" endtime="20220418 13:33:10.038"/>
 </kw>
 <kw name="POST On Session" library="RequestsLibrary">
 <var>${reponse}</var>
-<arg>alias=Create new partner</arg>
+<arg>alias=CreatePartner</arg>
 <arg>url=${BASE_URL}</arg>
 <arg>json=${payload}</arg>
 <arg>headers=${headers}</arg>
 <arg>expected_status=200</arg>
 <doc>Sends a POST request on a previously created HTTP Session.</doc>
-<msg timestamp="20220418 11:45:24.458" level="FAIL">Non-existing index or alias 'Create new partner'.</msg>
-<status status="FAIL" starttime="20220418 11:45:24.456" endtime="20220418 11:45:24.476"/>
+<msg timestamp="20220418 13:33:10.042" level="FAIL">MissingSchema: Invalid URL 'http=/localhost=3000/partner/http=/localhost=3000/partner': No scheme supplied. Perhaps you meant http://http=/localhost=3000/partner/http=/localhost=3000/partner?</msg>
+<status status="FAIL" starttime="20220418 13:33:10.038" endtime="20220418 13:33:10.048"/>
 </kw>
-<status status="FAIL" starttime="20220418 11:45:24.453" endtime="20220418 11:45:24.476">Non-existing index or alias 'Create new partner'.</status>
+<status status="FAIL" starttime="20220418 13:33:10.036" endtime="20220418 13:33:10.049">MissingSchema: Invalid URL 'http=/localhost=3000/partner/http=/localhost=3000/partner': No scheme supplied. Perhaps you meant http://http=/localhost=3000/partner/http=/localhost=3000/partner?</status>
 </test>
 <doc>POST /partners</doc>
-<status status="FAIL" starttime="20220418 11:45:24.287" endtime="20220418 11:45:24.478"/>
+<status status="FAIL" starttime="20220418 13:33:09.900" endtime="20220418 13:33:10.050"/>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="1" skip="0">All Tests</stat>
+<stat pass="1" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="0" fail="1" skip="0" id="s1" name="Post">Post</stat>
+<stat pass="1" fail="1" skip="0" id="s1" name="Post">Post</stat>
 </suite>
 </statistics>
 <errors>
