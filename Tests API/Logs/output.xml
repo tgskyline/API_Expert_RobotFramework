@@ -1,17 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 5.0 (Python 3.10.4 on win32)" generated="20220419 13:21:53.411" rpa="false" schemaversion="3">
+<robot generator="Robot 5.0 (Python 3.10.4 on win32)" generated="20220419 13:58:58.869" rpa="false" schemaversion="3">
 <suite id="s1" name="Post" source="C:\Users\tiago.santos\OneDrive\Documentos\Automação de Testes\RobotFramework\API_Expert\buger-eats-partner-ms\Tests API\post.robot">
 <test id="s1-t1" name="Conectar a API BugerEats" line="16">
 <kw name="Create Session" library="RequestsLibrary">
 <arg>CreatePartner</arg>
 <arg>${BASE_URL}</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20220419 13:21:53.721" level="INFO">Creating Session using : alias=CreatePartner, url=http://localhost:3333/partners, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20220419 13:21:53.721" endtime="20220419 13:21:53.723"/>
+<msg timestamp="20220419 13:58:59.340" level="INFO">Creating Session using : alias=CreatePartner, url=http://localhost:3333/partners, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220419 13:58:59.340" endtime="20220419 13:58:59.341"/>
 </kw>
-<status status="PASS" starttime="20220419 13:21:53.721" endtime="20220419 13:21:53.723"/>
+<status status="PASS" starttime="20220419 13:58:59.339" endtime="20220419 13:58:59.341"/>
 </test>
-<test id="s1-t2" name="Should create a new partner" line="19">
+<test id="s1-t2" name="Should delete a partner" line="19">
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${Filter}</var>
+<arg>name=Pizzas Papito</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20220419 13:58:59.343" level="INFO">${Filter} = {'name': 'Pizzas Papito'}</msg>
+<status status="PASS" starttime="20220419 13:58:59.342" endtime="20220419 13:58:59.343"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<arg>${Filter}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" starttime="20220419 13:58:59.343" endtime="20220419 13:58:59.343"/>
+</kw>
+<kw name="Delete One" library="RobotMongoDBLibrary.Delete">
+<arg>${MONGO_URI}</arg>
+<arg>${Filter}</arg>
+<status status="PASS" starttime="20220419 13:58:59.343" endtime="20220419 13:58:59.929"/>
+</kw>
+<status status="PASS" starttime="20220419 13:58:59.342" endtime="20220419 13:58:59.931"/>
+</test>
+<test id="s1-t3" name="Should create a new partner" line="26">
 <kw name="Create Dictionary" library="BuiltIn">
 <var>${PayLoad}</var>
 <arg>name=Pizzas Papito</arg>
@@ -19,8 +39,8 @@
 <arg>whatsapp=11999999999</arg>
 <arg>business=Restaurante</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20220419 13:21:53.724" level="INFO">${PayLoad} = {'name': 'Pizzas Papito', 'email': 'contato@papito.com.br', 'whatsapp': '11999999999', 'business': 'Restaurante'}</msg>
-<status status="PASS" starttime="20220419 13:21:53.724" endtime="20220419 13:21:53.724"/>
+<msg timestamp="20220419 13:58:59.933" level="INFO">${PayLoad} = {'name': 'Pizzas Papito', 'email': 'contato@papito.com.br', 'whatsapp': '11999999999', 'business': 'Restaurante'}</msg>
+<status status="PASS" starttime="20220419 13:58:59.933" endtime="20220419 13:58:59.933"/>
 </kw>
 <kw name="Create Dictionary" library="BuiltIn">
 <var>${Headers}</var>
@@ -28,20 +48,8 @@
 <arg>auth_user=qa</arg>
 <arg>auth_password=ninja</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20220419 13:21:53.725" level="INFO">${Headers} = {'Content-Type': 'application/json', 'auth_user': 'qa', 'auth_password': 'ninja'}</msg>
-<status status="PASS" starttime="20220419 13:21:53.725" endtime="20220419 13:21:53.725"/>
-</kw>
-<kw name="Create Dictionary" library="BuiltIn">
-<var>${Filter}</var>
-<arg>name=Pizzas Papito</arg>
-<doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20220419 13:21:53.725" level="INFO">${Filter} = {'name': 'Pizzas Papito'}</msg>
-<status status="PASS" starttime="20220419 13:21:53.725" endtime="20220419 13:21:53.725"/>
-</kw>
-<kw name="Delete One" library="RobotMongoDBLibrary.Delete">
-<arg>${MONGO_URI}</arg>
-<arg>${Filter}</arg>
-<status status="PASS" starttime="20220419 13:21:53.725" endtime="20220419 13:21:54.510"/>
+<msg timestamp="20220419 13:58:59.934" level="INFO">${Headers} = {'Content-Type': 'application/json', 'auth_user': 'qa', 'auth_password': 'ninja'}</msg>
+<status status="PASS" starttime="20220419 13:58:59.934" endtime="20220419 13:58:59.934"/>
 </kw>
 <kw name="POST On Session" library="RequestsLibrary">
 <var>${Reponse}</var>
@@ -51,32 +59,37 @@
 <arg>headers=${headers}</arg>
 <arg>expected_status=201</arg>
 <doc>Sends a POST request on a previously created HTTP Session.</doc>
-<msg timestamp="20220419 13:21:54.638" level="INFO">POST Request : url=http://localhost:3333/partners 
+<msg timestamp="20220419 13:58:59.989" level="INFO">POST Request : url=http://localhost:3333/partners 
  path_url=/partners 
  headers={'User-Agent': 'python-requests/2.27.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'auth_user': 'qa', 'auth_password': 'ninja', 'Content-Length': '113'} 
  body=b'{"name": "Pizzas Papito", "email": "contato@papito.com.br", "whatsapp": "11999999999", "business": "Restaurante"}' 
  </msg>
-<msg timestamp="20220419 13:21:54.638" level="INFO">POST Response : url=http://localhost:3333/partners 
+<msg timestamp="20220419 13:58:59.989" level="INFO">POST Response : url=http://localhost:3333/partners 
  status=201, reason=Created 
- headers={'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Access-Control-Expose-Headers': 'Authorization,auth_user,auth_password', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '41', 'ETag': 'W/"29-wWVX1sKoMz4nr0TgG6NAIeCPB4s"', 'Date': 'Tue, 19 Apr 2022 16:21:54 GMT', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=5'} 
- body={"partner_id":"625ee1a2f5c2e8c979c8d4da"} 
+ headers={'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Access-Control-Expose-Headers': 'Authorization,auth_user,auth_password', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '41', 'ETag': 'W/"29-0tyI9nd5JjmkdnVqNX6Lu+kvrOo"', 'Date': 'Tue, 19 Apr 2022 16:58:59 GMT', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=5'} 
+ body={"partner_id":"625eea53f5c2e8c979c8d4ea"} 
  </msg>
-<msg timestamp="20220419 13:21:54.638" level="INFO">${Reponse} = &lt;Response [201]&gt;</msg>
-<status status="PASS" starttime="20220419 13:21:54.511" endtime="20220419 13:21:54.638"/>
+<msg timestamp="20220419 13:58:59.989" level="INFO">${Reponse} = &lt;Response [201]&gt;</msg>
+<status status="PASS" starttime="20220419 13:58:59.934" endtime="20220419 13:58:59.989"/>
 </kw>
-<status status="PASS" starttime="20220419 13:21:53.724" endtime="20220419 13:21:54.639"/>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${Reponse.json()}[partner_id]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220419 13:58:59.990" endtime="20220419 13:58:59.990"/>
+</kw>
+<status status="PASS" starttime="20220419 13:58:59.932" endtime="20220419 13:58:59.991"/>
 </test>
 <doc>POST /partners</doc>
-<status status="PASS" starttime="20220419 13:21:53.414" endtime="20220419 13:21:54.640"/>
+<status status="PASS" starttime="20220419 13:58:58.872" endtime="20220419 13:58:59.993"/>
 </suite>
 <statistics>
 <total>
-<stat pass="2" fail="0" skip="0">All Tests</stat>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="2" fail="0" skip="0" id="s1" name="Post">Post</stat>
+<stat pass="3" fail="0" skip="0" id="s1" name="Post">Post</stat>
 </suite>
 </statistics>
 <errors>
