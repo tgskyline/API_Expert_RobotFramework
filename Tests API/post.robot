@@ -11,9 +11,17 @@ ${BASE_URL}         http://localhost:3333/partners
 ...                 database=PartnerDB
 ...                 collection=partner
 
+
 *** Test Cases ***
 Conectar a API BugerEats
     Create Session    CreatePartner    ${BASE_URL}
+
+Should delete a partner
+    ${Filter}    Create Dictionary
+    ...    name=Pizzas Papito
+    Set Variable    ${Filter}
+
+    DeleteOne    ${MONGO_URI}    ${Filter}
 
 Should create a new partner
     ${PayLoad}    Create Dictionary
@@ -27,14 +35,17 @@ Should create a new partner
     ...    auth_user=qa
     ...    auth_password=ninja
 
-    ${Filter}    Create Dictionary
-    ...    name=Pizzas Papito
-
-    DeleteOne    ${MONGO_URI}    ${Filter}
-
     ${Reponse}    POST On Session
     ...    CreatePartner
     ...    ${BASE_URL}
     ...    json=${payload}
     ...    headers=${headers}
     ...    expected_status=201
+
+    Log To Console    ${Reponse.json()}[partner_id]
+
+    &{FILLTER}    Create Dictionary    name=Tarathep    address=Thailand
+    ${RESULTS}    Find    ${MONGODB_CONNECT_STRING}    ${FILLTER}
+    FOR    ${RESULT}    IN    @{RESULTS}
+       Log To Console    ${RESULT["phone"]}
+    END
