@@ -5,11 +5,11 @@ Library             RequestsLibrary
 
 
 *** Variables ***
-${BASE_URL}         http=//localhost=3000/partner
+${BASE_URL}         http://localhost:3000/partner
 
 
 *** Test Cases ***
-Conectar a minha API
+Conectar a API BugerEats
     Create Session    CreatePartner    ${BASE_URL}
 
 Should create a new partner

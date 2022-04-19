@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 5.0 (Python 3.10.4 on win32)" generated="20220418 13:33:09.896" rpa="false" schemaversion="3">
+<robot generator="Robot 5.0 (Python 3.10.4 on win32)" generated="20220418 20:57:51.492" rpa="false" schemaversion="3">
 <suite id="s1" name="Post" source="C:\Users\tiago.santos\OneDrive\Documentos\Automação de Testes\RobotFramework\API_Expert\buger-eats-partner-ms\Tests API\post.robot">
-<test id="s1-t1" name="Conectar a minha API" line="12">
+<test id="s1-t1" name="Conectar a API BugerEats" line="12">
 <kw name="Create Session" library="RequestsLibrary">
 <arg>CreatePartner</arg>
 <arg>${BASE_URL}</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20220418 13:33:10.033" level="INFO">Creating Session using : alias=CreatePartner, url=http=//localhost=3000/partner, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20220418 13:33:10.033" endtime="20220418 13:33:10.033"/>
+<msg timestamp="20220418 20:57:51.637" level="INFO">Creating Session using : alias=CreatePartner, url=http://localhost:3000/partner, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220418 20:57:51.637" endtime="20220418 20:57:51.637"/>
 </kw>
-<status status="PASS" starttime="20220418 13:33:10.032" endtime="20220418 13:33:10.034"/>
+<status status="PASS" starttime="20220418 20:57:51.636" endtime="20220418 20:57:51.637"/>
 </test>
 <test id="s1-t2" name="Should create a new partner" line="15">
 <kw name="Create Dictionary" library="BuiltIn">
@@ -19,8 +19,8 @@
 <arg>whatsapp= 11999999999</arg>
 <arg>business= Restaurante</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20220418 13:33:10.037" level="INFO">${PayLoad} = {'name': ' Pizzas Papito3', 'email': ' contato3@papito.com.br', 'whatsapp': ' 11999999999', 'business': ' Restaurante'}</msg>
-<status status="PASS" starttime="20220418 13:33:10.036" endtime="20220418 13:33:10.037"/>
+<msg timestamp="20220418 20:57:51.639" level="INFO">${PayLoad} = {'name': ' Pizzas Papito3', 'email': ' contato3@papito.com.br', 'whatsapp': ' 11999999999', 'business': ' Restaurante'}</msg>
+<status status="PASS" starttime="20220418 20:57:51.639" endtime="20220418 20:57:51.639"/>
 </kw>
 <kw name="Create Dictionary" library="BuiltIn">
 <var>${heaDers}</var>
@@ -28,24 +28,44 @@
 <arg>auth_user=qa</arg>
 <arg>auth_password=ninja</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20220418 13:33:10.038" level="INFO">${heaDers} = {'Content-Type': 'application/json', 'auth_user': 'qa', 'auth_password': 'ninja'}</msg>
-<status status="PASS" starttime="20220418 13:33:10.037" endtime="20220418 13:33:10.038"/>
+<msg timestamp="20220418 20:57:51.639" level="INFO">${heaDers} = {'Content-Type': 'application/json', 'auth_user': 'qa', 'auth_password': 'ninja'}</msg>
+<status status="PASS" starttime="20220418 20:57:51.639" endtime="20220418 20:57:51.639"/>
 </kw>
 <kw name="POST On Session" library="RequestsLibrary">
 <var>${reponse}</var>
-<arg>alias=CreatePartner</arg>
-<arg>url=${BASE_URL}</arg>
+<arg>CreatePartner</arg>
+<arg>${BASE_URL}</arg>
 <arg>json=${payload}</arg>
 <arg>headers=${headers}</arg>
 <arg>expected_status=200</arg>
 <doc>Sends a POST request on a previously created HTTP Session.</doc>
-<msg timestamp="20220418 13:33:10.042" level="FAIL">MissingSchema: Invalid URL 'http=/localhost=3000/partner/http=/localhost=3000/partner': No scheme supplied. Perhaps you meant http://http=/localhost=3000/partner/http=/localhost=3000/partner?</msg>
-<status status="FAIL" starttime="20220418 13:33:10.038" endtime="20220418 13:33:10.048"/>
+<msg timestamp="20220418 20:57:51.655" level="INFO">POST Request : url=http://localhost:3000/partner 
+ path_url=/partner 
+ headers={'User-Agent': 'python-requests/2.27.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'auth_user': 'qa', 'auth_password': 'ninja', 'Content-Length': '119'} 
+ body=b'{"name": " Pizzas Papito3", "email": " contato3@papito.com.br", "whatsapp": " 11999999999", "business": " Restaurante"}' 
+ </msg>
+<msg timestamp="20220418 20:57:51.655" level="INFO">POST Response : url=http://localhost:3000/partner 
+ status=404, reason=Not Found 
+ headers={'X-Powered-By': 'Express', 'Content-Security-Policy': "default-src 'none'", 'X-Content-Type-Options': 'nosniff', 'Content-Type': 'text/html; charset=utf-8', 'Content-Length': '147', 'Date': 'Mon, 18 Apr 2022 23:57:51 GMT', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=5'} 
+ body=&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+&lt;meta charset="utf-8"&gt;
+&lt;title&gt;Error&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;pre&gt;Cannot POST /partner&lt;/pre&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+ 
+ </msg>
+<msg timestamp="20220418 20:57:51.655" level="FAIL">Url: http://localhost:3000/partner Expected status: 404 != 200</msg>
+<status status="FAIL" starttime="20220418 20:57:51.640" endtime="20220418 20:57:51.659"/>
 </kw>
-<status status="FAIL" starttime="20220418 13:33:10.036" endtime="20220418 13:33:10.049">MissingSchema: Invalid URL 'http=/localhost=3000/partner/http=/localhost=3000/partner': No scheme supplied. Perhaps you meant http://http=/localhost=3000/partner/http=/localhost=3000/partner?</status>
+<status status="FAIL" starttime="20220418 20:57:51.638" endtime="20220418 20:57:51.662">Url: http://localhost:3000/partner Expected status: 404 != 200</status>
 </test>
 <doc>POST /partners</doc>
-<status status="FAIL" starttime="20220418 13:33:09.900" endtime="20220418 13:33:10.050"/>
+<status status="FAIL" starttime="20220418 20:57:51.496" endtime="20220418 20:57:51.665"/>
 </suite>
 <statistics>
 <total>

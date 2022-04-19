@@ -6,7 +6,6 @@ lint:
 	robotidy --transform AlignTestCases '$(src)'
 	robotidy --configure AlignSettingsSection:up_to_column=3 '$(src)'
 	robotidy --configure AlignSettingsSection:argument_indent=0 '$(src)'
-	robotidy --transform AlignSettingsSection:argument_indent=0 '$(src)'
 	robotidy --transform OrderTags '$(src)'
 	robotidy --configure AlignVariablesSection:min_width=20 '$(src)'
 	@echo *********************************************** RODANDO TESTE ***********************************************
