@@ -1,15 +1,7 @@
 *** Settings ***
 Documentation       POST    /partners
 
-Library             RequestsLibrary
-Library             RobotMongoDBLibrary.Delete
-
-
-*** Variables ***
-${BASE_URL}         http://localhost:3333/partners
-&{MONGO_URI}        connection=mongodb+srv://bugereates:AFUB3uVt5exShGsp@cluster0.ivqe9.mongodb.net/PartnerDB?retryWrites=true&w=majority
-...                 database=PartnerDB
-...                 collection=partner
+Resource            ${EXECDIR}/TestsAPI/Resources/base.robot
 
 
 *** Test Cases ***
@@ -19,7 +11,7 @@ Conectar a API BugerEats
 Should delete a partner
     ${Filter}    Create Dictionary
     ...    name=Pizzas Papito
-    Set Variable    ${Filter}
+    Set suite Variable    ${Filter}
 
     DeleteOne    ${MONGO_URI}    ${Filter}
 
@@ -44,8 +36,8 @@ Should create a new partner
 
     Log To Console    ${Reponse.json()}[partner_id]
 
-    &{FILLTER}    Create Dictionary    name=Tarathep    address=Thailand
-    ${RESULTS}    Find    ${MONGODB_CONNECT_STRING}    ${FILLTER}
-    FOR    ${RESULT}    IN    @{RESULTS}
-       Log To Console    ${RESULT["phone"]}
-    END
+    ${results}    Find    ${MONGO_URI}    ${Filter}
+
+    Log To Console    ${results}[0][_id]
+
+    Should Be Equal    ${Reponse.json()}[partner_id]    ${results}[0][_id]
