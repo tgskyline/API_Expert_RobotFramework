@@ -14,9 +14,9 @@ Should create a new partner
 
 # Encapsulamento do teste
 
-        Remove Partner By Name        Pizzas Papito
+        Remove Partner By Name        ${Partner}[name]
 
         ${response}        POST Partner        ${Partner}
 
-        ${Result}        Find Partner By Name        Pizzas Papito
+        ${Result}        Find Partner By Name        ${Partner}[name]
         Should Be Equal        ${Response.json()}[partner_id]        ${Result}[_id]
