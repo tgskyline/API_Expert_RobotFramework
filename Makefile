@@ -8,8 +8,9 @@ lint:
 	robotidy --configure AlignSettingsSection:argument_indent=0 '$(src)'
 	robotidy --transform OrderTags '$(src)'
 	robotidy --configure AlignVariablesSection:min_width=20 '$(src)'
+	
 	@echo *********************************************** RODANDO TESTE ***********************************************
-	robot -d './Tests API/Logs/' '$(src)'	
+	robot -d './TestsAPI/Logs/' '$(src)'	
 	@echo *********************************************** RELATORIO FINAL DO ROBOCOP ***********************************************
 	robocop '$(src)' --reports all
 	
