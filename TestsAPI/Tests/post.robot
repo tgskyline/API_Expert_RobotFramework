@@ -1,22 +1,24 @@
 *** Settings ***
-Documentation       POST        /partners
+Documentation       POST    /partners
 
 Resource            ../Resources/base.robot
 
 
 *** Test Cases ***
-Conectar a API BugerEats
-        Create Session        CreatePartner        ${BASE_URL}
-
 Should create a new partner
-        ${Partner}        Factory New Partner
-        Set Global Variable        ${Partner}
+    [Tags]    happy_way
+    ${Partner}    Factory New Partner
+    Remove Partner By Name    ${Partner}[name]
+    ${response}    POST Partner    ${Partner}
+    Status Should Be    201
+    ${Result}    Find Partner By Name    ${Partner}[name]
+    Should Be Equal    ${Response.json()}[partner_id]    ${Result}[_id]
 
-# Encapsulamento do teste
-
-        Remove Partner By Name        ${Partner}[name]
-
-        ${response}        POST Partner        ${Partner}
-
-        ${Result}        Find Partner By Name        ${Partner}[name]
-        Should Be Equal        ${Response.json()}[partner_id]        ${Result}[_id]
+Should return duplicate company name
+    [Tags]    sad_way
+    ${Partner}    Factory Dup Name
+    Remove Partner By Name    ${Partner}[name]
+    POST Partner    ${Partner}
+    ${Response}    POST Partner    ${Partner}
+    Status Should Be    409
+    Should Be Equal    ${Response.json()}[message]    Duplicate company name

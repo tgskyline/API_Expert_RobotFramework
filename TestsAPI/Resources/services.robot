@@ -6,18 +6,18 @@ Library             RequestsLibrary
 
 *** Variables ***
 ${BASE_URL}     http://localhost:3333/partners
-&{HEADERS}      Content-Type=application/json        auth_user=qa        auth_password=ninja
+&{HEADERS}      Content-Type=application/json    auth_user=qa    auth_password=ninja
 
 
 *** Keywords ***
 POST Partner
-        [Arguments]        ${Payload}
+    [Arguments]    ${Payload}
+    Create Session    CreatePartner    ${BASE_URL}
+    ${Response}    POST On Session
+    ...    CreatePartner
+    ...    ${BASE_URL}
+    ...    json=${payload}
+    ...    headers=${HEADERS}
+    ...    expected_status=any
 
-        ${Response}        POST On Session
-        ...        CreatePartner
-        ...        ${BASE_URL}
-        ...        json=${payload}
-        ...        headers=${HEADERS}
-        ...        expected_status=201
-
-        [Return]        ${Response}
+    [Return]    ${Response}

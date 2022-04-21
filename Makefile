@@ -7,7 +7,7 @@ lint:
 	robotidy --configure AlignSettingsSection:up_to_column=10 '$(src)'
 	robotidy --configure AlignSettingsSection:argument_indent=0 '$(src)'
 	robotidy --transform OrderTags '$(src)'
-	robotidy --spacecount 8 '$(src)'
+	robotidy --spacecount 4 '$(src)'
 	@echo *********************************************** RODANDO TESTE ***********************************************
 	robot -d './TestsAPI/Logs/' '$(src)'	
 	@echo *********************************************** RELATORIO FINAL DO ROBOCOP ***********************************************
