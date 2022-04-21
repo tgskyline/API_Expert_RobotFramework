@@ -13,18 +13,18 @@ Library             RobotMongoDBLibrary.Find
 
 *** Keywords ***
 Remove Partner By Name
-        [Arguments]        ${Partner_name}
-        ${Filter}        Create Dictionary
-        ...        name=${Partner_name}
+    [Arguments]    ${Partner_name}
+    ${Filter}    Create Dictionary
+    ...    name=${Partner_name}
 
-        DeleteOne        ${MONGO_URI}        ${Filter}
+    DeleteOne    ${MONGO_URI}    ${Filter}
 
-        Set Global Variable        ${Filter}
+    Set Global Variable    ${Filter}
 
 Find Partner By Name
-        [Arguments]        ${Partner_name}
+    [Arguments]    ${Partner_name}
 
-        ${Result}        Find        ${MONGO_URI}        ${Filter}
+    ${Result}    Find    ${MONGO_URI}    ${Filter}
 
-        Set Global Variable        ${Result}
-        [Return]        ${Result}[0]
+    Set Global Variable    ${Result}
+    [Return]    ${Result}[0]
