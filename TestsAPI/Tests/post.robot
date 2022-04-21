@@ -1,43 +1,22 @@
 *** Settings ***
-Documentation       POST    /partners
+Documentation       POST        /partners
 
-Resource            ${EXECDIR}/TestsAPI/Resources/base.robot
+Resource            ../Resources/base.robot
 
 
 *** Test Cases ***
 Conectar a API BugerEats
-    Create Session    CreatePartner    ${BASE_URL}
-
-Should delete a partner
-    ${Filter}    Create Dictionary
-    ...    name=Pizzas Papito
-    Set suite Variable    ${Filter}
-
-    DeleteOne    ${MONGO_URI}    ${Filter}
+        Create Session        CreatePartner        ${BASE_URL}
 
 Should create a new partner
-    ${PayLoad}    Create Dictionary
-    ...    name=Pizzas Papito
-    ...    email=contato@papito.com.br
-    ...    whatsapp=11999999999
-    ...    business=Restaurante
+        ${Partner}        Factory New Partner
+        Set Global Variable        ${Partner}
 
-    ${Headers}    Create Dictionary
-    ...    Content-Type=application/json
-    ...    auth_user=qa
-    ...    auth_password=ninja
+# Encapsulamento do teste
 
-    ${Reponse}    POST On Session
-    ...    CreatePartner
-    ...    ${BASE_URL}
-    ...    json=${payload}
-    ...    headers=${headers}
-    ...    expected_status=201
+        Remove Partner By Name        Pizzas Papito
 
-    Log To Console    ${Reponse.json()}[partner_id]
+        ${response}        POST Partner        ${Partner}
 
-    ${results}    Find    ${MONGO_URI}    ${Filter}
-
-    Log To Console    ${results}[0][_id]
-
-    Should Be Equal    ${Reponse.json()}[partner_id]    ${results}[0][_id]
+        ${Result}        Find Partner By Name        Pizzas Papito
+        Should Be Equal        ${Response.json()}[partner_id]        ${Result}[_id]
