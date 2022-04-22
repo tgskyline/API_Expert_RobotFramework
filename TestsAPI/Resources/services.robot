@@ -20,9 +20,8 @@ POST Partner
     ...    headers=${HEADERS}
     ...    expected_status=any
 
-    [Return]    ${Response}
-
     Set Global Variable    ${payload}
+    [Return]    ${Response}
 
 GET Partners
     Create Session    CreatePartner    ${BASE_URL}

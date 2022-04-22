@@ -17,8 +17,7 @@ Should create a new partner
 Should return duplicate company name
     [Tags]    sad_way
     ${Partner}    Factory Dup Name
-    Remove Partner By Name    ${Partner}[name]
-    POST Partner    ${Partner}
+    ${partner_id}    Create a new partner    ${partner}
     ${Response}    POST Partner    ${Partner}
     Status Should Be    409
     Should Be Equal    ${Response.json()}[message]    Duplicate company name
