@@ -39,4 +39,22 @@ def factory_partner_list():
     ]
 
     return p_list
+
+def factory_enable_partner():
+    partner = {
+        'name':"Jujuba Não Tem Antena",
+	    'email': "contato@jujuba.com.br",
+	    'whatsapp': "1199991004",
+	    'business': "Conveniência"
+        }
+    return partner
+
+def factory_404_partner():
+    partner = {
+        'name':"Joao dos Venenos",
+	    'email': "contato@venenos.com.br",
+	    'whatsapp': "11999991007",
+	    'business': "Conveniência"
+        }
+    return partner
     

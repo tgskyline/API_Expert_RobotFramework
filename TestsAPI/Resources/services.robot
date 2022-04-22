@@ -22,11 +22,41 @@ POST Partner
 
     [Return]    ${Response}
 
+    Set Global Variable    ${payload}
+
 GET Partners
     Create Session    CreatePartner    ${BASE_URL}
     ${Response}    GET On Session
     ...    CreatePartner
     ...    ${BASE_URL}
+    ...    headers=${HEADERS}
+    ...    expected_status=any
+
+    [Return]    ${Response}
+
+Search Partners
+    [Arguments]    ${name}
+
+    ${Query}    Create Dictionary    name=${name}
+
+    Create Session    CreatePartner    ${BASE_URL}
+    ${Response}    GET On Session
+    ...    CreatePartner
+    ...    ${BASE_URL}
+    ...    params=${Query}
+    ...    headers=${HEADERS}
+    ...    expected_status=any
+
+    [Return]    ${Response}
+
+Enable Partner
+    [Arguments]    ${partner_id}
+
+    Create Session    CreatePartner    ${BASE_URL}/${partner_id}/enable
+    ${Response}    PUT On Session
+    ...    CreatePartner
+    ...    ${BASE_URL}/${partner_id}/enable
+    ...    json=${payload}
     ...    headers=${HEADERS}
     ...    expected_status=any
 
