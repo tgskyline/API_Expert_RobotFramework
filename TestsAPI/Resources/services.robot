@@ -21,3 +21,13 @@ POST Partner
     ...    expected_status=any
 
     [Return]    ${Response}
+
+GET Partners
+    Create Session    CreatePartner    ${BASE_URL}
+    ${Response}    GET On Session
+    ...    CreatePartner
+    ...    ${BASE_URL}
+    ...    headers=${HEADERS}
+    ...    expected_status=any
+
+    [Return]    ${Response}

@@ -15,3 +15,28 @@ def factory_dup_name():
 	    'business': "Conveniência"
         }
     return partner
+
+def factory_partner_list():
+    p_list = [
+        {
+        'name':"Tabata Mercearia",
+	    'email': "contato@TMercearia.com.br",
+	    'whatsapp': "31988881001",
+	    'business': "Conveniência"
+        },
+        {
+        'name':"Braian Action Figure",
+	    'email': "contato@BraianAF.com.br",
+	    'whatsapp': "3199991002",
+	    'business': "Supermercado"
+        },
+        {
+        'name':"Maria das Graças Rest",
+	    'email': "contato@MGRest.com.br",
+	    'whatsapp': "31999991003",
+	    'business': "Restaurante"
+        }
+    ]
+
+    return p_list
+    

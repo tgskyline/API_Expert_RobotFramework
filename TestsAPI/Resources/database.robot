@@ -20,6 +20,7 @@ Remove Partner By Name
     DeleteOne    ${MONGO_URI}    ${Filter}
 
     Set Global Variable    ${Filter}
+    Set Global Variable    ${Partner_name}
 
 Find Partner By Name
     [Arguments]    ${Partner_name}
