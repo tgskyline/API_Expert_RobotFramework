@@ -57,4 +57,13 @@ def factory_404_partner():
 	    'business': "Conveniência"
         }
     return partner
+
+def factory_disable_partner():
+    partner = {
+        'name':"Super24hrs",
+	    'email': "contato@Super24hrs.com.br",
+	    'whatsapp': "1199991008",
+	    'business': "Supermercado"
+        }
+    return partner
     
