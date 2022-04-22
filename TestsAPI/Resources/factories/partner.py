@@ -66,4 +66,13 @@ def factory_disable_partner():
 	    'business': "Supermercado"
         }
     return partner
+
+def factory_remove_partner():
+    partner = {
+        'name':"Bar do Tiao",
+	    'email': "contato@bardotiao.com.br",
+	    'whatsapp': "1199991009",
+	    'business': "Conveniência"
+        }
+    return partner
     

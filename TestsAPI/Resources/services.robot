@@ -73,3 +73,15 @@ Disable Partner
     ...    expected_status=any
 
     [Return]    ${Response}
+
+DELETE Partner
+    [Arguments]    ${partner_id}
+
+    Create Session    CreatePartner    ${BASE_URL}/${partner_id}
+    ${Response}    DELETE On Session
+    ...    CreatePartner
+    ...    ${BASE_URL}/${partner_id}
+    ...    headers=${HEADERS}
+    ...    expected_status=any
+
+    [Return]    ${Response}

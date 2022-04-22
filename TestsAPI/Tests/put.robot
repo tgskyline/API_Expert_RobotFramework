@@ -20,7 +20,7 @@ Should disable a partner
     ${partner_id}    Create a new partner    ${partner}
     Enable Partner    ${partner_id}
 
-    ${response}    Disable Partner       ${partner_id}
+    ${response}    Disable Partner    ${partner_id}
     Status Should Be    200
 
 Should return 404 on enable a partner
