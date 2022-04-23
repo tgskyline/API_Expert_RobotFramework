@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation       POST    /partners
+Documentation       DELETE   /partners
 
 Resource            ../Resources/base.robot
 Library             String
