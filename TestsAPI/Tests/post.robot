@@ -7,12 +7,21 @@ Resource            ../Resources/base.robot
 *** Test Cases ***
 Should create a new partner
     [Tags]    happy_way
+
+    Purge Messages
+
     ${Partner}    Factory New Partner
     Remove Partner By Name    ${Partner}[name]
+
     ${response}    POST Partner    ${Partner}
     Status Should Be    201
+
     ${Result}    Find Partner By Name    ${Partner}[name]
     Should Be Equal    ${Response.json()}[partner_id]    ${Result}[_id]
+
+    ${message}    Get Message
+    Log    ${message}[payload]
+    Should Contain    ${message}[payload]    ${partner}[email]
 
 Should return duplicate company name
     [Tags]    sad_way

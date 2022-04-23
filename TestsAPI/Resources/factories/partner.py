@@ -57,4 +57,22 @@ def factory_404_partner():
 	    'business': "Conveniência"
         }
     return partner
+
+def factory_disable_partner():
+    partner = {
+        'name':"Super24hrs",
+	    'email': "contato@Super24hrs.com.br",
+	    'whatsapp': "1199991008",
+	    'business': "Supermercado"
+        }
+    return partner
+
+def factory_remove_partner():
+    partner = {
+        'name':"Bar do Tiao",
+	    'email': "contato@bardotiao.com.br",
+	    'whatsapp': "1199991009",
+	    'business': "Conveniência"
+        }
+    return partner
     

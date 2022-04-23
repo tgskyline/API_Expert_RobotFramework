@@ -60,3 +60,28 @@ Enable Partner
     ...    expected_status=any
 
     [Return]    ${Response}
+
+Disable Partner
+    [Arguments]    ${partner_id}
+
+    Create Session    CreatePartner    ${BASE_URL}/${partner_id}/disable
+    ${Response}    PUT On Session
+    ...    CreatePartner
+    ...    ${BASE_URL}/${partner_id}/disable
+    ...    json=${payload}
+    ...    headers=${HEADERS}
+    ...    expected_status=any
+
+    [Return]    ${Response}
+
+DELETE Partner
+    [Arguments]    ${partner_id}
+
+    Create Session    CreatePartner    ${BASE_URL}/${partner_id}
+    ${Response}    DELETE On Session
+    ...    CreatePartner
+    ...    ${BASE_URL}/${partner_id}
+    ...    headers=${HEADERS}
+    ...    expected_status=any
+
+    [Return]    ${Response}
