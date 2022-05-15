@@ -1,0 +1,18 @@
+make.exe --dry-run --always-make --keep-going --print-directory
+make.exe: Entering directory `c:/Users/Tiago Gomes/OneDrive/Documentos/Automa��o de Testes/RobotFramework/API_Expert/buger-eats-partner-ms'
+echo *********************************************** RODANDO ROBOTIDY ***********************************************
+robotidy ''
+echo *********************************************** RODANDO TRANSFORM ***********************************************
+robotidy --transform AlignTestCases ''
+robotidy --configure AlignSettingsSection:up_to_column=10 ''
+robotidy --configure AlignSettingsSection:argument_indent=0 ''
+robotidy --transform AlignTestCases ''
+robotidy --transform OrderTags ''
+robotidy --spacecount 4 ''
+robotidy --transform InlineIf ''
+echo *********************************************** RODANDO TESTE ***********************************************
+robot -d './TestsAPI/Logs/' ''	
+echo *********************************************** RELATORIO FINAL DO ROBOCOP ***********************************************
+robocop '' --reports all
+make.exe: Leaving directory `c:/Users/Tiago Gomes/OneDrive/Documentos/Automa��o de Testes/RobotFramework/API_Expert/buger-eats-partner-ms'
+ 

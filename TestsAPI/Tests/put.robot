@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation       PUT   /partners
+Documentation       PUT    /partners
 
 Resource            ../Resources/base.robot
 Library             String

@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 4.1.3 (Python 3.10.2 on win32)" generated="20220422 20:50:41.506" rpa="false" schemaversion="2">
-<suite id="s1" name="TestsAPI" source="C:\Users\Tiago Gomes\OneDrive\Documentos\Automação de Testes\RobotFramework\API_Expert\buger-eats-partner-ms\TestsAPI">
-<suite id="s1-s1" name="Tests" source="C:\Users\Tiago Gomes\OneDrive\Documentos\Automação de Testes\RobotFramework\API_Expert\buger-eats-partner-ms\TestsAPI\Tests">
-<suite id="s1-s1-s1" name="Delete" source="C:\Users\Tiago Gomes\OneDrive\Documentos\Automação de Testes\RobotFramework\API_Expert\buger-eats-partner-ms\TestsAPI\Tests\delete.robot">
-<test id="s1-s1-s1-t1" name="Should remove a partner">
+<robot generator="Robot 5.0 (Python 3.10.4 on win32)" generated="20220428 11:55:20.462" rpa="false" schemaversion="3">
+<suite id="s1" name="Tests" source="C:\Users\tiago.santos\OneDrive\Documentos\Automação de Testes\RobotFramework\API_Expert\buger-eats-partner-ms\TestsAPI\Tests">
+<suite id="s1-s1" name="Delete" source="C:\Users\tiago.santos\OneDrive\Documentos\Automação de Testes\RobotFramework\API_Expert\buger-eats-partner-ms\TestsAPI\Tests\delete.robot">
+<test id="s1-s1-t1" name="Should Remove A Partner" line="9">
 <kw name="Factory Remove Partner" library="partner">
 <var>${partner}</var>
-<msg timestamp="20220422 20:50:41.980" level="INFO">${partner} = {'name': 'Bar do Tiao', 'email': 'contato@bardotiao.com.br', 'whatsapp': '1199991009', 'business': 'Conveniência'}</msg>
-<status status="PASS" starttime="20220422 20:50:41.980" endtime="20220422 20:50:41.980"/>
+<msg timestamp="20220428 11:55:20.921" level="INFO">${partner} = {'name': 'Bar do Tiao', 'email': 'contato@bardotiao.com.br', 'whatsapp': '1199991009', 'business': 'Conveniência'}</msg>
+<status status="PASS" starttime="20220428 11:55:20.920" endtime="20220428 11:55:20.921"/>
 </kw>
 <kw name="Create a new partner" library="helpers">
 <var>${partner_id}</var>
@@ -18,27 +17,27 @@
 <var>${Filter}</var>
 <arg>name=${Partner_name}</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20220422 20:50:41.982" level="INFO">${Filter} = {'name': 'Bar do Tiao'}</msg>
-<status status="PASS" starttime="20220422 20:50:41.981" endtime="20220422 20:50:41.982"/>
+<msg timestamp="20220428 11:55:20.923" level="INFO">${Filter} = {'name': 'Bar do Tiao'}</msg>
+<status status="PASS" starttime="20220428 11:55:20.922" endtime="20220428 11:55:20.923"/>
 </kw>
 <kw name="Delete One" library="RobotMongoDBLibrary.Delete">
 <arg>${MONGO_URI}</arg>
 <arg>${Filter}</arg>
-<status status="PASS" starttime="20220422 20:50:41.982" endtime="20220422 20:50:42.357"/>
+<status status="PASS" starttime="20220428 11:55:20.924" endtime="20220428 11:55:21.527"/>
 </kw>
 <kw name="Set Global Variable" library="BuiltIn">
 <arg>${Filter}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20220422 20:50:42.358" level="INFO">${Filter} = {'name': 'Bar do Tiao'}</msg>
-<status status="PASS" starttime="20220422 20:50:42.358" endtime="20220422 20:50:42.358"/>
+<msg timestamp="20220428 11:55:21.527" level="INFO">${Filter} = {'name': 'Bar do Tiao'}</msg>
+<status status="PASS" starttime="20220428 11:55:21.527" endtime="20220428 11:55:21.527"/>
 </kw>
 <kw name="Set Global Variable" library="BuiltIn">
 <arg>${Partner_name}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20220422 20:50:42.358" level="INFO">${Partner_name} = Bar do Tiao</msg>
-<status status="PASS" starttime="20220422 20:50:42.358" endtime="20220422 20:50:42.358"/>
+<msg timestamp="20220428 11:55:21.528" level="INFO">${Partner_name} = Bar do Tiao</msg>
+<status status="PASS" starttime="20220428 11:55:21.528" endtime="20220428 11:55:21.528"/>
 </kw>
-<status status="PASS" starttime="20220422 20:50:41.981" endtime="20220422 20:50:42.359"/>
+<status status="PASS" starttime="20220428 11:55:20.922" endtime="20220428 11:55:21.528"/>
 </kw>
 <kw name="POST Partner" library="services">
 <var>${response}</var>
@@ -47,8 +46,8 @@
 <arg>CreatePartner</arg>
 <arg>${BASE_URL}</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20220422 20:50:42.359" level="INFO">Creating Session using : alias=CreatePartner, url=http://localhost:3333/partners, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20220422 20:50:42.359" endtime="20220422 20:50:42.359"/>
+<msg timestamp="20220428 11:55:21.529" level="INFO">Creating Session using : alias=CreatePartner, url=http://localhost:3333/partners, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220428 11:55:21.528" endtime="20220428 11:55:21.529"/>
 </kw>
 <kw name="POST On Session" library="RequestsLibrary">
 <var>${Response}</var>
@@ -58,37 +57,37 @@
 <arg>headers=${HEADERS}</arg>
 <arg>expected_status=any</arg>
 <doc>Sends a POST request on a previously created HTTP Session.</doc>
-<msg timestamp="20220422 20:50:42.401" level="INFO">POST Request : url=http://localhost:3333/partners 
+<msg timestamp="20220428 11:55:21.570" level="INFO">POST Request : url=http://localhost:3333/partners 
  path_url=/partners 
  headers={'User-Agent': 'python-requests/2.27.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'auth_user': 'qa', 'auth_password': 'ninja', 'Content-Length': '119'} 
  body=b'{"name": "Bar do Tiao", "email": "contato@bardotiao.com.br", "whatsapp": "1199991009", "business": "Conveni\\u00eancia"}' 
  </msg>
-<msg timestamp="20220422 20:50:42.401" level="INFO">POST Response : url=http://localhost:3333/partners 
+<msg timestamp="20220428 11:55:21.570" level="INFO">POST Response : url=http://localhost:3333/partners 
  status=201, reason=Created 
- headers={'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Access-Control-Expose-Headers': 'Authorization,auth_user,auth_password', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '41', 'ETag': 'W/"29-lqUPyyZ/W38VDL4aw4obST6AxR4"', 'Date': 'Fri, 22 Apr 2022 23:50:42 GMT', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=5'} 
- body={"partner_id":"62633f5274dbf13b033bdcd5"} 
+ headers={'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Access-Control-Expose-Headers': 'Authorization,auth_user,auth_password', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '41', 'ETag': 'W/"29-YnJPZHvZxqWKYpTQWTQg8vReRwk"', 'Date': 'Thu, 28 Apr 2022 14:55:21 GMT', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=5'} 
+ body={"partner_id":"626aaad99c44ef7af41edc3b"} 
  </msg>
-<msg timestamp="20220422 20:50:42.401" level="INFO">${Response} = &lt;Response [201]&gt;</msg>
-<status status="PASS" starttime="20220422 20:50:42.359" endtime="20220422 20:50:42.401"/>
+<msg timestamp="20220428 11:55:21.570" level="INFO">${Response} = &lt;Response [201]&gt;</msg>
+<status status="PASS" starttime="20220428 11:55:21.529" endtime="20220428 11:55:21.570"/>
 </kw>
 <kw name="Set Global Variable" library="BuiltIn">
 <arg>${payload}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20220422 20:50:42.402" level="INFO">${payload} = {'name': 'Bar do Tiao', 'email': 'contato@bardotiao.com.br', 'whatsapp': '1199991009', 'business': 'Conveniência'}</msg>
-<status status="PASS" starttime="20220422 20:50:42.402" endtime="20220422 20:50:42.402"/>
+<msg timestamp="20220428 11:55:21.570" level="INFO">${payload} = {'name': 'Bar do Tiao', 'email': 'contato@bardotiao.com.br', 'whatsapp': '1199991009', 'business': 'Conveniência'}</msg>
+<status status="PASS" starttime="20220428 11:55:21.570" endtime="20220428 11:55:21.570"/>
 </kw>
-<msg timestamp="20220422 20:50:42.402" level="INFO">${response} = &lt;Response [201]&gt;</msg>
-<status status="PASS" starttime="20220422 20:50:42.359" endtime="20220422 20:50:42.402"/>
+<msg timestamp="20220428 11:55:21.571" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<status status="PASS" starttime="20220428 11:55:21.528" endtime="20220428 11:55:21.571"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${partner_id}</var>
 <arg>${response.json()}[partner_id]</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20220422 20:50:42.403" level="INFO">${partner_id} = 62633f5274dbf13b033bdcd5</msg>
-<status status="PASS" starttime="20220422 20:50:42.402" endtime="20220422 20:50:42.403"/>
+<msg timestamp="20220428 11:55:21.571" level="INFO">${partner_id} = 626aaad99c44ef7af41edc3b</msg>
+<status status="PASS" starttime="20220428 11:55:21.571" endtime="20220428 11:55:21.571"/>
 </kw>
-<msg timestamp="20220422 20:50:42.403" level="INFO">${partner_id} = 62633f5274dbf13b033bdcd5</msg>
-<status status="PASS" starttime="20220422 20:50:41.981" endtime="20220422 20:50:42.403"/>
+<msg timestamp="20220428 11:55:21.571" level="INFO">${partner_id} = 626aaad99c44ef7af41edc3b</msg>
+<status status="PASS" starttime="20220428 11:55:20.921" endtime="20220428 11:55:21.571"/>
 </kw>
 <kw name="DELETE Partner" library="services">
 <arg>${partner_id}</arg>
@@ -96,8 +95,8 @@
 <arg>CreatePartner</arg>
 <arg>${BASE_URL}/${partner_id}</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20220422 20:50:42.404" level="INFO">Creating Session using : alias=CreatePartner, url=http://localhost:3333/partners/62633f5274dbf13b033bdcd5, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20220422 20:50:42.404" endtime="20220422 20:50:42.404"/>
+<msg timestamp="20220428 11:55:21.573" level="INFO">Creating Session using : alias=CreatePartner, url=http://localhost:3333/partners/626aaad99c44ef7af41edc3b, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220428 11:55:21.572" endtime="20220428 11:55:21.573"/>
 </kw>
 <kw name="DELETE On Session" library="RequestsLibrary">
 <var>${Response}</var>
@@ -106,33 +105,33 @@
 <arg>headers=${HEADERS}</arg>
 <arg>expected_status=any</arg>
 <doc>Sends a DELETE request on a previously created HTTP Session.</doc>
-<msg timestamp="20220422 20:50:42.445" level="INFO">DELETE Request : url=http://localhost:3333/partners/62633f5274dbf13b033bdcd5 
- path_url=/partners/62633f5274dbf13b033bdcd5 
+<msg timestamp="20220428 11:55:21.609" level="INFO">DELETE Request : url=http://localhost:3333/partners/626aaad99c44ef7af41edc3b 
+ path_url=/partners/626aaad99c44ef7af41edc3b 
  headers={'User-Agent': 'python-requests/2.27.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'auth_user': 'qa', 'auth_password': 'ninja', 'Content-Length': '0'} 
  body=None 
  </msg>
-<msg timestamp="20220422 20:50:42.445" level="INFO">DELETE Response : url=http://localhost:3333/partners/62633f5274dbf13b033bdcd5 
+<msg timestamp="20220428 11:55:21.609" level="INFO">DELETE Response : url=http://localhost:3333/partners/626aaad99c44ef7af41edc3b 
  status=204, reason=No Content 
- headers={'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Access-Control-Expose-Headers': 'Authorization,auth_user,auth_password', 'Date': 'Fri, 22 Apr 2022 23:50:42 GMT', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=5'} 
+ headers={'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Access-Control-Expose-Headers': 'Authorization,auth_user,auth_password', 'Date': 'Thu, 28 Apr 2022 14:55:21 GMT', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=5'} 
  body=None 
  </msg>
-<msg timestamp="20220422 20:50:42.445" level="INFO">${Response} = &lt;Response [204]&gt;</msg>
-<status status="PASS" starttime="20220422 20:50:42.404" endtime="20220422 20:50:42.445"/>
+<msg timestamp="20220428 11:55:21.609" level="INFO">${Response} = &lt;Response [204]&gt;</msg>
+<status status="PASS" starttime="20220428 11:55:21.573" endtime="20220428 11:55:21.609"/>
 </kw>
-<status status="PASS" starttime="20220422 20:50:42.403" endtime="20220422 20:50:42.445"/>
+<status status="PASS" starttime="20220428 11:55:21.572" endtime="20220428 11:55:21.609"/>
 </kw>
 <kw name="Status Should Be" library="RequestsLibrary">
 <arg>204</arg>
 <doc>Fails if response status code is different than the expected.</doc>
-<status status="PASS" starttime="20220422 20:50:42.446" endtime="20220422 20:50:42.446"/>
+<status status="PASS" starttime="20220428 11:55:21.610" endtime="20220428 11:55:21.610"/>
 </kw>
-<status status="PASS" starttime="20220422 20:50:41.979" endtime="20220422 20:50:42.446"/>
+<status status="PASS" starttime="20220428 11:55:20.919" endtime="20220428 11:55:21.611"/>
 </test>
-<test id="s1-s1-s1-t2" name="Should return 404 on remove partner">
+<test id="s1-s1-t2" name="Should Return 404 On Remove Partner" line="16">
 <kw name="Factory Remove Partner" library="partner">
 <var>${partner}</var>
-<msg timestamp="20220422 20:50:42.449" level="INFO">${partner} = {'name': 'Bar do Tiao', 'email': 'contato@bardotiao.com.br', 'whatsapp': '1199991009', 'business': 'Conveniência'}</msg>
-<status status="PASS" starttime="20220422 20:50:42.449" endtime="20220422 20:50:42.449"/>
+<msg timestamp="20220428 11:55:21.613" level="INFO">${partner} = {'name': 'Bar do Tiao', 'email': 'contato@bardotiao.com.br', 'whatsapp': '1199991009', 'business': 'Conveniência'}</msg>
+<status status="PASS" starttime="20220428 11:55:21.612" endtime="20220428 11:55:21.613"/>
 </kw>
 <kw name="Create a new partner" library="helpers">
 <var>${partner_id}</var>
@@ -143,27 +142,27 @@
 <var>${Filter}</var>
 <arg>name=${Partner_name}</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20220422 20:50:42.450" level="INFO">${Filter} = {'name': 'Bar do Tiao'}</msg>
-<status status="PASS" starttime="20220422 20:50:42.450" endtime="20220422 20:50:42.450"/>
+<msg timestamp="20220428 11:55:21.614" level="INFO">${Filter} = {'name': 'Bar do Tiao'}</msg>
+<status status="PASS" starttime="20220428 11:55:21.614" endtime="20220428 11:55:21.614"/>
 </kw>
 <kw name="Delete One" library="RobotMongoDBLibrary.Delete">
 <arg>${MONGO_URI}</arg>
 <arg>${Filter}</arg>
-<status status="PASS" starttime="20220422 20:50:42.450" endtime="20220422 20:50:42.827"/>
+<status status="PASS" starttime="20220428 11:55:21.614" endtime="20220428 11:55:22.027"/>
 </kw>
 <kw name="Set Global Variable" library="BuiltIn">
 <arg>${Filter}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20220422 20:50:42.828" level="INFO">${Filter} = {'name': 'Bar do Tiao'}</msg>
-<status status="PASS" starttime="20220422 20:50:42.828" endtime="20220422 20:50:42.828"/>
+<msg timestamp="20220428 11:55:22.028" level="INFO">${Filter} = {'name': 'Bar do Tiao'}</msg>
+<status status="PASS" starttime="20220428 11:55:22.027" endtime="20220428 11:55:22.028"/>
 </kw>
 <kw name="Set Global Variable" library="BuiltIn">
 <arg>${Partner_name}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20220422 20:50:42.828" level="INFO">${Partner_name} = Bar do Tiao</msg>
-<status status="PASS" starttime="20220422 20:50:42.828" endtime="20220422 20:50:42.828"/>
+<msg timestamp="20220428 11:55:22.028" level="INFO">${Partner_name} = Bar do Tiao</msg>
+<status status="PASS" starttime="20220428 11:55:22.028" endtime="20220428 11:55:22.028"/>
 </kw>
-<status status="PASS" starttime="20220422 20:50:42.450" endtime="20220422 20:50:42.828"/>
+<status status="PASS" starttime="20220428 11:55:21.613" endtime="20220428 11:55:22.028"/>
 </kw>
 <kw name="POST Partner" library="services">
 <var>${response}</var>
@@ -172,8 +171,8 @@
 <arg>CreatePartner</arg>
 <arg>${BASE_URL}</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20220422 20:50:42.829" level="INFO">Creating Session using : alias=CreatePartner, url=http://localhost:3333/partners, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20220422 20:50:42.829" endtime="20220422 20:50:42.829"/>
+<msg timestamp="20220428 11:55:22.028" level="INFO">Creating Session using : alias=CreatePartner, url=http://localhost:3333/partners, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220428 11:55:22.028" endtime="20220428 11:55:22.029"/>
 </kw>
 <kw name="POST On Session" library="RequestsLibrary">
 <var>${Response}</var>
@@ -183,37 +182,37 @@
 <arg>headers=${HEADERS}</arg>
 <arg>expected_status=any</arg>
 <doc>Sends a POST request on a previously created HTTP Session.</doc>
-<msg timestamp="20220422 20:50:42.870" level="INFO">POST Request : url=http://localhost:3333/partners 
+<msg timestamp="20220428 11:55:22.067" level="INFO">POST Request : url=http://localhost:3333/partners 
  path_url=/partners 
  headers={'User-Agent': 'python-requests/2.27.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'auth_user': 'qa', 'auth_password': 'ninja', 'Content-Length': '119'} 
  body=b'{"name": "Bar do Tiao", "email": "contato@bardotiao.com.br", "whatsapp": "1199991009", "business": "Conveni\\u00eancia"}' 
  </msg>
-<msg timestamp="20220422 20:50:42.870" level="INFO">POST Response : url=http://localhost:3333/partners 
+<msg timestamp="20220428 11:55:22.067" level="INFO">POST Response : url=http://localhost:3333/partners 
  status=201, reason=Created 
- headers={'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Access-Control-Expose-Headers': 'Authorization,auth_user,auth_password', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '41', 'ETag': 'W/"29-Bc+HjaoLOYDKYxHqIOApxQWdo+k"', 'Date': 'Fri, 22 Apr 2022 23:50:42 GMT', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=5'} 
- body={"partner_id":"62633f5274dbf13b033bdcd8"} 
+ headers={'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Access-Control-Expose-Headers': 'Authorization,auth_user,auth_password', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '41', 'ETag': 'W/"29-Jw5etbmU59RpP2HE7Vdbfev1cRM"', 'Date': 'Thu, 28 Apr 2022 14:55:22 GMT', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=5'} 
+ body={"partner_id":"626aaada9c44ef7af41edc3e"} 
  </msg>
-<msg timestamp="20220422 20:50:42.870" level="INFO">${Response} = &lt;Response [201]&gt;</msg>
-<status status="PASS" starttime="20220422 20:50:42.829" endtime="20220422 20:50:42.870"/>
+<msg timestamp="20220428 11:55:22.068" level="INFO">${Response} = &lt;Response [201]&gt;</msg>
+<status status="PASS" starttime="20220428 11:55:22.029" endtime="20220428 11:55:22.068"/>
 </kw>
 <kw name="Set Global Variable" library="BuiltIn">
 <arg>${payload}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20220422 20:50:42.871" level="INFO">${payload} = {'name': 'Bar do Tiao', 'email': 'contato@bardotiao.com.br', 'whatsapp': '1199991009', 'business': 'Conveniência'}</msg>
-<status status="PASS" starttime="20220422 20:50:42.870" endtime="20220422 20:50:42.871"/>
+<msg timestamp="20220428 11:55:22.068" level="INFO">${payload} = {'name': 'Bar do Tiao', 'email': 'contato@bardotiao.com.br', 'whatsapp': '1199991009', 'business': 'Conveniência'}</msg>
+<status status="PASS" starttime="20220428 11:55:22.068" endtime="20220428 11:55:22.068"/>
 </kw>
-<msg timestamp="20220422 20:50:42.871" level="INFO">${response} = &lt;Response [201]&gt;</msg>
-<status status="PASS" starttime="20220422 20:50:42.828" endtime="20220422 20:50:42.871"/>
+<msg timestamp="20220428 11:55:22.068" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<status status="PASS" starttime="20220428 11:55:22.028" endtime="20220428 11:55:22.068"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${partner_id}</var>
 <arg>${response.json()}[partner_id]</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20220422 20:50:42.871" level="INFO">${partner_id} = 62633f5274dbf13b033bdcd8</msg>
-<status status="PASS" starttime="20220422 20:50:42.871" endtime="20220422 20:50:42.871"/>
+<msg timestamp="20220428 11:55:22.069" level="INFO">${partner_id} = 626aaada9c44ef7af41edc3e</msg>
+<status status="PASS" starttime="20220428 11:55:22.068" endtime="20220428 11:55:22.069"/>
 </kw>
-<msg timestamp="20220422 20:50:42.871" level="INFO">${partner_id} = 62633f5274dbf13b033bdcd8</msg>
-<status status="PASS" starttime="20220422 20:50:42.449" endtime="20220422 20:50:42.871"/>
+<msg timestamp="20220428 11:55:22.069" level="INFO">${partner_id} = 626aaada9c44ef7af41edc3e</msg>
+<status status="PASS" starttime="20220428 11:55:21.613" endtime="20220428 11:55:22.069"/>
 </kw>
 <kw name="Remove Partner By Name" library="database">
 <arg>${partner}[name]</arg>
@@ -221,27 +220,27 @@
 <var>${Filter}</var>
 <arg>name=${Partner_name}</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20220422 20:50:42.873" level="INFO">${Filter} = {'name': 'Bar do Tiao'}</msg>
-<status status="PASS" starttime="20220422 20:50:42.872" endtime="20220422 20:50:42.873"/>
+<msg timestamp="20220428 11:55:22.071" level="INFO">${Filter} = {'name': 'Bar do Tiao'}</msg>
+<status status="PASS" starttime="20220428 11:55:22.071" endtime="20220428 11:55:22.071"/>
 </kw>
 <kw name="Delete One" library="RobotMongoDBLibrary.Delete">
 <arg>${MONGO_URI}</arg>
 <arg>${Filter}</arg>
-<status status="PASS" starttime="20220422 20:50:42.873" endtime="20220422 20:50:44.267"/>
+<status status="PASS" starttime="20220428 11:55:22.071" endtime="20220428 11:55:22.545"/>
 </kw>
 <kw name="Set Global Variable" library="BuiltIn">
 <arg>${Filter}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20220422 20:50:44.268" level="INFO">${Filter} = {'name': 'Bar do Tiao'}</msg>
-<status status="PASS" starttime="20220422 20:50:44.267" endtime="20220422 20:50:44.268"/>
+<msg timestamp="20220428 11:55:22.546" level="INFO">${Filter} = {'name': 'Bar do Tiao'}</msg>
+<status status="PASS" starttime="20220428 11:55:22.545" endtime="20220428 11:55:22.546"/>
 </kw>
 <kw name="Set Global Variable" library="BuiltIn">
 <arg>${Partner_name}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20220422 20:50:44.268" level="INFO">${Partner_name} = Bar do Tiao</msg>
-<status status="PASS" starttime="20220422 20:50:44.268" endtime="20220422 20:50:44.268"/>
+<msg timestamp="20220428 11:55:22.547" level="INFO">${Partner_name} = Bar do Tiao</msg>
+<status status="PASS" starttime="20220428 11:55:22.547" endtime="20220428 11:55:22.547"/>
 </kw>
-<status status="PASS" starttime="20220422 20:50:42.872" endtime="20220422 20:50:44.268"/>
+<status status="PASS" starttime="20220428 11:55:22.070" endtime="20220428 11:55:22.547"/>
 </kw>
 <kw name="DELETE Partner" library="services">
 <arg>${partner_id}</arg>
@@ -249,8 +248,8 @@
 <arg>CreatePartner</arg>
 <arg>${BASE_URL}/${partner_id}</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20220422 20:50:44.269" level="INFO">Creating Session using : alias=CreatePartner, url=http://localhost:3333/partners/62633f5274dbf13b033bdcd8, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20220422 20:50:44.269" endtime="20220422 20:50:44.269"/>
+<msg timestamp="20220428 11:55:22.548" level="INFO">Creating Session using : alias=CreatePartner, url=http://localhost:3333/partners/626aaada9c44ef7af41edc3e, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220428 11:55:22.548" endtime="20220428 11:55:22.548"/>
 </kw>
 <kw name="DELETE On Session" library="RequestsLibrary">
 <var>${Response}</var>
@@ -259,37 +258,37 @@
 <arg>headers=${HEADERS}</arg>
 <arg>expected_status=any</arg>
 <doc>Sends a DELETE request on a previously created HTTP Session.</doc>
-<msg timestamp="20220422 20:50:44.305" level="INFO">DELETE Request : url=http://localhost:3333/partners/62633f5274dbf13b033bdcd8 
- path_url=/partners/62633f5274dbf13b033bdcd8 
+<msg timestamp="20220428 11:55:22.583" level="INFO">DELETE Request : url=http://localhost:3333/partners/626aaada9c44ef7af41edc3e 
+ path_url=/partners/626aaada9c44ef7af41edc3e 
  headers={'User-Agent': 'python-requests/2.27.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'auth_user': 'qa', 'auth_password': 'ninja', 'Content-Length': '0'} 
  body=None 
  </msg>
-<msg timestamp="20220422 20:50:44.305" level="INFO">DELETE Response : url=http://localhost:3333/partners/62633f5274dbf13b033bdcd8 
+<msg timestamp="20220428 11:55:22.584" level="INFO">DELETE Response : url=http://localhost:3333/partners/626aaada9c44ef7af41edc3e 
  status=404, reason=Not Found 
- headers={'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Access-Control-Expose-Headers': 'Authorization,auth_user,auth_password', 'Date': 'Fri, 22 Apr 2022 23:50:44 GMT', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=5', 'Content-Length': '0'} 
+ headers={'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Access-Control-Expose-Headers': 'Authorization,auth_user,auth_password', 'Date': 'Thu, 28 Apr 2022 14:55:22 GMT', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=5', 'Content-Length': '0'} 
  body=None 
  </msg>
-<msg timestamp="20220422 20:50:44.305" level="INFO">${Response} = &lt;Response [404]&gt;</msg>
-<status status="PASS" starttime="20220422 20:50:44.269" endtime="20220422 20:50:44.305"/>
+<msg timestamp="20220428 11:55:22.584" level="INFO">${Response} = &lt;Response [404]&gt;</msg>
+<status status="PASS" starttime="20220428 11:55:22.549" endtime="20220428 11:55:22.584"/>
 </kw>
-<status status="PASS" starttime="20220422 20:50:44.269" endtime="20220422 20:50:44.305"/>
+<status status="PASS" starttime="20220428 11:55:22.548" endtime="20220428 11:55:22.584"/>
 </kw>
 <kw name="Status Should Be" library="RequestsLibrary">
 <arg>404</arg>
 <doc>Fails if response status code is different than the expected.</doc>
-<status status="PASS" starttime="20220422 20:50:44.306" endtime="20220422 20:50:44.306"/>
+<status status="PASS" starttime="20220428 11:55:22.585" endtime="20220428 11:55:22.585"/>
 </kw>
-<status status="PASS" starttime="20220422 20:50:42.448" endtime="20220422 20:50:44.307"/>
+<status status="PASS" starttime="20220428 11:55:21.612" endtime="20220428 11:55:22.585"/>
 </test>
-<doc>POST /partners</doc>
-<status status="PASS" starttime="20220422 20:50:41.531" endtime="20220422 20:50:44.308"/>
+<doc>DELETE /partners</doc>
+<status status="PASS" starttime="20220428 11:55:20.491" endtime="20220428 11:55:22.587"/>
 </suite>
-<suite id="s1-s1-s2" name="Get" source="C:\Users\Tiago Gomes\OneDrive\Documentos\Automação de Testes\RobotFramework\API_Expert\buger-eats-partner-ms\TestsAPI\Tests\get.robot">
+<suite id="s1-s2" name="Get" source="C:\Users\tiago.santos\OneDrive\Documentos\Automação de Testes\RobotFramework\API_Expert\buger-eats-partner-ms\TestsAPI\Tests\get.robot">
 <kw name="Create partnert list" type="SETUP">
 <kw name="Factory Partner List" library="partner">
 <var>${partners}</var>
-<msg timestamp="20220422 20:50:44.318" level="INFO">${partners} = [{'name': 'Tabata Mercearia', 'email': 'contato@TMercearia.com.br', 'whatsapp': '31988881001', 'business': 'Conveniência'}, {'name': 'Braian Action Figure', 'email': 'contato@BraianAF.com.br', 'whatsa...</msg>
-<status status="PASS" starttime="20220422 20:50:44.317" endtime="20220422 20:50:44.318"/>
+<msg timestamp="20220428 11:55:22.610" level="INFO">${partners} = [{'name': 'Tabata Mercearia', 'email': 'contato@TMercearia.com.br', 'whatsapp': '31988881001', 'business': 'Conveniência'}, {'name': 'Braian Action Figure', 'email': 'contato@BraianAF.com.br', 'whatsa...</msg>
+<status status="PASS" starttime="20220428 11:55:22.610" endtime="20220428 11:55:22.610"/>
 </kw>
 <for flavor="IN">
 <var>${p}</var>
@@ -302,27 +301,27 @@
 <var>${Filter}</var>
 <arg>name=${Partner_name}</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20220422 20:50:44.318" level="INFO">${Filter} = {'name': "[{'name': 'Tabata Mercearia', 'email': 'contato@TMercearia.com.br', 'whatsapp': '31988881001', 'business': 'Conveniência'}, {'name': 'Braian Action Figure', 'email': 'contato@BraianAF.com.br...</msg>
-<status status="PASS" starttime="20220422 20:50:44.318" endtime="20220422 20:50:44.318"/>
+<msg timestamp="20220428 11:55:22.611" level="INFO">${Filter} = {'name': "[{'name': 'Tabata Mercearia', 'email': 'contato@TMercearia.com.br', 'whatsapp': '31988881001', 'business': 'Conveniência'}, {'name': 'Braian Action Figure', 'email': 'contato@BraianAF.com.br...</msg>
+<status status="PASS" starttime="20220428 11:55:22.610" endtime="20220428 11:55:22.611"/>
 </kw>
 <kw name="Delete One" library="RobotMongoDBLibrary.Delete">
 <arg>${MONGO_URI}</arg>
 <arg>${Filter}</arg>
-<status status="PASS" starttime="20220422 20:50:44.318" endtime="20220422 20:50:44.694"/>
+<status status="PASS" starttime="20220428 11:55:22.611" endtime="20220428 11:55:23.016"/>
 </kw>
 <kw name="Set Global Variable" library="BuiltIn">
 <arg>${Filter}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20220422 20:50:44.695" level="INFO">${Filter} = {'name': "[{'name': 'Tabata Mercearia', 'email': 'contato@TMercearia.com.br', 'whatsapp': '31988881001', 'business': 'Conveniência'}, {'name': 'Braian Action Figure', 'email': 'contato@BraianAF.com.br...</msg>
-<status status="PASS" starttime="20220422 20:50:44.695" endtime="20220422 20:50:44.695"/>
+<msg timestamp="20220428 11:55:23.017" level="INFO">${Filter} = {'name': "[{'name': 'Tabata Mercearia', 'email': 'contato@TMercearia.com.br', 'whatsapp': '31988881001', 'business': 'Conveniência'}, {'name': 'Braian Action Figure', 'email': 'contato@BraianAF.com.br...</msg>
+<status status="PASS" starttime="20220428 11:55:23.016" endtime="20220428 11:55:23.017"/>
 </kw>
 <kw name="Set Global Variable" library="BuiltIn">
 <arg>${Partner_name}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20220422 20:50:44.695" level="INFO">${Partner_name} = [{'name': 'Tabata Mercearia', 'email': 'contato@TMercearia.com.br', 'whatsapp': '31988881001', 'business': 'Conveniência'}, {'name': 'Braian Action Figure', 'email': 'contato@BraianAF.com.br', 'whatsa...</msg>
-<status status="PASS" starttime="20220422 20:50:44.695" endtime="20220422 20:50:44.695"/>
+<msg timestamp="20220428 11:55:23.018" level="INFO">${Partner_name} = [{'name': 'Tabata Mercearia', 'email': 'contato@TMercearia.com.br', 'whatsapp': '31988881001', 'business': 'Conveniência'}, {'name': 'Braian Action Figure', 'email': 'contato@BraianAF.com.br', 'whatsa...</msg>
+<status status="PASS" starttime="20220428 11:55:23.018" endtime="20220428 11:55:23.018"/>
 </kw>
-<status status="PASS" starttime="20220422 20:50:44.318" endtime="20220422 20:50:44.695"/>
+<status status="PASS" starttime="20220428 11:55:22.610" endtime="20220428 11:55:23.018"/>
 </kw>
 <kw name="POST Partner" library="services">
 <arg>${p}</arg>
@@ -330,8 +329,8 @@
 <arg>CreatePartner</arg>
 <arg>${BASE_URL}</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20220422 20:50:44.696" level="INFO">Creating Session using : alias=CreatePartner, url=http://localhost:3333/partners, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20220422 20:50:44.696" endtime="20220422 20:50:44.696"/>
+<msg timestamp="20220428 11:55:23.018" level="INFO">Creating Session using : alias=CreatePartner, url=http://localhost:3333/partners, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220428 11:55:23.018" endtime="20220428 11:55:23.018"/>
 </kw>
 <kw name="POST On Session" library="RequestsLibrary">
 <var>${Response}</var>
@@ -341,28 +340,28 @@
 <arg>headers=${HEADERS}</arg>
 <arg>expected_status=any</arg>
 <doc>Sends a POST request on a previously created HTTP Session.</doc>
-<msg timestamp="20220422 20:50:44.731" level="INFO">POST Request : url=http://localhost:3333/partners 
+<msg timestamp="20220428 11:55:23.052" level="INFO">POST Request : url=http://localhost:3333/partners 
  path_url=/partners 
  headers={'User-Agent': 'python-requests/2.27.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'auth_user': 'qa', 'auth_password': 'ninja', 'Content-Length': '126'} 
  body=b'{"name": "Tabata Mercearia", "email": "contato@TMercearia.com.br", "whatsapp": "31988881001", "business": "Conveni\\u00eancia"}' 
  </msg>
-<msg timestamp="20220422 20:50:44.731" level="INFO">POST Response : url=http://localhost:3333/partners 
+<msg timestamp="20220428 11:55:23.052" level="INFO">POST Response : url=http://localhost:3333/partners 
  status=409, reason=Conflict 
- headers={'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Access-Control-Expose-Headers': 'Authorization,auth_user,auth_password', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '36', 'ETag': 'W/"24-npRjBxR/ioA1Ds6xvIHfcGoYoY4"', 'Date': 'Fri, 22 Apr 2022 23:50:44 GMT', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=5'} 
+ headers={'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Access-Control-Expose-Headers': 'Authorization,auth_user,auth_password', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '36', 'ETag': 'W/"24-npRjBxR/ioA1Ds6xvIHfcGoYoY4"', 'Date': 'Thu, 28 Apr 2022 14:55:23 GMT', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=5'} 
  body={"message":"Duplicate company name"} 
  </msg>
-<msg timestamp="20220422 20:50:44.731" level="INFO">${Response} = &lt;Response [409]&gt;</msg>
-<status status="PASS" starttime="20220422 20:50:44.696" endtime="20220422 20:50:44.731"/>
+<msg timestamp="20220428 11:55:23.053" level="INFO">${Response} = &lt;Response [409]&gt;</msg>
+<status status="PASS" starttime="20220428 11:55:23.018" endtime="20220428 11:55:23.053"/>
 </kw>
 <kw name="Set Global Variable" library="BuiltIn">
 <arg>${payload}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20220422 20:50:44.732" level="INFO">${payload} = {'name': 'Tabata Mercearia', 'email': 'contato@TMercearia.com.br', 'whatsapp': '31988881001', 'business': 'Conveniência'}</msg>
-<status status="PASS" starttime="20220422 20:50:44.731" endtime="20220422 20:50:44.732"/>
+<msg timestamp="20220428 11:55:23.053" level="INFO">${payload} = {'name': 'Tabata Mercearia', 'email': 'contato@TMercearia.com.br', 'whatsapp': '31988881001', 'business': 'Conveniência'}</msg>
+<status status="PASS" starttime="20220428 11:55:23.053" endtime="20220428 11:55:23.053"/>
 </kw>
-<status status="PASS" starttime="20220422 20:50:44.695" endtime="20220422 20:50:44.732"/>
+<status status="PASS" starttime="20220428 11:55:23.018" endtime="20220428 11:55:23.053"/>
 </kw>
-<status status="PASS" starttime="20220422 20:50:44.318" endtime="20220422 20:50:44.732"/>
+<status status="PASS" starttime="20220428 11:55:22.610" endtime="20220428 11:55:23.053"/>
 </iter>
 <iter>
 <var name="${p}">{'name': 'Braian Action Figure', 'email': 'contato@BraianAF.com.br', 'whatsapp': '3199991002', 'business': 'Supermercado'}</var>
@@ -372,27 +371,27 @@
 <var>${Filter}</var>
 <arg>name=${Partner_name}</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20220422 20:50:44.732" level="INFO">${Filter} = {'name': "[{'name': 'Tabata Mercearia', 'email': 'contato@TMercearia.com.br', 'whatsapp': '31988881001', 'business': 'Conveniência'}, {'name': 'Braian Action Figure', 'email': 'contato@BraianAF.com.br...</msg>
-<status status="PASS" starttime="20220422 20:50:44.732" endtime="20220422 20:50:44.732"/>
+<msg timestamp="20220428 11:55:23.054" level="INFO">${Filter} = {'name': "[{'name': 'Tabata Mercearia', 'email': 'contato@TMercearia.com.br', 'whatsapp': '31988881001', 'business': 'Conveniência'}, {'name': 'Braian Action Figure', 'email': 'contato@BraianAF.com.br...</msg>
+<status status="PASS" starttime="20220428 11:55:23.053" endtime="20220428 11:55:23.054"/>
 </kw>
 <kw name="Delete One" library="RobotMongoDBLibrary.Delete">
 <arg>${MONGO_URI}</arg>
 <arg>${Filter}</arg>
-<status status="PASS" starttime="20220422 20:50:44.732" endtime="20220422 20:50:45.108"/>
+<status status="PASS" starttime="20220428 11:55:23.054" endtime="20220428 11:55:23.458"/>
 </kw>
 <kw name="Set Global Variable" library="BuiltIn">
 <arg>${Filter}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20220422 20:50:45.108" level="INFO">${Filter} = {'name': "[{'name': 'Tabata Mercearia', 'email': 'contato@TMercearia.com.br', 'whatsapp': '31988881001', 'business': 'Conveniência'}, {'name': 'Braian Action Figure', 'email': 'contato@BraianAF.com.br...</msg>
-<status status="PASS" starttime="20220422 20:50:45.108" endtime="20220422 20:50:45.108"/>
+<msg timestamp="20220428 11:55:23.458" level="INFO">${Filter} = {'name': "[{'name': 'Tabata Mercearia', 'email': 'contato@TMercearia.com.br', 'whatsapp': '31988881001', 'business': 'Conveniência'}, {'name': 'Braian Action Figure', 'email': 'contato@BraianAF.com.br...</msg>
+<status status="PASS" starttime="20220428 11:55:23.458" endtime="20220428 11:55:23.458"/>
 </kw>
 <kw name="Set Global Variable" library="BuiltIn">
 <arg>${Partner_name}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20220422 20:50:45.109" level="INFO">${Partner_name} = [{'name': 'Tabata Mercearia', 'email': 'contato@TMercearia.com.br', 'whatsapp': '31988881001', 'business': 'Conveniência'}, {'name': 'Braian Action Figure', 'email': 'contato@BraianAF.com.br', 'whatsa...</msg>
-<status status="PASS" starttime="20220422 20:50:45.108" endtime="20220422 20:50:45.109"/>
+<msg timestamp="20220428 11:55:23.458" level="INFO">${Partner_name} = [{'name': 'Tabata Mercearia', 'email': 'contato@TMercearia.com.br', 'whatsapp': '31988881001', 'business': 'Conveniência'}, {'name': 'Braian Action Figure', 'email': 'contato@BraianAF.com.br', 'whatsa...</msg>
+<status status="PASS" starttime="20220428 11:55:23.458" endtime="20220428 11:55:23.458"/>
 </kw>
-<status status="PASS" starttime="20220422 20:50:44.732" endtime="20220422 20:50:45.109"/>
+<status status="PASS" starttime="20220428 11:55:23.053" endtime="20220428 11:55:23.459"/>
 </kw>
 <kw name="POST Partner" library="services">
 <arg>${p}</arg>
@@ -400,8 +399,8 @@
 <arg>CreatePartner</arg>
 <arg>${BASE_URL}</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20220422 20:50:45.109" level="INFO">Creating Session using : alias=CreatePartner, url=http://localhost:3333/partners, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20220422 20:50:45.109" endtime="20220422 20:50:45.109"/>
+<msg timestamp="20220428 11:55:23.459" level="INFO">Creating Session using : alias=CreatePartner, url=http://localhost:3333/partners, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220428 11:55:23.459" endtime="20220428 11:55:23.460"/>
 </kw>
 <kw name="POST On Session" library="RequestsLibrary">
 <var>${Response}</var>
@@ -411,28 +410,28 @@
 <arg>headers=${HEADERS}</arg>
 <arg>expected_status=any</arg>
 <doc>Sends a POST request on a previously created HTTP Session.</doc>
-<msg timestamp="20220422 20:50:45.145" level="INFO">POST Request : url=http://localhost:3333/partners 
+<msg timestamp="20220428 11:55:23.496" level="INFO">POST Request : url=http://localhost:3333/partners 
  path_url=/partners 
  headers={'User-Agent': 'python-requests/2.27.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'auth_user': 'qa', 'auth_password': 'ninja', 'Content-Length': '122'} 
  body=b'{"name": "Braian Action Figure", "email": "contato@BraianAF.com.br", "whatsapp": "3199991002", "business": "Supermercado"}' 
  </msg>
-<msg timestamp="20220422 20:50:45.145" level="INFO">POST Response : url=http://localhost:3333/partners 
+<msg timestamp="20220428 11:55:23.496" level="INFO">POST Response : url=http://localhost:3333/partners 
  status=409, reason=Conflict 
- headers={'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Access-Control-Expose-Headers': 'Authorization,auth_user,auth_password', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '36', 'ETag': 'W/"24-npRjBxR/ioA1Ds6xvIHfcGoYoY4"', 'Date': 'Fri, 22 Apr 2022 23:50:45 GMT', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=5'} 
+ headers={'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Access-Control-Expose-Headers': 'Authorization,auth_user,auth_password', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '36', 'ETag': 'W/"24-npRjBxR/ioA1Ds6xvIHfcGoYoY4"', 'Date': 'Thu, 28 Apr 2022 14:55:23 GMT', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=5'} 
  body={"message":"Duplicate company name"} 
  </msg>
-<msg timestamp="20220422 20:50:45.145" level="INFO">${Response} = &lt;Response [409]&gt;</msg>
-<status status="PASS" starttime="20220422 20:50:45.109" endtime="20220422 20:50:45.145"/>
+<msg timestamp="20220428 11:55:23.496" level="INFO">${Response} = &lt;Response [409]&gt;</msg>
+<status status="PASS" starttime="20220428 11:55:23.460" endtime="20220428 11:55:23.496"/>
 </kw>
 <kw name="Set Global Variable" library="BuiltIn">
 <arg>${payload}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20220422 20:50:45.145" level="INFO">${payload} = {'name': 'Braian Action Figure', 'email': 'contato@BraianAF.com.br', 'whatsapp': '3199991002', 'business': 'Supermercado'}</msg>
-<status status="PASS" starttime="20220422 20:50:45.145" endtime="20220422 20:50:45.145"/>
+<msg timestamp="20220428 11:55:23.497" level="INFO">${payload} = {'name': 'Braian Action Figure', 'email': 'contato@BraianAF.com.br', 'whatsapp': '3199991002', 'business': 'Supermercado'}</msg>
+<status status="PASS" starttime="20220428 11:55:23.496" endtime="20220428 11:55:23.497"/>
 </kw>
-<status status="PASS" starttime="20220422 20:50:45.109" endtime="20220422 20:50:45.145"/>
+<status status="PASS" starttime="20220428 11:55:23.459" endtime="20220428 11:55:23.497"/>
 </kw>
-<status status="PASS" starttime="20220422 20:50:44.732" endtime="20220422 20:50:45.145"/>
+<status status="PASS" starttime="20220428 11:55:23.053" endtime="20220428 11:55:23.497"/>
 </iter>
 <iter>
 <var name="${p}">{'name': 'Maria das Graças Rest', 'email': 'contato@MGRest.com.br', 'whatsapp': '31999991003', 'business': 'Restaurante'}</var>
@@ -442,27 +441,27 @@
 <var>${Filter}</var>
 <arg>name=${Partner_name}</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20220422 20:50:45.146" level="INFO">${Filter} = {'name': "[{'name': 'Tabata Mercearia', 'email': 'contato@TMercearia.com.br', 'whatsapp': '31988881001', 'business': 'Conveniência'}, {'name': 'Braian Action Figure', 'email': 'contato@BraianAF.com.br...</msg>
-<status status="PASS" starttime="20220422 20:50:45.146" endtime="20220422 20:50:45.146"/>
+<msg timestamp="20220428 11:55:23.497" level="INFO">${Filter} = {'name': "[{'name': 'Tabata Mercearia', 'email': 'contato@TMercearia.com.br', 'whatsapp': '31988881001', 'business': 'Conveniência'}, {'name': 'Braian Action Figure', 'email': 'contato@BraianAF.com.br...</msg>
+<status status="PASS" starttime="20220428 11:55:23.497" endtime="20220428 11:55:23.498"/>
 </kw>
 <kw name="Delete One" library="RobotMongoDBLibrary.Delete">
 <arg>${MONGO_URI}</arg>
 <arg>${Filter}</arg>
-<status status="PASS" starttime="20220422 20:50:45.146" endtime="20220422 20:50:45.479"/>
+<status status="PASS" starttime="20220428 11:55:23.498" endtime="20220428 11:55:23.922"/>
 </kw>
 <kw name="Set Global Variable" library="BuiltIn">
 <arg>${Filter}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20220422 20:50:45.479" level="INFO">${Filter} = {'name': "[{'name': 'Tabata Mercearia', 'email': 'contato@TMercearia.com.br', 'whatsapp': '31988881001', 'business': 'Conveniência'}, {'name': 'Braian Action Figure', 'email': 'contato@BraianAF.com.br...</msg>
-<status status="PASS" starttime="20220422 20:50:45.479" endtime="20220422 20:50:45.479"/>
+<msg timestamp="20220428 11:55:23.923" level="INFO">${Filter} = {'name': "[{'name': 'Tabata Mercearia', 'email': 'contato@TMercearia.com.br', 'whatsapp': '31988881001', 'business': 'Conveniência'}, {'name': 'Braian Action Figure', 'email': 'contato@BraianAF.com.br...</msg>
+<status status="PASS" starttime="20220428 11:55:23.923" endtime="20220428 11:55:23.923"/>
 </kw>
 <kw name="Set Global Variable" library="BuiltIn">
 <arg>${Partner_name}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20220422 20:50:45.479" level="INFO">${Partner_name} = [{'name': 'Tabata Mercearia', 'email': 'contato@TMercearia.com.br', 'whatsapp': '31988881001', 'business': 'Conveniência'}, {'name': 'Braian Action Figure', 'email': 'contato@BraianAF.com.br', 'whatsa...</msg>
-<status status="PASS" starttime="20220422 20:50:45.479" endtime="20220422 20:50:45.480"/>
+<msg timestamp="20220428 11:55:23.923" level="INFO">${Partner_name} = [{'name': 'Tabata Mercearia', 'email': 'contato@TMercearia.com.br', 'whatsapp': '31988881001', 'business': 'Conveniência'}, {'name': 'Braian Action Figure', 'email': 'contato@BraianAF.com.br', 'whatsa...</msg>
+<status status="PASS" starttime="20220428 11:55:23.923" endtime="20220428 11:55:23.923"/>
 </kw>
-<status status="PASS" starttime="20220422 20:50:45.146" endtime="20220422 20:50:45.480"/>
+<status status="PASS" starttime="20220428 11:55:23.497" endtime="20220428 11:55:23.923"/>
 </kw>
 <kw name="POST Partner" library="services">
 <arg>${p}</arg>
@@ -470,8 +469,8 @@
 <arg>CreatePartner</arg>
 <arg>${BASE_URL}</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20220422 20:50:45.480" level="INFO">Creating Session using : alias=CreatePartner, url=http://localhost:3333/partners, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20220422 20:50:45.480" endtime="20220422 20:50:45.480"/>
+<msg timestamp="20220428 11:55:23.924" level="INFO">Creating Session using : alias=CreatePartner, url=http://localhost:3333/partners, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220428 11:55:23.923" endtime="20220428 11:55:23.924"/>
 </kw>
 <kw name="POST On Session" library="RequestsLibrary">
 <var>${Response}</var>
@@ -481,42 +480,42 @@
 <arg>headers=${HEADERS}</arg>
 <arg>expected_status=any</arg>
 <doc>Sends a POST request on a previously created HTTP Session.</doc>
-<msg timestamp="20220422 20:50:45.517" level="INFO">POST Request : url=http://localhost:3333/partners 
+<msg timestamp="20220428 11:55:23.958" level="INFO">POST Request : url=http://localhost:3333/partners 
  path_url=/partners 
  headers={'User-Agent': 'python-requests/2.27.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'auth_user': 'qa', 'auth_password': 'ninja', 'Content-Length': '126'} 
  body=b'{"name": "Maria das Gra\\u00e7as Rest", "email": "contato@MGRest.com.br", "whatsapp": "31999991003", "business": "Restaurante"}' 
  </msg>
-<msg timestamp="20220422 20:50:45.517" level="INFO">POST Response : url=http://localhost:3333/partners 
+<msg timestamp="20220428 11:55:23.958" level="INFO">POST Response : url=http://localhost:3333/partners 
  status=409, reason=Conflict 
- headers={'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Access-Control-Expose-Headers': 'Authorization,auth_user,auth_password', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '36', 'ETag': 'W/"24-npRjBxR/ioA1Ds6xvIHfcGoYoY4"', 'Date': 'Fri, 22 Apr 2022 23:50:45 GMT', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=5'} 
+ headers={'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Access-Control-Expose-Headers': 'Authorization,auth_user,auth_password', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '36', 'ETag': 'W/"24-npRjBxR/ioA1Ds6xvIHfcGoYoY4"', 'Date': 'Thu, 28 Apr 2022 14:55:23 GMT', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=5'} 
  body={"message":"Duplicate company name"} 
  </msg>
-<msg timestamp="20220422 20:50:45.517" level="INFO">${Response} = &lt;Response [409]&gt;</msg>
-<status status="PASS" starttime="20220422 20:50:45.480" endtime="20220422 20:50:45.517"/>
+<msg timestamp="20220428 11:55:23.958" level="INFO">${Response} = &lt;Response [409]&gt;</msg>
+<status status="PASS" starttime="20220428 11:55:23.924" endtime="20220428 11:55:23.958"/>
 </kw>
 <kw name="Set Global Variable" library="BuiltIn">
 <arg>${payload}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20220422 20:50:45.517" level="INFO">${payload} = {'name': 'Maria das Graças Rest', 'email': 'contato@MGRest.com.br', 'whatsapp': '31999991003', 'business': 'Restaurante'}</msg>
-<status status="PASS" starttime="20220422 20:50:45.517" endtime="20220422 20:50:45.517"/>
+<msg timestamp="20220428 11:55:23.959" level="INFO">${payload} = {'name': 'Maria das Graças Rest', 'email': 'contato@MGRest.com.br', 'whatsapp': '31999991003', 'business': 'Restaurante'}</msg>
+<status status="PASS" starttime="20220428 11:55:23.959" endtime="20220428 11:55:23.959"/>
 </kw>
-<status status="PASS" starttime="20220422 20:50:45.480" endtime="20220422 20:50:45.517"/>
+<status status="PASS" starttime="20220428 11:55:23.923" endtime="20220428 11:55:23.959"/>
 </kw>
-<status status="PASS" starttime="20220422 20:50:45.146" endtime="20220422 20:50:45.517"/>
+<status status="PASS" starttime="20220428 11:55:23.497" endtime="20220428 11:55:23.959"/>
 </iter>
-<status status="PASS" starttime="20220422 20:50:44.318" endtime="20220422 20:50:45.517"/>
+<status status="PASS" starttime="20220428 11:55:22.610" endtime="20220428 11:55:23.959"/>
 </for>
-<status status="PASS" starttime="20220422 20:50:44.317" endtime="20220422 20:50:45.517"/>
+<status status="PASS" starttime="20220428 11:55:22.609" endtime="20220428 11:55:23.959"/>
 </kw>
-<test id="s1-s1-s2-t1" name="Should return a partner list">
+<test id="s1-s2-t1" name="Should return a partner list" line="11">
 <kw name="GET Partners" library="services">
 <var>${Response}</var>
 <kw name="Create Session" library="RequestsLibrary">
 <arg>CreatePartner</arg>
 <arg>${BASE_URL}</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20220422 20:50:45.519" level="INFO">Creating Session using : alias=CreatePartner, url=http://localhost:3333/partners, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20220422 20:50:45.518" endtime="20220422 20:50:45.519"/>
+<msg timestamp="20220428 11:55:23.961" level="INFO">Creating Session using : alias=CreatePartner, url=http://localhost:3333/partners, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220428 11:55:23.960" endtime="20220428 11:55:23.961"/>
 </kw>
 <kw name="GET On Session" library="RequestsLibrary">
 <var>${Response}</var>
@@ -525,43 +524,43 @@
 <arg>headers=${HEADERS}</arg>
 <arg>expected_status=any</arg>
 <doc>Sends a GET request on a previously created HTTP Session.</doc>
-<msg timestamp="20220422 20:50:45.553" level="INFO">GET Request : url=http://localhost:3333/partners 
+<msg timestamp="20220428 11:55:23.998" level="INFO">GET Request : url=http://localhost:3333/partners 
  path_url=/partners 
  headers={'User-Agent': 'python-requests/2.27.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'auth_user': 'qa', 'auth_password': 'ninja'} 
  body=None 
  </msg>
-<msg timestamp="20220422 20:50:45.553" level="INFO">GET Response : url=http://localhost:3333/partners 
+<msg timestamp="20220428 11:55:23.998" level="INFO">GET Response : url=http://localhost:3333/partners 
  status=200, reason=OK 
- headers={'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Access-Control-Expose-Headers': 'Authorization,auth_user,auth_password', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '1692', 'ETag': 'W/"69c-YaqeNb2c6ECMPyxiDwRxxx/XViQ"', 'Date': 'Fri, 22 Apr 2022 23:50:45 GMT', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=5'} 
- body=[{"_id":"62633f2174dbf13b033bdcd3","name":"Pizzas Papito","email":"contato@papito.com.br","whatsapp":"11999999999","business":"Restaurante","active":false,"created_at":"2022-04-22T23:49:53.660Z","updated_at":"2022-04-22T23:49:53.660Z"},{"_id":"62632ec274dbf13b033bdcad","name":"Super24hrs","email":"contato@Super24hrs.com.br","whatsapp":"1199991008","business":"Supermercado","active":false,"created_at":"2022-04-22T22:40:02.383Z","updated_at":"2022-04-22T22:40:02.471Z"},{"_id":"62632ec174dbf13b033bdcaa","name":"Jujuba Não Tem Antena","email":"contato@jujuba.com.br","whatsapp":"1199991004","business":"Conveniência","active":true,"created_at":"2022-04-22T22:40:01.905Z","updated_at":"2022-04-22T22:40:01.950Z"},{"_id":"62632ec174dbf13b033bdca6","name":"Tiago Lanchonete","email":"contato@Lanchonete.com.br","whatsapp":"31999999999","business":"Conveniência","active":false,"created_at":"2022-04-22T22:40:01.350Z","updated_at":"2022-04-22T22:40:01.350Z"},{"_id":"626309a40f0ef13fe32b0e92","name":"Maria das Graças Rest","email":"contato@MGRest.com.br","whatsapp":"31999991003","business":"Restaurante","active":false,"created_at":"2022-04-22T20:01:40.529Z","updated_at":"2022-04-22T20:01:40.529Z"},{"_id":"626309a40f0ef13fe32b0e90","name":"Braian Action Figure","email":"contato@BraianAF.com.br","whatsapp":"3199991002","business":"Supermercado","active":false,"created_at":"2022-04-22T20:01:40.175Z","updated_at":"2022-04-22T20:01:40.175Z"},{"_id":"626309a30f0ef13fe32b0e8e","name":"Tabata Mercearia","email":"contato@TMercearia.com.br","whatsapp":"31988881001","business":"Conveniência","active":false,"created_at":"2022-04-22T20:01:39.803Z","updated_at":"2022-04-22T20:01:39.803Z"}] 
+ headers={'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Access-Control-Expose-Headers': 'Authorization,auth_user,auth_password', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '1692', 'ETag': 'W/"69c-Uvk/o7mIwX1kKkfaZcSslq0Izxk"', 'Date': 'Thu, 28 Apr 2022 14:55:23 GMT', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=5'} 
+ body=[{"_id":"626534a20fbe498e632c62cb","name":"Super24hrs","email":"contato@Super24hrs.com.br","whatsapp":"1199991008","business":"Supermercado","active":false,"created_at":"2022-04-24T11:29:38.581Z","updated_at":"2022-04-24T11:29:38.663Z"},{"_id":"626534a20fbe498e632c62c8","name":"Jujuba Não Tem Antena","email":"contato@jujuba.com.br","whatsapp":"1199991004","business":"Conveniência","active":true,"created_at":"2022-04-24T11:29:38.159Z","updated_at":"2022-04-24T11:29:38.200Z"},{"_id":"626534a10fbe498e632c62c4","name":"Tiago Lanchonete","email":"contato@Lanchonete.com.br","whatsapp":"31999999999","business":"Conveniência","active":false,"created_at":"2022-04-24T11:29:37.688Z","updated_at":"2022-04-24T11:29:37.688Z"},{"_id":"626534a00fbe498e632c62c2","name":"Pizzas Papito","email":"contato@papito.com.br","whatsapp":"11999999999","business":"Restaurante","active":false,"created_at":"2022-04-24T11:29:36.233Z","updated_at":"2022-04-24T11:29:36.233Z"},{"_id":"6265318d0fbe498e632c6201","name":"Maria das Graças Rest","email":"contato@MGRest.com.br","whatsapp":"31999991003","business":"Restaurante","active":false,"created_at":"2022-04-24T11:16:29.665Z","updated_at":"2022-04-24T11:16:29.665Z"},{"_id":"6265318d0fbe498e632c61ff","name":"Braian Action Figure","email":"contato@BraianAF.com.br","whatsapp":"3199991002","business":"Supermercado","active":false,"created_at":"2022-04-24T11:16:29.251Z","updated_at":"2022-04-24T11:16:29.251Z"},{"_id":"6265318c0fbe498e632c61fd","name":"Tabata Mercearia","email":"contato@TMercearia.com.br","whatsapp":"31988881001","business":"Conveniência","active":false,"created_at":"2022-04-24T11:16:28.860Z","updated_at":"2022-04-24T11:16:28.860Z"}] 
  </msg>
-<msg timestamp="20220422 20:50:45.553" level="INFO">${Response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20220422 20:50:45.519" endtime="20220422 20:50:45.553"/>
+<msg timestamp="20220428 11:55:23.998" level="INFO">${Response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220428 11:55:23.961" endtime="20220428 11:55:23.998"/>
 </kw>
-<msg timestamp="20220422 20:50:45.554" level="INFO">${Response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20220422 20:50:45.518" endtime="20220422 20:50:45.554"/>
+<msg timestamp="20220428 11:55:23.999" level="INFO">${Response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220428 11:55:23.960" endtime="20220428 11:55:23.999"/>
 </kw>
 <kw name="Status Should Be" library="RequestsLibrary">
 <arg>200</arg>
 <doc>Fails if response status code is different than the expected.</doc>
-<status status="PASS" starttime="20220422 20:50:45.554" endtime="20220422 20:50:45.554"/>
+<status status="PASS" starttime="20220428 11:55:23.999" endtime="20220428 11:55:24.000"/>
 </kw>
 <kw name="Get Length" library="BuiltIn">
 <var>${size}</var>
 <arg>${response.json()}</arg>
 <doc>Returns and logs the length of the given item as an integer.</doc>
-<msg timestamp="20220422 20:50:45.556" level="INFO">Length is 7</msg>
-<msg timestamp="20220422 20:50:45.556" level="INFO">${size} = 7</msg>
-<status status="PASS" starttime="20220422 20:50:45.555" endtime="20220422 20:50:45.556"/>
+<msg timestamp="20220428 11:55:24.001" level="INFO">Length is 7</msg>
+<msg timestamp="20220428 11:55:24.001" level="INFO">${size} = 7</msg>
+<status status="PASS" starttime="20220428 11:55:24.000" endtime="20220428 11:55:24.001"/>
 </kw>
 <kw name="Should Be True" library="BuiltIn">
 <arg>${size} &gt; 0</arg>
 <doc>Fails if the given condition is not true.</doc>
-<status status="PASS" starttime="20220422 20:50:45.557" endtime="20220422 20:50:45.557"/>
+<status status="PASS" starttime="20220428 11:55:24.001" endtime="20220428 11:55:24.002"/>
 </kw>
-<status status="PASS" starttime="20220422 20:50:45.518" endtime="20220422 20:50:45.558"/>
+<status status="PASS" starttime="20220428 11:55:23.959" endtime="20220428 11:55:24.002"/>
 </test>
-<test id="s1-s1-s2-t2" name="Should search parner by name">
+<test id="s1-s2-t2" name="Should search parner by name" line="18">
 <kw name="Search Partners" library="services">
 <var>${Response}</var>
 <arg>Tabata</arg>
@@ -569,15 +568,15 @@
 <var>${Query}</var>
 <arg>name=${name}</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20220422 20:50:45.561" level="INFO">${Query} = {'name': 'Tabata'}</msg>
-<status status="PASS" starttime="20220422 20:50:45.561" endtime="20220422 20:50:45.561"/>
+<msg timestamp="20220428 11:55:24.006" level="INFO">${Query} = {'name': 'Tabata'}</msg>
+<status status="PASS" starttime="20220428 11:55:24.006" endtime="20220428 11:55:24.006"/>
 </kw>
 <kw name="Create Session" library="RequestsLibrary">
 <arg>CreatePartner</arg>
 <arg>${BASE_URL}</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20220422 20:50:45.561" level="INFO">Creating Session using : alias=CreatePartner, url=http://localhost:3333/partners, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20220422 20:50:45.561" endtime="20220422 20:50:45.561"/>
+<msg timestamp="20220428 11:55:24.006" level="INFO">Creating Session using : alias=CreatePartner, url=http://localhost:3333/partners, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220428 11:55:24.006" endtime="20220428 11:55:24.007"/>
 </kw>
 <kw name="GET On Session" library="RequestsLibrary">
 <var>${Response}</var>
@@ -587,53 +586,53 @@
 <arg>headers=${HEADERS}</arg>
 <arg>expected_status=any</arg>
 <doc>Sends a GET request on a previously created HTTP Session.</doc>
-<msg timestamp="20220422 20:50:45.598" level="INFO">GET Request : url=http://localhost:3333/partners?name=Tabata 
+<msg timestamp="20220428 11:55:24.044" level="INFO">GET Request : url=http://localhost:3333/partners?name=Tabata 
  path_url=/partners?name=Tabata 
  headers={'User-Agent': 'python-requests/2.27.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'auth_user': 'qa', 'auth_password': 'ninja'} 
  body=None 
  </msg>
-<msg timestamp="20220422 20:50:45.598" level="INFO">GET Response : url=http://localhost:3333/partners?name=Tabata 
+<msg timestamp="20220428 11:55:24.044" level="INFO">GET Response : url=http://localhost:3333/partners?name=Tabata 
  status=200, reason=OK 
- headers={'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Access-Control-Expose-Headers': 'Authorization,auth_user,auth_password', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '245', 'ETag': 'W/"f5-2q/3I9jHDH90tO3EFp6QA+99sUE"', 'Date': 'Fri, 22 Apr 2022 23:50:45 GMT', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=5'} 
- body=[{"_id":"626309a30f0ef13fe32b0e8e","name":"Tabata Mercearia","email":"contato@TMercearia.com.br","whatsapp":"31988881001","business":"Conveniência","active":false,"created_at":"2022-04-22T20:01:39.803Z","updated_at":"2022-04-22T20:01:39.803Z"}] 
+ headers={'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Access-Control-Expose-Headers': 'Authorization,auth_user,auth_password', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '245', 'ETag': 'W/"f5-xva/ZUE/oltPUbEkDzpv0KlG7R8"', 'Date': 'Thu, 28 Apr 2022 14:55:24 GMT', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=5'} 
+ body=[{"_id":"6265318c0fbe498e632c61fd","name":"Tabata Mercearia","email":"contato@TMercearia.com.br","whatsapp":"31988881001","business":"Conveniência","active":false,"created_at":"2022-04-24T11:16:28.860Z","updated_at":"2022-04-24T11:16:28.860Z"}] 
  </msg>
-<msg timestamp="20220422 20:50:45.598" level="INFO">${Response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20220422 20:50:45.562" endtime="20220422 20:50:45.598"/>
+<msg timestamp="20220428 11:55:24.044" level="INFO">${Response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220428 11:55:24.007" endtime="20220428 11:55:24.044"/>
 </kw>
-<msg timestamp="20220422 20:50:45.598" level="INFO">${Response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20220422 20:50:45.561" endtime="20220422 20:50:45.598"/>
+<msg timestamp="20220428 11:55:24.044" level="INFO">${Response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220428 11:55:24.005" endtime="20220428 11:55:24.044"/>
 </kw>
 <kw name="Status Should Be" library="RequestsLibrary">
 <arg>200</arg>
 <doc>Fails if response status code is different than the expected.</doc>
-<status status="PASS" starttime="20220422 20:50:45.599" endtime="20220422 20:50:45.599"/>
+<status status="PASS" starttime="20220428 11:55:24.045" endtime="20220428 11:55:24.045"/>
 </kw>
 <kw name="Get Length" library="BuiltIn">
 <var>${size}</var>
 <arg>${response.json()}</arg>
 <doc>Returns and logs the length of the given item as an integer.</doc>
-<msg timestamp="20220422 20:50:45.600" level="INFO">Length is 1</msg>
-<msg timestamp="20220422 20:50:45.600" level="INFO">${size} = 1</msg>
-<status status="PASS" starttime="20220422 20:50:45.600" endtime="20220422 20:50:45.600"/>
+<msg timestamp="20220428 11:55:24.046" level="INFO">Length is 1</msg>
+<msg timestamp="20220428 11:55:24.047" level="INFO">${size} = 1</msg>
+<status status="PASS" starttime="20220428 11:55:24.046" endtime="20220428 11:55:24.047"/>
 </kw>
 <kw name="Should Be True" library="BuiltIn">
 <arg>${size} == 1</arg>
 <doc>Fails if the given condition is not true.</doc>
-<status status="PASS" starttime="20220422 20:50:45.601" endtime="20220422 20:50:45.601"/>
+<status status="PASS" starttime="20220428 11:55:24.047" endtime="20220428 11:55:24.047"/>
 </kw>
 <kw name="Should Be Equal" library="BuiltIn">
 <arg>${response.json()}[0][name]</arg>
 <arg>Tabata Mercearia</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" starttime="20220422 20:50:45.602" endtime="20220422 20:50:45.602"/>
+<status status="PASS" starttime="20220428 11:55:24.048" endtime="20220428 11:55:24.049"/>
 </kw>
-<status status="PASS" starttime="20220422 20:50:45.560" endtime="20220422 20:50:45.602"/>
+<status status="PASS" starttime="20220428 11:55:24.004" endtime="20220428 11:55:24.050"/>
 </test>
-<doc>POST /partners</doc>
-<status status="PASS" starttime="20220422 20:50:44.311" endtime="20220422 20:50:45.604"/>
+<doc>GET /partners</doc>
+<status status="PASS" starttime="20220428 11:55:22.588" endtime="20220428 11:55:24.051"/>
 </suite>
-<suite id="s1-s1-s3" name="Post" source="C:\Users\Tiago Gomes\OneDrive\Documentos\Automação de Testes\RobotFramework\API_Expert\buger-eats-partner-ms\TestsAPI\Tests\post.robot">
-<test id="s1-s1-s3-t1" name="Should create a new partner">
+<suite id="s1-s3" name="Post" source="C:\Users\tiago.santos\OneDrive\Documentos\Automação de Testes\RobotFramework\API_Expert\buger-eats-partner-ms\TestsAPI\Tests\post.robot">
+<test id="s1-s3-t1" name="Should create a new partner" line="8">
 <kw name="Purge Messages" library="rabbitmq">
 <kw name="Create Dictionary" library="BuiltIn">
 <var>${payload}</var>
@@ -641,15 +640,15 @@
 <arg>name=email</arg>
 <arg>mode=purge</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20220422 20:50:45.617" level="INFO">${payload} = {'vhost': 'obsqplap', 'name': 'email', 'mode': 'purge'}</msg>
-<status status="PASS" starttime="20220422 20:50:45.616" endtime="20220422 20:50:45.617"/>
+<msg timestamp="20220428 11:55:24.074" level="INFO">${payload} = {'vhost': 'obsqplap', 'name': 'email', 'mode': 'purge'}</msg>
+<status status="PASS" starttime="20220428 11:55:24.073" endtime="20220428 11:55:24.074"/>
 </kw>
 <kw name="Create Session" library="RequestsLibrary">
 <arg>Purge</arg>
 <arg>${RABBIT_URL}/contents</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20220422 20:50:45.617" level="INFO">Creating Session using : alias=Purge, url=https://sparrow.rmq.cloudamqp.com/api/queues/obsqplap/email/contents, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20220422 20:50:45.617" endtime="20220422 20:50:45.617"/>
+<msg timestamp="20220428 11:55:24.074" level="INFO">Creating Session using : alias=Purge, url=https://sparrow.rmq.cloudamqp.com/api/queues/obsqplap/email/contents, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220428 11:55:24.074" endtime="20220428 11:55:24.074"/>
 </kw>
 <kw name="DELETE On Session" library="RequestsLibrary">
 <var>${response}</var>
@@ -659,27 +658,27 @@
 <arg>headers=${RABBIT_HEADERS}</arg>
 <arg>expected_status=204</arg>
 <doc>Sends a DELETE request on a previously created HTTP Session.</doc>
-<msg timestamp="20220422 20:50:46.275" level="INFO">DELETE Request : url=https://sparrow.rmq.cloudamqp.com/api/queues/obsqplap/email/contents 
+<msg timestamp="20220428 11:55:24.775" level="INFO">DELETE Request : url=https://sparrow.rmq.cloudamqp.com/api/queues/obsqplap/email/contents 
  path_url=/api/queues/obsqplap/email/contents 
  headers={'User-Agent': 'python-requests/2.27.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Authorization': 'Basic b2JzcXBsYXA6djU1MDRPWF9RSmstUDFIM3VZcWVNVldUT3gydm1pbTc=', 'Content-Length': '55'} 
  body=b'{"vhost": "obsqplap", "name": "email", "mode": "purge"}' 
  </msg>
-<msg timestamp="20220422 20:50:46.275" level="INFO">DELETE Response : url=https://sparrow.rmq.cloudamqp.com/api/queues/obsqplap/email/contents 
+<msg timestamp="20220428 11:55:24.775" level="INFO">DELETE Response : url=https://sparrow.rmq.cloudamqp.com/api/queues/obsqplap/email/contents 
  status=204, reason=No Content 
- headers={'Server': 'nginx', 'Date': 'Fri, 22 Apr 2022 23:50:39 GMT', 'Connection': 'keep-alive', 'content-security-policy': "script-src 'self' 'unsafe-eval' 'unsafe-inline'; object-src 'self', default-src 'none'; connect-src 'self'; img-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline'; style-src 'self' 'unsafe-inline'", 'vary': 'accept-encoding, origin', 'X-Content-Type-Options': 'nosniff', 'X-XSS-Protection': '1; mode=block', 'Strict-Transport-Security': 'max-age=631138519', 'X-Frame-Options': 'deny'} 
+ headers={'Server': 'nginx', 'Date': 'Thu, 28 Apr 2022 14:55:24 GMT', 'Connection': 'keep-alive', 'content-security-policy': "script-src 'self' 'unsafe-eval' 'unsafe-inline'; object-src 'self', default-src 'none'; connect-src 'self'; img-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline'; style-src 'self' 'unsafe-inline'", 'vary': 'accept-encoding, origin', 'X-Content-Type-Options': 'nosniff', 'X-XSS-Protection': '1; mode=block', 'Strict-Transport-Security': 'max-age=631138519', 'X-Frame-Options': 'deny'} 
  body=None 
  </msg>
-<msg timestamp="20220422 20:50:46.275" level="INFO">C:\Users\Tiago Gomes\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:1043: InsecureRequestWarning: Unverified HTTPS request is being made to host 'sparrow.rmq.cloudamqp.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+<msg timestamp="20220428 11:55:24.775" level="INFO">C:\Python310\lib\site-packages\urllib3\connectionpool.py:1043: InsecureRequestWarning: Unverified HTTPS request is being made to host 'sparrow.rmq.cloudamqp.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
   warnings.warn(</msg>
-<msg timestamp="20220422 20:50:46.276" level="INFO">${response} = &lt;Response [204]&gt;</msg>
-<status status="PASS" starttime="20220422 20:50:45.617" endtime="20220422 20:50:46.276"/>
+<msg timestamp="20220428 11:55:24.776" level="INFO">${response} = &lt;Response [204]&gt;</msg>
+<status status="PASS" starttime="20220428 11:55:24.074" endtime="20220428 11:55:24.776"/>
 </kw>
-<status status="PASS" starttime="20220422 20:50:45.616" endtime="20220422 20:50:46.276"/>
+<status status="PASS" starttime="20220428 11:55:24.073" endtime="20220428 11:55:24.776"/>
 </kw>
 <kw name="Factory New Partner" library="partner">
 <var>${Partner}</var>
-<msg timestamp="20220422 20:50:46.277" level="INFO">${Partner} = {'name': 'Pizzas Papito', 'email': 'contato@papito.com.br', 'whatsapp': '11999999999', 'business': 'Restaurante'}</msg>
-<status status="PASS" starttime="20220422 20:50:46.277" endtime="20220422 20:50:46.277"/>
+<msg timestamp="20220428 11:55:24.777" level="INFO">${Partner} = {'name': 'Pizzas Papito', 'email': 'contato@papito.com.br', 'whatsapp': '11999999999', 'business': 'Restaurante'}</msg>
+<status status="PASS" starttime="20220428 11:55:24.777" endtime="20220428 11:55:24.777"/>
 </kw>
 <kw name="Remove Partner By Name" library="database">
 <arg>${Partner}[name]</arg>
@@ -687,27 +686,27 @@
 <var>${Filter}</var>
 <arg>name=${Partner_name}</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20220422 20:50:46.278" level="INFO">${Filter} = {'name': 'Pizzas Papito'}</msg>
-<status status="PASS" starttime="20220422 20:50:46.278" endtime="20220422 20:50:46.278"/>
+<msg timestamp="20220428 11:55:24.779" level="INFO">${Filter} = {'name': 'Pizzas Papito'}</msg>
+<status status="PASS" starttime="20220428 11:55:24.778" endtime="20220428 11:55:24.779"/>
 </kw>
 <kw name="Delete One" library="RobotMongoDBLibrary.Delete">
 <arg>${MONGO_URI}</arg>
 <arg>${Filter}</arg>
-<status status="PASS" starttime="20220422 20:50:46.278" endtime="20220422 20:50:46.659"/>
+<status status="PASS" starttime="20220428 11:55:24.779" endtime="20220428 11:55:25.219"/>
 </kw>
 <kw name="Set Global Variable" library="BuiltIn">
 <arg>${Filter}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20220422 20:50:46.659" level="INFO">${Filter} = {'name': 'Pizzas Papito'}</msg>
-<status status="PASS" starttime="20220422 20:50:46.659" endtime="20220422 20:50:46.659"/>
+<msg timestamp="20220428 11:55:25.219" level="INFO">${Filter} = {'name': 'Pizzas Papito'}</msg>
+<status status="PASS" starttime="20220428 11:55:25.219" endtime="20220428 11:55:25.219"/>
 </kw>
 <kw name="Set Global Variable" library="BuiltIn">
 <arg>${Partner_name}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20220422 20:50:46.659" level="INFO">${Partner_name} = Pizzas Papito</msg>
-<status status="PASS" starttime="20220422 20:50:46.659" endtime="20220422 20:50:46.659"/>
+<msg timestamp="20220428 11:55:25.220" level="INFO">${Partner_name} = Pizzas Papito</msg>
+<status status="PASS" starttime="20220428 11:55:25.220" endtime="20220428 11:55:25.220"/>
 </kw>
-<status status="PASS" starttime="20220422 20:50:46.278" endtime="20220422 20:50:46.659"/>
+<status status="PASS" starttime="20220428 11:55:24.778" endtime="20220428 11:55:25.220"/>
 </kw>
 <kw name="POST Partner" library="services">
 <var>${response}</var>
@@ -716,8 +715,8 @@
 <arg>CreatePartner</arg>
 <arg>${BASE_URL}</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20220422 20:50:46.660" level="INFO">Creating Session using : alias=CreatePartner, url=http://localhost:3333/partners, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20220422 20:50:46.660" endtime="20220422 20:50:46.661"/>
+<msg timestamp="20220428 11:55:25.221" level="INFO">Creating Session using : alias=CreatePartner, url=http://localhost:3333/partners, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220428 11:55:25.221" endtime="20220428 11:55:25.222"/>
 </kw>
 <kw name="POST On Session" library="RequestsLibrary">
 <var>${Response}</var>
@@ -727,32 +726,32 @@
 <arg>headers=${HEADERS}</arg>
 <arg>expected_status=any</arg>
 <doc>Sends a POST request on a previously created HTTP Session.</doc>
-<msg timestamp="20220422 20:50:46.699" level="INFO">POST Request : url=http://localhost:3333/partners 
+<msg timestamp="20220428 11:55:25.261" level="INFO">POST Request : url=http://localhost:3333/partners 
  path_url=/partners 
  headers={'User-Agent': 'python-requests/2.27.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'auth_user': 'qa', 'auth_password': 'ninja', 'Content-Length': '113'} 
  body=b'{"name": "Pizzas Papito", "email": "contato@papito.com.br", "whatsapp": "11999999999", "business": "Restaurante"}' 
  </msg>
-<msg timestamp="20220422 20:50:46.699" level="INFO">POST Response : url=http://localhost:3333/partners 
+<msg timestamp="20220428 11:55:25.261" level="INFO">POST Response : url=http://localhost:3333/partners 
  status=201, reason=Created 
- headers={'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Access-Control-Expose-Headers': 'Authorization,auth_user,auth_password', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '41', 'ETag': 'W/"29-DosovlOfHZa61RWnbH4KaWz1sj4"', 'Date': 'Fri, 22 Apr 2022 23:50:46 GMT', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=5'} 
- body={"partner_id":"62633f5674dbf13b033bdce3"} 
+ headers={'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Access-Control-Expose-Headers': 'Authorization,auth_user,auth_password', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '41', 'ETag': 'W/"29-KLI0dCg+7Kqrr6n9NMnJV/pFtBc"', 'Date': 'Thu, 28 Apr 2022 14:55:25 GMT', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=5'} 
+ body={"partner_id":"626aaadd9c44ef7af41edc49"} 
  </msg>
-<msg timestamp="20220422 20:50:46.699" level="INFO">${Response} = &lt;Response [201]&gt;</msg>
-<status status="PASS" starttime="20220422 20:50:46.661" endtime="20220422 20:50:46.699"/>
+<msg timestamp="20220428 11:55:25.262" level="INFO">${Response} = &lt;Response [201]&gt;</msg>
+<status status="PASS" starttime="20220428 11:55:25.222" endtime="20220428 11:55:25.262"/>
 </kw>
 <kw name="Set Global Variable" library="BuiltIn">
 <arg>${payload}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20220422 20:50:46.699" level="INFO">${payload} = {'name': 'Pizzas Papito', 'email': 'contato@papito.com.br', 'whatsapp': '11999999999', 'business': 'Restaurante'}</msg>
-<status status="PASS" starttime="20220422 20:50:46.699" endtime="20220422 20:50:46.699"/>
+<msg timestamp="20220428 11:55:25.262" level="INFO">${payload} = {'name': 'Pizzas Papito', 'email': 'contato@papito.com.br', 'whatsapp': '11999999999', 'business': 'Restaurante'}</msg>
+<status status="PASS" starttime="20220428 11:55:25.262" endtime="20220428 11:55:25.262"/>
 </kw>
-<msg timestamp="20220422 20:50:46.699" level="INFO">${response} = &lt;Response [201]&gt;</msg>
-<status status="PASS" starttime="20220422 20:50:46.660" endtime="20220422 20:50:46.699"/>
+<msg timestamp="20220428 11:55:25.263" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<status status="PASS" starttime="20220428 11:55:25.221" endtime="20220428 11:55:25.263"/>
 </kw>
 <kw name="Status Should Be" library="RequestsLibrary">
 <arg>201</arg>
 <doc>Fails if response status code is different than the expected.</doc>
-<status status="PASS" starttime="20220422 20:50:46.700" endtime="20220422 20:50:46.700"/>
+<status status="PASS" starttime="20220428 11:55:25.263" endtime="20220428 11:55:25.264"/>
 </kw>
 <kw name="Find Partner By Name" library="database">
 <var>${Result}</var>
@@ -761,23 +760,23 @@
 <var>${Result}</var>
 <arg>${MONGO_URI}</arg>
 <arg>${Filter}</arg>
-<msg timestamp="20220422 20:50:47.038" level="INFO">${Result} = [{'_id': '62633f5674dbf13b033bdce3', 'name': 'Pizzas Papito', 'email': 'contato@papito.com.br', 'whatsapp': '11999999999', 'business': 'Restaurante', 'active': False, 'created_at': datetime.datetime(2...</msg>
-<status status="PASS" starttime="20220422 20:50:46.701" endtime="20220422 20:50:47.038"/>
+<msg timestamp="20220428 11:55:25.669" level="INFO">${Result} = [{'_id': '626aaadd9c44ef7af41edc49', 'name': 'Pizzas Papito', 'email': 'contato@papito.com.br', 'whatsapp': '11999999999', 'business': 'Restaurante', 'active': False, 'created_at': datetime.datetime(2...</msg>
+<status status="PASS" starttime="20220428 11:55:25.265" endtime="20220428 11:55:25.669"/>
 </kw>
 <kw name="Set Global Variable" library="BuiltIn">
 <arg>${Result}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20220422 20:50:47.039" level="INFO">${Result} = [{'_id': '62633f5674dbf13b033bdce3', 'name': 'Pizzas Papito', 'email': 'contato@papito.com.br', 'whatsapp': '11999999999', 'business': 'Restaurante', 'active': False, 'created_at': datetime.datetime(2...</msg>
-<status status="PASS" starttime="20220422 20:50:47.038" endtime="20220422 20:50:47.039"/>
+<msg timestamp="20220428 11:55:25.669" level="INFO">${Result} = [{'_id': '626aaadd9c44ef7af41edc49', 'name': 'Pizzas Papito', 'email': 'contato@papito.com.br', 'whatsapp': '11999999999', 'business': 'Restaurante', 'active': False, 'created_at': datetime.datetime(2...</msg>
+<status status="PASS" starttime="20220428 11:55:25.669" endtime="20220428 11:55:25.669"/>
 </kw>
-<msg timestamp="20220422 20:50:47.039" level="INFO">${Result} = {'_id': '62633f5674dbf13b033bdce3', 'name': 'Pizzas Papito', 'email': 'contato@papito.com.br', 'whatsapp': '11999999999', 'business': 'Restaurante', 'active': False, 'created_at': datetime.datetime(20...</msg>
-<status status="PASS" starttime="20220422 20:50:46.701" endtime="20220422 20:50:47.039"/>
+<msg timestamp="20220428 11:55:25.669" level="INFO">${Result} = {'_id': '626aaadd9c44ef7af41edc49', 'name': 'Pizzas Papito', 'email': 'contato@papito.com.br', 'whatsapp': '11999999999', 'business': 'Restaurante', 'active': False, 'created_at': datetime.datetime(20...</msg>
+<status status="PASS" starttime="20220428 11:55:25.264" endtime="20220428 11:55:25.669"/>
 </kw>
 <kw name="Should Be Equal" library="BuiltIn">
 <arg>${Response.json()}[partner_id]</arg>
 <arg>${Result}[_id]</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" starttime="20220422 20:50:47.040" endtime="20220422 20:50:47.040"/>
+<status status="PASS" starttime="20220428 11:55:25.670" endtime="20220428 11:55:25.670"/>
 </kw>
 <kw name="Get Message" library="rabbitmq">
 <var>${message}</var>
@@ -790,15 +789,15 @@
 <arg>encoding=auto</arg>
 <arg>count=1</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20220422 20:50:47.041" level="INFO">${payload} = {'vhost': 'obsqplap', 'name': 'email', 'truncate': '50000', 'ackmode': 'ack_requeue_true', 'encoding': 'auto', 'count': '1'}</msg>
-<status status="PASS" starttime="20220422 20:50:47.041" endtime="20220422 20:50:47.041"/>
+<msg timestamp="20220428 11:55:25.671" level="INFO">${payload} = {'vhost': 'obsqplap', 'name': 'email', 'truncate': '50000', 'ackmode': 'ack_requeue_true', 'encoding': 'auto', 'count': '1'}</msg>
+<status status="PASS" starttime="20220428 11:55:25.671" endtime="20220428 11:55:25.671"/>
 </kw>
 <kw name="Create Session" library="RequestsLibrary">
 <arg>Get</arg>
 <arg>${RABBIT_URL}/get</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20220422 20:50:47.042" level="INFO">Creating Session using : alias=Get, url=https://sparrow.rmq.cloudamqp.com/api/queues/obsqplap/email/get, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20220422 20:50:47.041" endtime="20220422 20:50:47.042"/>
+<msg timestamp="20220428 11:55:25.672" level="INFO">Creating Session using : alias=Get, url=https://sparrow.rmq.cloudamqp.com/api/queues/obsqplap/email/get, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220428 11:55:25.671" endtime="20220428 11:55:25.672"/>
 </kw>
 <kw name="POST On Session" library="RequestsLibrary">
 <var>${response}</var>
@@ -808,44 +807,44 @@
 <arg>headers=${RABBIT_HEADERS}</arg>
 <arg>expected_status=200</arg>
 <doc>Sends a POST request on a previously created HTTP Session.</doc>
-<msg timestamp="20220422 20:50:47.674" level="INFO">POST Request : url=https://sparrow.rmq.cloudamqp.com/api/queues/obsqplap/email/get 
+<msg timestamp="20220428 11:55:26.310" level="INFO">POST Request : url=https://sparrow.rmq.cloudamqp.com/api/queues/obsqplap/email/get 
  path_url=/api/queues/obsqplap/email/get 
  headers={'User-Agent': 'python-requests/2.27.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Authorization': 'Basic b2JzcXBsYXA6djU1MDRPWF9RSmstUDFIM3VZcWVNVldUT3gydm1pbTc=', 'Content-Length': '124'} 
  body=b'{"vhost": "obsqplap", "name": "email", "truncate": "50000", "ackmode": "ack_requeue_true", "encoding": "auto", "count": "1"}' 
  </msg>
-<msg timestamp="20220422 20:50:47.674" level="INFO">POST Response : url=https://sparrow.rmq.cloudamqp.com/api/queues/obsqplap/email/get 
+<msg timestamp="20220428 11:55:26.310" level="INFO">POST Response : url=https://sparrow.rmq.cloudamqp.com/api/queues/obsqplap/email/get 
  status=200, reason=OK 
- headers={'Server': 'nginx', 'Date': 'Fri, 22 Apr 2022 23:50:40 GMT', 'Content-Type': 'application/json', 'Content-Length': '285', 'Connection': 'keep-alive', 'cache-control': 'no-cache', 'content-encoding': 'gzip', 'content-security-policy': "script-src 'self' 'unsafe-eval' 'unsafe-inline'; object-src 'self', default-src 'none'; connect-src 'self'; img-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline'; style-src 'self' 'unsafe-inline'", 'vary': 'accept, accept-encoding, origin', 'X-Content-Type-Options': 'nosniff', 'X-XSS-Protection': '1; mode=block', 'Strict-Transport-Security': 'max-age=631138519', 'X-Frame-Options': 'deny'} 
+ headers={'Server': 'nginx', 'Date': 'Thu, 28 Apr 2022 14:55:26 GMT', 'Content-Type': 'application/json', 'Content-Length': '285', 'Connection': 'keep-alive', 'cache-control': 'no-cache', 'content-encoding': 'gzip', 'content-security-policy': "script-src 'self' 'unsafe-eval' 'unsafe-inline'; object-src 'self', default-src 'none'; connect-src 'self'; img-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline'; style-src 'self' 'unsafe-inline'", 'vary': 'accept, accept-encoding, origin', 'X-Content-Type-Options': 'nosniff', 'X-XSS-Protection': '1; mode=block', 'Strict-Transport-Security': 'max-age=631138519', 'X-Frame-Options': 'deny'} 
  body=[{"payload_bytes":205,"redelivered":false,"exchange":"","routing_key":"email","message_count":0,"properties":{"headers":{}},"payload":"{\"html\":\"&lt;p&gt;Seu cadastro foi confirmado!&lt;/p&gt;Em breve enviaremos mais detalhes sobre a nossa parceria.&lt;/p&gt; &lt;p&gt;Abs, &lt;br/&gt;Equipe BugerEats&lt;/p&gt;\",\"email\":\"contato@papito.com.br\",\"subject\":\"Parceria Buger Eats\"}","payload_encoding":"string"}] 
  </msg>
-<msg timestamp="20220422 20:50:47.674" level="INFO">C:\Users\Tiago Gomes\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:1043: InsecureRequestWarning: Unverified HTTPS request is being made to host 'sparrow.rmq.cloudamqp.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+<msg timestamp="20220428 11:55:26.310" level="INFO">C:\Python310\lib\site-packages\urllib3\connectionpool.py:1043: InsecureRequestWarning: Unverified HTTPS request is being made to host 'sparrow.rmq.cloudamqp.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
   warnings.warn(</msg>
-<msg timestamp="20220422 20:50:47.674" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20220422 20:50:47.042" endtime="20220422 20:50:47.674"/>
+<msg timestamp="20220428 11:55:26.311" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220428 11:55:25.672" endtime="20220428 11:55:26.311"/>
 </kw>
-<msg timestamp="20220422 20:50:47.675" level="INFO">${message} = {'payload_bytes': 205, 'redelivered': False, 'exchange': '', 'routing_key': 'email', 'message_count': 0, 'properties': {'headers': {}}, 'payload': '{"html":"&lt;p&gt;Seu cadastro foi confirmado!&lt;/p&gt;Em breve...</msg>
-<status status="PASS" starttime="20220422 20:50:47.041" endtime="20220422 20:50:47.675"/>
+<msg timestamp="20220428 11:55:26.312" level="INFO">${message} = {'payload_bytes': 205, 'redelivered': False, 'exchange': '', 'routing_key': 'email', 'message_count': 0, 'properties': {'headers': {}}, 'payload': '{"html":"&lt;p&gt;Seu cadastro foi confirmado!&lt;/p&gt;Em breve...</msg>
+<status status="PASS" starttime="20220428 11:55:25.671" endtime="20220428 11:55:26.312"/>
 </kw>
 <kw name="Log" library="BuiltIn">
 <arg>${message}[payload]</arg>
 <doc>Logs the given message with the given level.</doc>
-<msg timestamp="20220422 20:50:47.677" level="INFO">{"html":"&lt;p&gt;Seu cadastro foi confirmado!&lt;/p&gt;Em breve enviaremos mais detalhes sobre a nossa parceria.&lt;/p&gt; &lt;p&gt;Abs, &lt;br/&gt;Equipe BugerEats&lt;/p&gt;","email":"contato@papito.com.br","subject":"Parceria Buger Eats"}</msg>
-<status status="PASS" starttime="20220422 20:50:47.677" endtime="20220422 20:50:47.677"/>
+<msg timestamp="20220428 11:55:26.313" level="INFO">{"html":"&lt;p&gt;Seu cadastro foi confirmado!&lt;/p&gt;Em breve enviaremos mais detalhes sobre a nossa parceria.&lt;/p&gt; &lt;p&gt;Abs, &lt;br/&gt;Equipe BugerEats&lt;/p&gt;","email":"contato@papito.com.br","subject":"Parceria Buger Eats"}</msg>
+<status status="PASS" starttime="20220428 11:55:26.313" endtime="20220428 11:55:26.313"/>
 </kw>
 <kw name="Should Contain" library="BuiltIn">
 <arg>${message}[payload]</arg>
 <arg>${partner}[email]</arg>
 <doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="PASS" starttime="20220422 20:50:47.678" endtime="20220422 20:50:47.678"/>
+<status status="PASS" starttime="20220428 11:55:26.314" endtime="20220428 11:55:26.315"/>
 </kw>
 <tag>happy_way</tag>
-<status status="PASS" starttime="20220422 20:50:45.615" endtime="20220422 20:50:47.678"/>
+<status status="PASS" starttime="20220428 11:55:24.073" endtime="20220428 11:55:26.315"/>
 </test>
-<test id="s1-s1-s3-t2" name="Should return duplicate company name">
+<test id="s1-s3-t2" name="Should return duplicate company name" line="26">
 <kw name="Factory Dup Name" library="partner">
 <var>${Partner}</var>
-<msg timestamp="20220422 20:50:47.681" level="INFO">${Partner} = {'name': 'Tiago Lanchonete', 'email': 'contato@Lanchonete.com.br', 'whatsapp': '31999999999', 'business': 'Conveniência'}</msg>
-<status status="PASS" starttime="20220422 20:50:47.681" endtime="20220422 20:50:47.681"/>
+<msg timestamp="20220428 11:55:26.317" level="INFO">${Partner} = {'name': 'Tiago Lanchonete', 'email': 'contato@Lanchonete.com.br', 'whatsapp': '31999999999', 'business': 'Conveniência'}</msg>
+<status status="PASS" starttime="20220428 11:55:26.317" endtime="20220428 11:55:26.317"/>
 </kw>
 <kw name="Create a new partner" library="helpers">
 <var>${partner_id}</var>
@@ -856,27 +855,27 @@
 <var>${Filter}</var>
 <arg>name=${Partner_name}</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20220422 20:50:47.682" level="INFO">${Filter} = {'name': 'Tiago Lanchonete'}</msg>
-<status status="PASS" starttime="20220422 20:50:47.682" endtime="20220422 20:50:47.682"/>
+<msg timestamp="20220428 11:55:26.318" level="INFO">${Filter} = {'name': 'Tiago Lanchonete'}</msg>
+<status status="PASS" starttime="20220428 11:55:26.318" endtime="20220428 11:55:26.318"/>
 </kw>
 <kw name="Delete One" library="RobotMongoDBLibrary.Delete">
 <arg>${MONGO_URI}</arg>
 <arg>${Filter}</arg>
-<status status="PASS" starttime="20220422 20:50:47.682" endtime="20220422 20:50:48.017"/>
+<status status="PASS" starttime="20220428 11:55:26.318" endtime="20220428 11:55:26.703"/>
 </kw>
 <kw name="Set Global Variable" library="BuiltIn">
 <arg>${Filter}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20220422 20:50:48.018" level="INFO">${Filter} = {'name': 'Tiago Lanchonete'}</msg>
-<status status="PASS" starttime="20220422 20:50:48.017" endtime="20220422 20:50:48.018"/>
+<msg timestamp="20220428 11:55:26.703" level="INFO">${Filter} = {'name': 'Tiago Lanchonete'}</msg>
+<status status="PASS" starttime="20220428 11:55:26.703" endtime="20220428 11:55:26.703"/>
 </kw>
 <kw name="Set Global Variable" library="BuiltIn">
 <arg>${Partner_name}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20220422 20:50:48.018" level="INFO">${Partner_name} = Tiago Lanchonete</msg>
-<status status="PASS" starttime="20220422 20:50:48.018" endtime="20220422 20:50:48.018"/>
+<msg timestamp="20220428 11:55:26.704" level="INFO">${Partner_name} = Tiago Lanchonete</msg>
+<status status="PASS" starttime="20220428 11:55:26.703" endtime="20220428 11:55:26.704"/>
 </kw>
-<status status="PASS" starttime="20220422 20:50:47.682" endtime="20220422 20:50:48.018"/>
+<status status="PASS" starttime="20220428 11:55:26.318" endtime="20220428 11:55:26.704"/>
 </kw>
 <kw name="POST Partner" library="services">
 <var>${response}</var>
@@ -885,8 +884,8 @@
 <arg>CreatePartner</arg>
 <arg>${BASE_URL}</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20220422 20:50:48.018" level="INFO">Creating Session using : alias=CreatePartner, url=http://localhost:3333/partners, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20220422 20:50:48.018" endtime="20220422 20:50:48.019"/>
+<msg timestamp="20220428 11:55:26.704" level="INFO">Creating Session using : alias=CreatePartner, url=http://localhost:3333/partners, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220428 11:55:26.704" endtime="20220428 11:55:26.704"/>
 </kw>
 <kw name="POST On Session" library="RequestsLibrary">
 <var>${Response}</var>
@@ -896,37 +895,37 @@
 <arg>headers=${HEADERS}</arg>
 <arg>expected_status=any</arg>
 <doc>Sends a POST request on a previously created HTTP Session.</doc>
-<msg timestamp="20220422 20:50:48.058" level="INFO">POST Request : url=http://localhost:3333/partners 
+<msg timestamp="20220428 11:55:26.741" level="INFO">POST Request : url=http://localhost:3333/partners 
  path_url=/partners 
  headers={'User-Agent': 'python-requests/2.27.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'auth_user': 'qa', 'auth_password': 'ninja', 'Content-Length': '126'} 
  body=b'{"name": "Tiago Lanchonete", "email": "contato@Lanchonete.com.br", "whatsapp": "31999999999", "business": "Conveni\\u00eancia"}' 
  </msg>
-<msg timestamp="20220422 20:50:48.058" level="INFO">POST Response : url=http://localhost:3333/partners 
+<msg timestamp="20220428 11:55:26.741" level="INFO">POST Response : url=http://localhost:3333/partners 
  status=201, reason=Created 
- headers={'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Access-Control-Expose-Headers': 'Authorization,auth_user,auth_password', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '41', 'ETag': 'W/"29-sWRekoahKCHIY4ELcsWs+e7aXpg"', 'Date': 'Fri, 22 Apr 2022 23:50:48 GMT', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=5'} 
- body={"partner_id":"62633f5874dbf13b033bdce5"} 
+ headers={'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Access-Control-Expose-Headers': 'Authorization,auth_user,auth_password', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '41', 'ETag': 'W/"29-RFUOAZEThwBvv23L8zxiGu4tDZ8"', 'Date': 'Thu, 28 Apr 2022 14:55:26 GMT', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=5'} 
+ body={"partner_id":"626aaade9c44ef7af41edc4b"} 
  </msg>
-<msg timestamp="20220422 20:50:48.058" level="INFO">${Response} = &lt;Response [201]&gt;</msg>
-<status status="PASS" starttime="20220422 20:50:48.019" endtime="20220422 20:50:48.058"/>
+<msg timestamp="20220428 11:55:26.741" level="INFO">${Response} = &lt;Response [201]&gt;</msg>
+<status status="PASS" starttime="20220428 11:55:26.705" endtime="20220428 11:55:26.742"/>
 </kw>
 <kw name="Set Global Variable" library="BuiltIn">
 <arg>${payload}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20220422 20:50:48.058" level="INFO">${payload} = {'name': 'Tiago Lanchonete', 'email': 'contato@Lanchonete.com.br', 'whatsapp': '31999999999', 'business': 'Conveniência'}</msg>
-<status status="PASS" starttime="20220422 20:50:48.058" endtime="20220422 20:50:48.059"/>
+<msg timestamp="20220428 11:55:26.742" level="INFO">${payload} = {'name': 'Tiago Lanchonete', 'email': 'contato@Lanchonete.com.br', 'whatsapp': '31999999999', 'business': 'Conveniência'}</msg>
+<status status="PASS" starttime="20220428 11:55:26.742" endtime="20220428 11:55:26.742"/>
 </kw>
-<msg timestamp="20220422 20:50:48.059" level="INFO">${response} = &lt;Response [201]&gt;</msg>
-<status status="PASS" starttime="20220422 20:50:48.018" endtime="20220422 20:50:48.059"/>
+<msg timestamp="20220428 11:55:26.742" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<status status="PASS" starttime="20220428 11:55:26.704" endtime="20220428 11:55:26.742"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${partner_id}</var>
 <arg>${response.json()}[partner_id]</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20220422 20:50:48.059" level="INFO">${partner_id} = 62633f5874dbf13b033bdce5</msg>
-<status status="PASS" starttime="20220422 20:50:48.059" endtime="20220422 20:50:48.059"/>
+<msg timestamp="20220428 11:55:26.743" level="INFO">${partner_id} = 626aaade9c44ef7af41edc4b</msg>
+<status status="PASS" starttime="20220428 11:55:26.742" endtime="20220428 11:55:26.743"/>
 </kw>
-<msg timestamp="20220422 20:50:48.059" level="INFO">${partner_id} = 62633f5874dbf13b033bdce5</msg>
-<status status="PASS" starttime="20220422 20:50:47.681" endtime="20220422 20:50:48.059"/>
+<msg timestamp="20220428 11:55:26.743" level="INFO">${partner_id} = 626aaade9c44ef7af41edc4b</msg>
+<status status="PASS" starttime="20220428 11:55:26.318" endtime="20220428 11:55:26.743"/>
 </kw>
 <kw name="POST Partner" library="services">
 <var>${Response}</var>
@@ -935,8 +934,8 @@
 <arg>CreatePartner</arg>
 <arg>${BASE_URL}</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20220422 20:50:48.061" level="INFO">Creating Session using : alias=CreatePartner, url=http://localhost:3333/partners, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20220422 20:50:48.061" endtime="20220422 20:50:48.061"/>
+<msg timestamp="20220428 11:55:26.745" level="INFO">Creating Session using : alias=CreatePartner, url=http://localhost:3333/partners, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220428 11:55:26.745" endtime="20220428 11:55:26.745"/>
 </kw>
 <kw name="POST On Session" library="RequestsLibrary">
 <var>${Response}</var>
@@ -946,51 +945,51 @@
 <arg>headers=${HEADERS}</arg>
 <arg>expected_status=any</arg>
 <doc>Sends a POST request on a previously created HTTP Session.</doc>
-<msg timestamp="20220422 20:50:48.095" level="INFO">POST Request : url=http://localhost:3333/partners 
+<msg timestamp="20220428 11:55:26.780" level="INFO">POST Request : url=http://localhost:3333/partners 
  path_url=/partners 
  headers={'User-Agent': 'python-requests/2.27.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'auth_user': 'qa', 'auth_password': 'ninja', 'Content-Length': '126'} 
  body=b'{"name": "Tiago Lanchonete", "email": "contato@Lanchonete.com.br", "whatsapp": "31999999999", "business": "Conveni\\u00eancia"}' 
  </msg>
-<msg timestamp="20220422 20:50:48.096" level="INFO">POST Response : url=http://localhost:3333/partners 
+<msg timestamp="20220428 11:55:26.781" level="INFO">POST Response : url=http://localhost:3333/partners 
  status=409, reason=Conflict 
- headers={'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Access-Control-Expose-Headers': 'Authorization,auth_user,auth_password', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '36', 'ETag': 'W/"24-npRjBxR/ioA1Ds6xvIHfcGoYoY4"', 'Date': 'Fri, 22 Apr 2022 23:50:48 GMT', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=5'} 
+ headers={'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Access-Control-Expose-Headers': 'Authorization,auth_user,auth_password', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '36', 'ETag': 'W/"24-npRjBxR/ioA1Ds6xvIHfcGoYoY4"', 'Date': 'Thu, 28 Apr 2022 14:55:26 GMT', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=5'} 
  body={"message":"Duplicate company name"} 
  </msg>
-<msg timestamp="20220422 20:50:48.096" level="INFO">${Response} = &lt;Response [409]&gt;</msg>
-<status status="PASS" starttime="20220422 20:50:48.061" endtime="20220422 20:50:48.096"/>
+<msg timestamp="20220428 11:55:26.781" level="INFO">${Response} = &lt;Response [409]&gt;</msg>
+<status status="PASS" starttime="20220428 11:55:26.745" endtime="20220428 11:55:26.781"/>
 </kw>
 <kw name="Set Global Variable" library="BuiltIn">
 <arg>${payload}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20220422 20:50:48.096" level="INFO">${payload} = {'name': 'Tiago Lanchonete', 'email': 'contato@Lanchonete.com.br', 'whatsapp': '31999999999', 'business': 'Conveniência'}</msg>
-<status status="PASS" starttime="20220422 20:50:48.096" endtime="20220422 20:50:48.096"/>
+<msg timestamp="20220428 11:55:26.781" level="INFO">${payload} = {'name': 'Tiago Lanchonete', 'email': 'contato@Lanchonete.com.br', 'whatsapp': '31999999999', 'business': 'Conveniência'}</msg>
+<status status="PASS" starttime="20220428 11:55:26.781" endtime="20220428 11:55:26.781"/>
 </kw>
-<msg timestamp="20220422 20:50:48.097" level="INFO">${Response} = &lt;Response [409]&gt;</msg>
-<status status="PASS" starttime="20220422 20:50:48.061" endtime="20220422 20:50:48.097"/>
+<msg timestamp="20220428 11:55:26.782" level="INFO">${Response} = &lt;Response [409]&gt;</msg>
+<status status="PASS" starttime="20220428 11:55:26.744" endtime="20220428 11:55:26.782"/>
 </kw>
 <kw name="Status Should Be" library="RequestsLibrary">
 <arg>409</arg>
 <doc>Fails if response status code is different than the expected.</doc>
-<status status="PASS" starttime="20220422 20:50:48.097" endtime="20220422 20:50:48.097"/>
+<status status="PASS" starttime="20220428 11:55:26.783" endtime="20220428 11:55:26.783"/>
 </kw>
 <kw name="Should Be Equal" library="BuiltIn">
 <arg>${Response.json()}[message]</arg>
 <arg>Duplicate company name</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" starttime="20220422 20:50:48.098" endtime="20220422 20:50:48.098"/>
+<status status="PASS" starttime="20220428 11:55:26.784" endtime="20220428 11:55:26.785"/>
 </kw>
 <tag>sad_way</tag>
-<status status="PASS" starttime="20220422 20:50:47.680" endtime="20220422 20:50:48.099"/>
+<status status="PASS" starttime="20220428 11:55:26.316" endtime="20220428 11:55:26.786"/>
 </test>
 <doc>POST /partners</doc>
-<status status="PASS" starttime="20220422 20:50:45.606" endtime="20220422 20:50:48.101"/>
+<status status="PASS" starttime="20220428 11:55:24.053" endtime="20220428 11:55:26.787"/>
 </suite>
-<suite id="s1-s1-s4" name="Put" source="C:\Users\Tiago Gomes\OneDrive\Documentos\Automação de Testes\RobotFramework\API_Expert\buger-eats-partner-ms\TestsAPI\Tests\put.robot">
-<test id="s1-s1-s4-t1" name="Should enable a partner">
+<suite id="s1-s4" name="Put" source="C:\Users\tiago.santos\OneDrive\Documentos\Automação de Testes\RobotFramework\API_Expert\buger-eats-partner-ms\TestsAPI\Tests\put.robot">
+<test id="s1-s4-t1" name="Should enable a partner" line="9">
 <kw name="Factory Enable Partner" library="partner">
 <var>${partner}</var>
-<msg timestamp="20220422 20:50:48.112" level="INFO">${partner} = {'name': 'Jujuba Não Tem Antena', 'email': 'contato@jujuba.com.br', 'whatsapp': '1199991004', 'business': 'Conveniência'}</msg>
-<status status="PASS" starttime="20220422 20:50:48.112" endtime="20220422 20:50:48.112"/>
+<msg timestamp="20220428 11:55:26.816" level="INFO">${partner} = {'name': 'Jujuba Não Tem Antena', 'email': 'contato@jujuba.com.br', 'whatsapp': '1199991004', 'business': 'Conveniência'}</msg>
+<status status="PASS" starttime="20220428 11:55:26.816" endtime="20220428 11:55:26.816"/>
 </kw>
 <kw name="Create a new partner" library="helpers">
 <var>${partner_id}</var>
@@ -1001,27 +1000,27 @@
 <var>${Filter}</var>
 <arg>name=${Partner_name}</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20220422 20:50:48.113" level="INFO">${Filter} = {'name': 'Jujuba Não Tem Antena'}</msg>
-<status status="PASS" starttime="20220422 20:50:48.113" endtime="20220422 20:50:48.113"/>
+<msg timestamp="20220428 11:55:26.818" level="INFO">${Filter} = {'name': 'Jujuba Não Tem Antena'}</msg>
+<status status="PASS" starttime="20220428 11:55:26.818" endtime="20220428 11:55:26.818"/>
 </kw>
 <kw name="Delete One" library="RobotMongoDBLibrary.Delete">
 <arg>${MONGO_URI}</arg>
 <arg>${Filter}</arg>
-<status status="PASS" starttime="20220422 20:50:48.113" endtime="20220422 20:50:48.483"/>
+<status status="PASS" starttime="20220428 11:55:26.818" endtime="20220428 11:55:27.232"/>
 </kw>
 <kw name="Set Global Variable" library="BuiltIn">
 <arg>${Filter}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20220422 20:50:48.484" level="INFO">${Filter} = {'name': 'Jujuba Não Tem Antena'}</msg>
-<status status="PASS" starttime="20220422 20:50:48.483" endtime="20220422 20:50:48.484"/>
+<msg timestamp="20220428 11:55:27.233" level="INFO">${Filter} = {'name': 'Jujuba Não Tem Antena'}</msg>
+<status status="PASS" starttime="20220428 11:55:27.233" endtime="20220428 11:55:27.233"/>
 </kw>
 <kw name="Set Global Variable" library="BuiltIn">
 <arg>${Partner_name}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20220422 20:50:48.484" level="INFO">${Partner_name} = Jujuba Não Tem Antena</msg>
-<status status="PASS" starttime="20220422 20:50:48.484" endtime="20220422 20:50:48.484"/>
+<msg timestamp="20220428 11:55:27.234" level="INFO">${Partner_name} = Jujuba Não Tem Antena</msg>
+<status status="PASS" starttime="20220428 11:55:27.234" endtime="20220428 11:55:27.234"/>
 </kw>
-<status status="PASS" starttime="20220422 20:50:48.113" endtime="20220422 20:50:48.484"/>
+<status status="PASS" starttime="20220428 11:55:26.817" endtime="20220428 11:55:27.234"/>
 </kw>
 <kw name="POST Partner" library="services">
 <var>${response}</var>
@@ -1030,8 +1029,8 @@
 <arg>CreatePartner</arg>
 <arg>${BASE_URL}</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20220422 20:50:48.485" level="INFO">Creating Session using : alias=CreatePartner, url=http://localhost:3333/partners, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20220422 20:50:48.484" endtime="20220422 20:50:48.485"/>
+<msg timestamp="20220428 11:55:27.235" level="INFO">Creating Session using : alias=CreatePartner, url=http://localhost:3333/partners, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220428 11:55:27.235" endtime="20220428 11:55:27.235"/>
 </kw>
 <kw name="POST On Session" library="RequestsLibrary">
 <var>${Response}</var>
@@ -1041,37 +1040,37 @@
 <arg>headers=${HEADERS}</arg>
 <arg>expected_status=any</arg>
 <doc>Sends a POST request on a previously created HTTP Session.</doc>
-<msg timestamp="20220422 20:50:48.525" level="INFO">POST Request : url=http://localhost:3333/partners 
+<msg timestamp="20220428 11:55:27.276" level="INFO">POST Request : url=http://localhost:3333/partners 
  path_url=/partners 
  headers={'User-Agent': 'python-requests/2.27.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'auth_user': 'qa', 'auth_password': 'ninja', 'Content-Length': '131'} 
  body=b'{"name": "Jujuba N\\u00e3o Tem Antena", "email": "contato@jujuba.com.br", "whatsapp": "1199991004", "business": "Conveni\\u00eancia"}' 
  </msg>
-<msg timestamp="20220422 20:50:48.525" level="INFO">POST Response : url=http://localhost:3333/partners 
+<msg timestamp="20220428 11:55:27.276" level="INFO">POST Response : url=http://localhost:3333/partners 
  status=201, reason=Created 
- headers={'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Access-Control-Expose-Headers': 'Authorization,auth_user,auth_password', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '41', 'ETag': 'W/"29-hB2pXakzlbRdXzuZczGhqcudirw"', 'Date': 'Fri, 22 Apr 2022 23:50:48 GMT', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=5'} 
- body={"partner_id":"62633f5874dbf13b033bdce9"} 
+ headers={'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Access-Control-Expose-Headers': 'Authorization,auth_user,auth_password', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '41', 'ETag': 'W/"29-JranSKR1zr1GjhwVlbhpyJCj8fU"', 'Date': 'Thu, 28 Apr 2022 14:55:27 GMT', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=5'} 
+ body={"partner_id":"626aaadf9c44ef7af41edc4f"} 
  </msg>
-<msg timestamp="20220422 20:50:48.525" level="INFO">${Response} = &lt;Response [201]&gt;</msg>
-<status status="PASS" starttime="20220422 20:50:48.485" endtime="20220422 20:50:48.525"/>
+<msg timestamp="20220428 11:55:27.276" level="INFO">${Response} = &lt;Response [201]&gt;</msg>
+<status status="PASS" starttime="20220428 11:55:27.235" endtime="20220428 11:55:27.276"/>
 </kw>
 <kw name="Set Global Variable" library="BuiltIn">
 <arg>${payload}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20220422 20:50:48.526" level="INFO">${payload} = {'name': 'Jujuba Não Tem Antena', 'email': 'contato@jujuba.com.br', 'whatsapp': '1199991004', 'business': 'Conveniência'}</msg>
-<status status="PASS" starttime="20220422 20:50:48.525" endtime="20220422 20:50:48.526"/>
+<msg timestamp="20220428 11:55:27.277" level="INFO">${payload} = {'name': 'Jujuba Não Tem Antena', 'email': 'contato@jujuba.com.br', 'whatsapp': '1199991004', 'business': 'Conveniência'}</msg>
+<status status="PASS" starttime="20220428 11:55:27.277" endtime="20220428 11:55:27.277"/>
 </kw>
-<msg timestamp="20220422 20:50:48.526" level="INFO">${response} = &lt;Response [201]&gt;</msg>
-<status status="PASS" starttime="20220422 20:50:48.484" endtime="20220422 20:50:48.526"/>
+<msg timestamp="20220428 11:55:27.277" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<status status="PASS" starttime="20220428 11:55:27.234" endtime="20220428 11:55:27.277"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${partner_id}</var>
 <arg>${response.json()}[partner_id]</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20220422 20:50:48.526" level="INFO">${partner_id} = 62633f5874dbf13b033bdce9</msg>
-<status status="PASS" starttime="20220422 20:50:48.526" endtime="20220422 20:50:48.526"/>
+<msg timestamp="20220428 11:55:27.278" level="INFO">${partner_id} = 626aaadf9c44ef7af41edc4f</msg>
+<status status="PASS" starttime="20220428 11:55:27.277" endtime="20220428 11:55:27.278"/>
 </kw>
-<msg timestamp="20220422 20:50:48.527" level="INFO">${partner_id} = 62633f5874dbf13b033bdce9</msg>
-<status status="PASS" starttime="20220422 20:50:48.113" endtime="20220422 20:50:48.527"/>
+<msg timestamp="20220428 11:55:27.278" level="INFO">${partner_id} = 626aaadf9c44ef7af41edc4f</msg>
+<status status="PASS" starttime="20220428 11:55:26.817" endtime="20220428 11:55:27.278"/>
 </kw>
 <kw name="Enable Partner" library="services">
 <var>${response}</var>
@@ -1080,8 +1079,8 @@
 <arg>CreatePartner</arg>
 <arg>${BASE_URL}/${partner_id}/enable</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20220422 20:50:48.527" level="INFO">Creating Session using : alias=CreatePartner, url=http://localhost:3333/partners/62633f5874dbf13b033bdce9/enable, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20220422 20:50:48.527" endtime="20220422 20:50:48.528"/>
+<msg timestamp="20220428 11:55:27.279" level="INFO">Creating Session using : alias=CreatePartner, url=http://localhost:3333/partners/626aaadf9c44ef7af41edc4f/enable, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220428 11:55:27.279" endtime="20220428 11:55:27.279"/>
 </kw>
 <kw name="PUT On Session" library="RequestsLibrary">
 <var>${Response}</var>
@@ -1091,34 +1090,34 @@
 <arg>headers=${HEADERS}</arg>
 <arg>expected_status=any</arg>
 <doc>Sends a PUT request on a previously created HTTP Session.</doc>
-<msg timestamp="20220422 20:50:48.566" level="INFO">PUT Request : url=http://localhost:3333/partners/62633f5874dbf13b033bdce9/enable 
- path_url=/partners/62633f5874dbf13b033bdce9/enable 
+<msg timestamp="20220428 11:55:27.323" level="INFO">PUT Request : url=http://localhost:3333/partners/626aaadf9c44ef7af41edc4f/enable 
+ path_url=/partners/626aaadf9c44ef7af41edc4f/enable 
  headers={'User-Agent': 'python-requests/2.27.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'auth_user': 'qa', 'auth_password': 'ninja', 'Content-Length': '131'} 
  body=b'{"name": "Jujuba N\\u00e3o Tem Antena", "email": "contato@jujuba.com.br", "whatsapp": "1199991004", "business": "Conveni\\u00eancia"}' 
  </msg>
-<msg timestamp="20220422 20:50:48.566" level="INFO">PUT Response : url=http://localhost:3333/partners/62633f5874dbf13b033bdce9/enable 
+<msg timestamp="20220428 11:55:27.323" level="INFO">PUT Response : url=http://localhost:3333/partners/626aaadf9c44ef7af41edc4f/enable 
  status=200, reason=OK 
- headers={'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Access-Control-Expose-Headers': 'Authorization,auth_user,auth_password', 'Date': 'Fri, 22 Apr 2022 23:50:48 GMT', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=5', 'Content-Length': '0'} 
+ headers={'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Access-Control-Expose-Headers': 'Authorization,auth_user,auth_password', 'Date': 'Thu, 28 Apr 2022 14:55:27 GMT', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=5', 'Content-Length': '0'} 
  body=None 
  </msg>
-<msg timestamp="20220422 20:50:48.566" level="INFO">${Response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20220422 20:50:48.528" endtime="20220422 20:50:48.566"/>
+<msg timestamp="20220428 11:55:27.323" level="INFO">${Response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220428 11:55:27.279" endtime="20220428 11:55:27.323"/>
 </kw>
-<msg timestamp="20220422 20:50:48.566" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20220422 20:50:48.527" endtime="20220422 20:50:48.566"/>
+<msg timestamp="20220428 11:55:27.323" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220428 11:55:27.279" endtime="20220428 11:55:27.323"/>
 </kw>
 <kw name="Status Should Be" library="RequestsLibrary">
 <arg>200</arg>
 <doc>Fails if response status code is different than the expected.</doc>
-<status status="PASS" starttime="20220422 20:50:48.567" endtime="20220422 20:50:48.567"/>
+<status status="PASS" starttime="20220428 11:55:27.324" endtime="20220428 11:55:27.325"/>
 </kw>
-<status status="PASS" starttime="20220422 20:50:48.111" endtime="20220422 20:50:48.567"/>
+<status status="PASS" starttime="20220428 11:55:26.815" endtime="20220428 11:55:27.325"/>
 </test>
-<test id="s1-s1-s4-t2" name="Should disable a partner">
+<test id="s1-s4-t2" name="Should disable a partner" line="17">
 <kw name="Factory Disable Partner" library="partner">
 <var>${partner}</var>
-<msg timestamp="20220422 20:50:48.571" level="INFO">${partner} = {'name': 'Super24hrs', 'email': 'contato@Super24hrs.com.br', 'whatsapp': '1199991008', 'business': 'Supermercado'}</msg>
-<status status="PASS" starttime="20220422 20:50:48.571" endtime="20220422 20:50:48.571"/>
+<msg timestamp="20220428 11:55:27.327" level="INFO">${partner} = {'name': 'Super24hrs', 'email': 'contato@Super24hrs.com.br', 'whatsapp': '1199991008', 'business': 'Supermercado'}</msg>
+<status status="PASS" starttime="20220428 11:55:27.327" endtime="20220428 11:55:27.327"/>
 </kw>
 <kw name="Create a new partner" library="helpers">
 <var>${partner_id}</var>
@@ -1129,27 +1128,27 @@
 <var>${Filter}</var>
 <arg>name=${Partner_name}</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20220422 20:50:48.573" level="INFO">${Filter} = {'name': 'Super24hrs'}</msg>
-<status status="PASS" starttime="20220422 20:50:48.572" endtime="20220422 20:50:48.573"/>
+<msg timestamp="20220428 11:55:27.328" level="INFO">${Filter} = {'name': 'Super24hrs'}</msg>
+<status status="PASS" starttime="20220428 11:55:27.328" endtime="20220428 11:55:27.329"/>
 </kw>
 <kw name="Delete One" library="RobotMongoDBLibrary.Delete">
 <arg>${MONGO_URI}</arg>
 <arg>${Filter}</arg>
-<status status="PASS" starttime="20220422 20:50:48.573" endtime="20220422 20:50:48.992"/>
+<status status="PASS" starttime="20220428 11:55:27.329" endtime="20220428 11:55:28.718"/>
 </kw>
 <kw name="Set Global Variable" library="BuiltIn">
 <arg>${Filter}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20220422 20:50:48.993" level="INFO">${Filter} = {'name': 'Super24hrs'}</msg>
-<status status="PASS" starttime="20220422 20:50:48.992" endtime="20220422 20:50:48.993"/>
+<msg timestamp="20220428 11:55:28.719" level="INFO">${Filter} = {'name': 'Super24hrs'}</msg>
+<status status="PASS" starttime="20220428 11:55:28.718" endtime="20220428 11:55:28.719"/>
 </kw>
 <kw name="Set Global Variable" library="BuiltIn">
 <arg>${Partner_name}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20220422 20:50:48.993" level="INFO">${Partner_name} = Super24hrs</msg>
-<status status="PASS" starttime="20220422 20:50:48.993" endtime="20220422 20:50:48.993"/>
+<msg timestamp="20220428 11:55:28.719" level="INFO">${Partner_name} = Super24hrs</msg>
+<status status="PASS" starttime="20220428 11:55:28.719" endtime="20220428 11:55:28.719"/>
 </kw>
-<status status="PASS" starttime="20220422 20:50:48.572" endtime="20220422 20:50:48.993"/>
+<status status="PASS" starttime="20220428 11:55:27.328" endtime="20220428 11:55:28.719"/>
 </kw>
 <kw name="POST Partner" library="services">
 <var>${response}</var>
@@ -1158,8 +1157,8 @@
 <arg>CreatePartner</arg>
 <arg>${BASE_URL}</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20220422 20:50:48.993" level="INFO">Creating Session using : alias=CreatePartner, url=http://localhost:3333/partners, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20220422 20:50:48.993" endtime="20220422 20:50:48.993"/>
+<msg timestamp="20220428 11:55:28.720" level="INFO">Creating Session using : alias=CreatePartner, url=http://localhost:3333/partners, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220428 11:55:28.719" endtime="20220428 11:55:28.720"/>
 </kw>
 <kw name="POST On Session" library="RequestsLibrary">
 <var>${Response}</var>
@@ -1169,37 +1168,37 @@
 <arg>headers=${HEADERS}</arg>
 <arg>expected_status=any</arg>
 <doc>Sends a POST request on a previously created HTTP Session.</doc>
-<msg timestamp="20220422 20:50:49.043" level="INFO">POST Request : url=http://localhost:3333/partners 
+<msg timestamp="20220428 11:55:28.759" level="INFO">POST Request : url=http://localhost:3333/partners 
  path_url=/partners 
  headers={'User-Agent': 'python-requests/2.27.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'auth_user': 'qa', 'auth_password': 'ninja', 'Content-Length': '114'} 
  body=b'{"name": "Super24hrs", "email": "contato@Super24hrs.com.br", "whatsapp": "1199991008", "business": "Supermercado"}' 
  </msg>
-<msg timestamp="20220422 20:50:49.043" level="INFO">POST Response : url=http://localhost:3333/partners 
+<msg timestamp="20220428 11:55:28.759" level="INFO">POST Response : url=http://localhost:3333/partners 
  status=201, reason=Created 
- headers={'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Access-Control-Expose-Headers': 'Authorization,auth_user,auth_password', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '41', 'ETag': 'W/"29-OisQjZtG2CiVHc3NZx+rtYSAIW4"', 'Date': 'Fri, 22 Apr 2022 23:50:49 GMT', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=5'} 
- body={"partner_id":"62633f5874dbf13b033bdcec"} 
+ headers={'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Access-Control-Expose-Headers': 'Authorization,auth_user,auth_password', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '41', 'ETag': 'W/"29-yQOShFJUUpOzvevhiBnWdM9ptPY"', 'Date': 'Thu, 28 Apr 2022 14:55:28 GMT', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=5'} 
+ body={"partner_id":"626aaae09c44ef7af41edc52"} 
  </msg>
-<msg timestamp="20220422 20:50:49.043" level="INFO">${Response} = &lt;Response [201]&gt;</msg>
-<status status="PASS" starttime="20220422 20:50:48.993" endtime="20220422 20:50:49.043"/>
+<msg timestamp="20220428 11:55:28.759" level="INFO">${Response} = &lt;Response [201]&gt;</msg>
+<status status="PASS" starttime="20220428 11:55:28.720" endtime="20220428 11:55:28.759"/>
 </kw>
 <kw name="Set Global Variable" library="BuiltIn">
 <arg>${payload}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20220422 20:50:49.044" level="INFO">${payload} = {'name': 'Super24hrs', 'email': 'contato@Super24hrs.com.br', 'whatsapp': '1199991008', 'business': 'Supermercado'}</msg>
-<status status="PASS" starttime="20220422 20:50:49.043" endtime="20220422 20:50:49.044"/>
+<msg timestamp="20220428 11:55:28.759" level="INFO">${payload} = {'name': 'Super24hrs', 'email': 'contato@Super24hrs.com.br', 'whatsapp': '1199991008', 'business': 'Supermercado'}</msg>
+<status status="PASS" starttime="20220428 11:55:28.759" endtime="20220428 11:55:28.759"/>
 </kw>
-<msg timestamp="20220422 20:50:49.044" level="INFO">${response} = &lt;Response [201]&gt;</msg>
-<status status="PASS" starttime="20220422 20:50:48.993" endtime="20220422 20:50:49.044"/>
+<msg timestamp="20220428 11:55:28.760" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<status status="PASS" starttime="20220428 11:55:28.719" endtime="20220428 11:55:28.760"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${partner_id}</var>
 <arg>${response.json()}[partner_id]</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20220422 20:50:49.044" level="INFO">${partner_id} = 62633f5874dbf13b033bdcec</msg>
-<status status="PASS" starttime="20220422 20:50:49.044" endtime="20220422 20:50:49.044"/>
+<msg timestamp="20220428 11:55:28.760" level="INFO">${partner_id} = 626aaae09c44ef7af41edc52</msg>
+<status status="PASS" starttime="20220428 11:55:28.760" endtime="20220428 11:55:28.760"/>
 </kw>
-<msg timestamp="20220422 20:50:49.045" level="INFO">${partner_id} = 62633f5874dbf13b033bdcec</msg>
-<status status="PASS" starttime="20220422 20:50:48.572" endtime="20220422 20:50:49.045"/>
+<msg timestamp="20220428 11:55:28.760" level="INFO">${partner_id} = 626aaae09c44ef7af41edc52</msg>
+<status status="PASS" starttime="20220428 11:55:27.328" endtime="20220428 11:55:28.760"/>
 </kw>
 <kw name="Enable Partner" library="services">
 <arg>${partner_id}</arg>
@@ -1207,8 +1206,8 @@
 <arg>CreatePartner</arg>
 <arg>${BASE_URL}/${partner_id}/enable</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20220422 20:50:49.046" level="INFO">Creating Session using : alias=CreatePartner, url=http://localhost:3333/partners/62633f5874dbf13b033bdcec/enable, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20220422 20:50:49.046" endtime="20220422 20:50:49.046"/>
+<msg timestamp="20220428 11:55:28.762" level="INFO">Creating Session using : alias=CreatePartner, url=http://localhost:3333/partners/626aaae09c44ef7af41edc52/enable, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220428 11:55:28.761" endtime="20220428 11:55:28.762"/>
 </kw>
 <kw name="PUT On Session" library="RequestsLibrary">
 <var>${Response}</var>
@@ -1218,20 +1217,20 @@
 <arg>headers=${HEADERS}</arg>
 <arg>expected_status=any</arg>
 <doc>Sends a PUT request on a previously created HTTP Session.</doc>
-<msg timestamp="20220422 20:50:49.085" level="INFO">PUT Request : url=http://localhost:3333/partners/62633f5874dbf13b033bdcec/enable 
- path_url=/partners/62633f5874dbf13b033bdcec/enable 
+<msg timestamp="20220428 11:55:28.797" level="INFO">PUT Request : url=http://localhost:3333/partners/626aaae09c44ef7af41edc52/enable 
+ path_url=/partners/626aaae09c44ef7af41edc52/enable 
  headers={'User-Agent': 'python-requests/2.27.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'auth_user': 'qa', 'auth_password': 'ninja', 'Content-Length': '114'} 
  body=b'{"name": "Super24hrs", "email": "contato@Super24hrs.com.br", "whatsapp": "1199991008", "business": "Supermercado"}' 
  </msg>
-<msg timestamp="20220422 20:50:49.085" level="INFO">PUT Response : url=http://localhost:3333/partners/62633f5874dbf13b033bdcec/enable 
+<msg timestamp="20220428 11:55:28.797" level="INFO">PUT Response : url=http://localhost:3333/partners/626aaae09c44ef7af41edc52/enable 
  status=200, reason=OK 
- headers={'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Access-Control-Expose-Headers': 'Authorization,auth_user,auth_password', 'Date': 'Fri, 22 Apr 2022 23:50:49 GMT', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=5', 'Content-Length': '0'} 
+ headers={'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Access-Control-Expose-Headers': 'Authorization,auth_user,auth_password', 'Date': 'Thu, 28 Apr 2022 14:55:28 GMT', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=5', 'Content-Length': '0'} 
  body=None 
  </msg>
-<msg timestamp="20220422 20:50:49.085" level="INFO">${Response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20220422 20:50:49.046" endtime="20220422 20:50:49.085"/>
+<msg timestamp="20220428 11:55:28.798" level="INFO">${Response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220428 11:55:28.762" endtime="20220428 11:55:28.798"/>
 </kw>
-<status status="PASS" starttime="20220422 20:50:49.045" endtime="20220422 20:50:49.085"/>
+<status status="PASS" starttime="20220428 11:55:28.761" endtime="20220428 11:55:28.798"/>
 </kw>
 <kw name="Disable Partner" library="services">
 <var>${response}</var>
@@ -1240,8 +1239,8 @@
 <arg>CreatePartner</arg>
 <arg>${BASE_URL}/${partner_id}/disable</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20220422 20:50:49.086" level="INFO">Creating Session using : alias=CreatePartner, url=http://localhost:3333/partners/62633f5874dbf13b033bdcec/disable, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20220422 20:50:49.086" endtime="20220422 20:50:49.086"/>
+<msg timestamp="20220428 11:55:28.800" level="INFO">Creating Session using : alias=CreatePartner, url=http://localhost:3333/partners/626aaae09c44ef7af41edc52/disable, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220428 11:55:28.799" endtime="20220428 11:55:28.800"/>
 </kw>
 <kw name="PUT On Session" library="RequestsLibrary">
 <var>${Response}</var>
@@ -1251,34 +1250,34 @@
 <arg>headers=${HEADERS}</arg>
 <arg>expected_status=any</arg>
 <doc>Sends a PUT request on a previously created HTTP Session.</doc>
-<msg timestamp="20220422 20:50:49.125" level="INFO">PUT Request : url=http://localhost:3333/partners/62633f5874dbf13b033bdcec/disable 
- path_url=/partners/62633f5874dbf13b033bdcec/disable 
+<msg timestamp="20220428 11:55:28.840" level="INFO">PUT Request : url=http://localhost:3333/partners/626aaae09c44ef7af41edc52/disable 
+ path_url=/partners/626aaae09c44ef7af41edc52/disable 
  headers={'User-Agent': 'python-requests/2.27.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'auth_user': 'qa', 'auth_password': 'ninja', 'Content-Length': '114'} 
  body=b'{"name": "Super24hrs", "email": "contato@Super24hrs.com.br", "whatsapp": "1199991008", "business": "Supermercado"}' 
  </msg>
-<msg timestamp="20220422 20:50:49.125" level="INFO">PUT Response : url=http://localhost:3333/partners/62633f5874dbf13b033bdcec/disable 
+<msg timestamp="20220428 11:55:28.840" level="INFO">PUT Response : url=http://localhost:3333/partners/626aaae09c44ef7af41edc52/disable 
  status=200, reason=OK 
- headers={'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Access-Control-Expose-Headers': 'Authorization,auth_user,auth_password', 'Date': 'Fri, 22 Apr 2022 23:50:49 GMT', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=5', 'Content-Length': '0'} 
+ headers={'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Access-Control-Expose-Headers': 'Authorization,auth_user,auth_password', 'Date': 'Thu, 28 Apr 2022 14:55:28 GMT', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=5', 'Content-Length': '0'} 
  body=None 
  </msg>
-<msg timestamp="20220422 20:50:49.125" level="INFO">${Response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20220422 20:50:49.086" endtime="20220422 20:50:49.125"/>
+<msg timestamp="20220428 11:55:28.840" level="INFO">${Response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220428 11:55:28.800" endtime="20220428 11:55:28.840"/>
 </kw>
-<msg timestamp="20220422 20:50:49.125" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20220422 20:50:49.086" endtime="20220422 20:50:49.125"/>
+<msg timestamp="20220428 11:55:28.840" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220428 11:55:28.799" endtime="20220428 11:55:28.840"/>
 </kw>
 <kw name="Status Should Be" library="RequestsLibrary">
 <arg>200</arg>
 <doc>Fails if response status code is different than the expected.</doc>
-<status status="PASS" starttime="20220422 20:50:49.126" endtime="20220422 20:50:49.126"/>
+<status status="PASS" starttime="20220428 11:55:28.841" endtime="20220428 11:55:28.841"/>
 </kw>
-<status status="PASS" starttime="20220422 20:50:48.569" endtime="20220422 20:50:49.127"/>
+<status status="PASS" starttime="20220428 11:55:27.327" endtime="20220428 11:55:28.841"/>
 </test>
-<test id="s1-s1-s4-t3" name="Should return 404 on enable a partner">
+<test id="s1-s4-t3" name="Should return 404 on enable a partner" line="26">
 <kw name="Factory 404 Partner" library="partner">
 <var>${partner}</var>
-<msg timestamp="20220422 20:50:49.129" level="INFO">${partner} = {'name': 'Joao dos Venenos', 'email': 'contato@venenos.com.br', 'whatsapp': '11999991007', 'business': 'Conveniência'}</msg>
-<status status="PASS" starttime="20220422 20:50:49.129" endtime="20220422 20:50:49.129"/>
+<msg timestamp="20220428 11:55:28.843" level="INFO">${partner} = {'name': 'Joao dos Venenos', 'email': 'contato@venenos.com.br', 'whatsapp': '11999991007', 'business': 'Conveniência'}</msg>
+<status status="PASS" starttime="20220428 11:55:28.843" endtime="20220428 11:55:28.843"/>
 </kw>
 <kw name="Create a new partner" library="helpers">
 <var>${partner_id}</var>
@@ -1289,27 +1288,27 @@
 <var>${Filter}</var>
 <arg>name=${Partner_name}</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20220422 20:50:49.131" level="INFO">${Filter} = {'name': 'Joao dos Venenos'}</msg>
-<status status="PASS" starttime="20220422 20:50:49.131" endtime="20220422 20:50:49.131"/>
+<msg timestamp="20220428 11:55:28.845" level="INFO">${Filter} = {'name': 'Joao dos Venenos'}</msg>
+<status status="PASS" starttime="20220428 11:55:28.844" endtime="20220428 11:55:28.845"/>
 </kw>
 <kw name="Delete One" library="RobotMongoDBLibrary.Delete">
 <arg>${MONGO_URI}</arg>
 <arg>${Filter}</arg>
-<status status="PASS" starttime="20220422 20:50:49.131" endtime="20220422 20:50:49.499"/>
+<status status="PASS" starttime="20220428 11:55:28.845" endtime="20220428 11:55:29.284"/>
 </kw>
 <kw name="Set Global Variable" library="BuiltIn">
 <arg>${Filter}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20220422 20:50:49.500" level="INFO">${Filter} = {'name': 'Joao dos Venenos'}</msg>
-<status status="PASS" starttime="20220422 20:50:49.499" endtime="20220422 20:50:49.500"/>
+<msg timestamp="20220428 11:55:29.285" level="INFO">${Filter} = {'name': 'Joao dos Venenos'}</msg>
+<status status="PASS" starttime="20220428 11:55:29.285" endtime="20220428 11:55:29.285"/>
 </kw>
 <kw name="Set Global Variable" library="BuiltIn">
 <arg>${Partner_name}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20220422 20:50:49.500" level="INFO">${Partner_name} = Joao dos Venenos</msg>
-<status status="PASS" starttime="20220422 20:50:49.500" endtime="20220422 20:50:49.500"/>
+<msg timestamp="20220428 11:55:29.285" level="INFO">${Partner_name} = Joao dos Venenos</msg>
+<status status="PASS" starttime="20220428 11:55:29.285" endtime="20220428 11:55:29.285"/>
 </kw>
-<status status="PASS" starttime="20220422 20:50:49.130" endtime="20220422 20:50:49.500"/>
+<status status="PASS" starttime="20220428 11:55:28.844" endtime="20220428 11:55:29.285"/>
 </kw>
 <kw name="POST Partner" library="services">
 <var>${response}</var>
@@ -1318,8 +1317,8 @@
 <arg>CreatePartner</arg>
 <arg>${BASE_URL}</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20220422 20:50:49.500" level="INFO">Creating Session using : alias=CreatePartner, url=http://localhost:3333/partners, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20220422 20:50:49.500" endtime="20220422 20:50:49.500"/>
+<msg timestamp="20220428 11:55:29.286" level="INFO">Creating Session using : alias=CreatePartner, url=http://localhost:3333/partners, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220428 11:55:29.286" endtime="20220428 11:55:29.286"/>
 </kw>
 <kw name="POST On Session" library="RequestsLibrary">
 <var>${Response}</var>
@@ -1329,37 +1328,37 @@
 <arg>headers=${HEADERS}</arg>
 <arg>expected_status=any</arg>
 <doc>Sends a POST request on a previously created HTTP Session.</doc>
-<msg timestamp="20220422 20:50:49.540" level="INFO">POST Request : url=http://localhost:3333/partners 
+<msg timestamp="20220428 11:55:29.323" level="INFO">POST Request : url=http://localhost:3333/partners 
  path_url=/partners 
  headers={'User-Agent': 'python-requests/2.27.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'auth_user': 'qa', 'auth_password': 'ninja', 'Content-Length': '123'} 
  body=b'{"name": "Joao dos Venenos", "email": "contato@venenos.com.br", "whatsapp": "11999991007", "business": "Conveni\\u00eancia"}' 
  </msg>
-<msg timestamp="20220422 20:50:49.540" level="INFO">POST Response : url=http://localhost:3333/partners 
+<msg timestamp="20220428 11:55:29.323" level="INFO">POST Response : url=http://localhost:3333/partners 
  status=201, reason=Created 
- headers={'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Access-Control-Expose-Headers': 'Authorization,auth_user,auth_password', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '41', 'ETag': 'W/"29-yQl7QQfQRN87UOt+itqwQp1WXR0"', 'Date': 'Fri, 22 Apr 2022 23:50:49 GMT', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=5'} 
- body={"partner_id":"62633f5974dbf13b033bdcf0"} 
+ headers={'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Access-Control-Expose-Headers': 'Authorization,auth_user,auth_password', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '41', 'ETag': 'W/"29-710H7dFj1yNOl8JQAM3trVyPV4s"', 'Date': 'Thu, 28 Apr 2022 14:55:29 GMT', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=5'} 
+ body={"partner_id":"626aaae19c44ef7af41edc56"} 
  </msg>
-<msg timestamp="20220422 20:50:49.540" level="INFO">${Response} = &lt;Response [201]&gt;</msg>
-<status status="PASS" starttime="20220422 20:50:49.501" endtime="20220422 20:50:49.540"/>
+<msg timestamp="20220428 11:55:29.324" level="INFO">${Response} = &lt;Response [201]&gt;</msg>
+<status status="PASS" starttime="20220428 11:55:29.286" endtime="20220428 11:55:29.324"/>
 </kw>
 <kw name="Set Global Variable" library="BuiltIn">
 <arg>${payload}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20220422 20:50:49.541" level="INFO">${payload} = {'name': 'Joao dos Venenos', 'email': 'contato@venenos.com.br', 'whatsapp': '11999991007', 'business': 'Conveniência'}</msg>
-<status status="PASS" starttime="20220422 20:50:49.540" endtime="20220422 20:50:49.541"/>
+<msg timestamp="20220428 11:55:29.324" level="INFO">${payload} = {'name': 'Joao dos Venenos', 'email': 'contato@venenos.com.br', 'whatsapp': '11999991007', 'business': 'Conveniência'}</msg>
+<status status="PASS" starttime="20220428 11:55:29.324" endtime="20220428 11:55:29.324"/>
 </kw>
-<msg timestamp="20220422 20:50:49.541" level="INFO">${response} = &lt;Response [201]&gt;</msg>
-<status status="PASS" starttime="20220422 20:50:49.500" endtime="20220422 20:50:49.541"/>
+<msg timestamp="20220428 11:55:29.324" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<status status="PASS" starttime="20220428 11:55:29.286" endtime="20220428 11:55:29.324"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${partner_id}</var>
 <arg>${response.json()}[partner_id]</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20220422 20:50:49.542" level="INFO">${partner_id} = 62633f5974dbf13b033bdcf0</msg>
-<status status="PASS" starttime="20220422 20:50:49.541" endtime="20220422 20:50:49.542"/>
+<msg timestamp="20220428 11:55:29.325" level="INFO">${partner_id} = 626aaae19c44ef7af41edc56</msg>
+<status status="PASS" starttime="20220428 11:55:29.324" endtime="20220428 11:55:29.325"/>
 </kw>
-<msg timestamp="20220422 20:50:49.542" level="INFO">${partner_id} = 62633f5974dbf13b033bdcf0</msg>
-<status status="PASS" starttime="20220422 20:50:49.129" endtime="20220422 20:50:49.542"/>
+<msg timestamp="20220428 11:55:29.325" level="INFO">${partner_id} = 626aaae19c44ef7af41edc56</msg>
+<status status="PASS" starttime="20220428 11:55:28.843" endtime="20220428 11:55:29.325"/>
 </kw>
 <kw name="Remove Partner By Name" library="database">
 <arg>${partner}[name]</arg>
@@ -1367,27 +1366,27 @@
 <var>${Filter}</var>
 <arg>name=${Partner_name}</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20220422 20:50:49.543" level="INFO">${Filter} = {'name': 'Joao dos Venenos'}</msg>
-<status status="PASS" starttime="20220422 20:50:49.543" endtime="20220422 20:50:49.543"/>
+<msg timestamp="20220428 11:55:29.326" level="INFO">${Filter} = {'name': 'Joao dos Venenos'}</msg>
+<status status="PASS" starttime="20220428 11:55:29.325" endtime="20220428 11:55:29.326"/>
 </kw>
 <kw name="Delete One" library="RobotMongoDBLibrary.Delete">
 <arg>${MONGO_URI}</arg>
 <arg>${Filter}</arg>
-<status status="PASS" starttime="20220422 20:50:49.543" endtime="20220422 20:50:49.911"/>
+<status status="PASS" starttime="20220428 11:55:29.326" endtime="20220428 11:55:29.732"/>
 </kw>
 <kw name="Set Global Variable" library="BuiltIn">
 <arg>${Filter}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20220422 20:50:49.912" level="INFO">${Filter} = {'name': 'Joao dos Venenos'}</msg>
-<status status="PASS" starttime="20220422 20:50:49.912" endtime="20220422 20:50:49.912"/>
+<msg timestamp="20220428 11:55:29.733" level="INFO">${Filter} = {'name': 'Joao dos Venenos'}</msg>
+<status status="PASS" starttime="20220428 11:55:29.732" endtime="20220428 11:55:29.733"/>
 </kw>
 <kw name="Set Global Variable" library="BuiltIn">
 <arg>${Partner_name}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20220422 20:50:49.912" level="INFO">${Partner_name} = Joao dos Venenos</msg>
-<status status="PASS" starttime="20220422 20:50:49.912" endtime="20220422 20:50:49.912"/>
+<msg timestamp="20220428 11:55:29.733" level="INFO">${Partner_name} = Joao dos Venenos</msg>
+<status status="PASS" starttime="20220428 11:55:29.733" endtime="20220428 11:55:29.733"/>
 </kw>
-<status status="PASS" starttime="20220422 20:50:49.542" endtime="20220422 20:50:49.912"/>
+<status status="PASS" starttime="20220428 11:55:29.325" endtime="20220428 11:55:29.734"/>
 </kw>
 <kw name="Enable Partner" library="services">
 <var>${response}</var>
@@ -1396,8 +1395,8 @@
 <arg>CreatePartner</arg>
 <arg>${BASE_URL}/${partner_id}/enable</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20220422 20:50:49.913" level="INFO">Creating Session using : alias=CreatePartner, url=http://localhost:3333/partners/62633f5974dbf13b033bdcf0/enable, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20220422 20:50:49.913" endtime="20220422 20:50:49.914"/>
+<msg timestamp="20220428 11:55:29.734" level="INFO">Creating Session using : alias=CreatePartner, url=http://localhost:3333/partners/626aaae19c44ef7af41edc56/enable, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220428 11:55:29.734" endtime="20220428 11:55:29.735"/>
 </kw>
 <kw name="PUT On Session" library="RequestsLibrary">
 <var>${Response}</var>
@@ -1407,34 +1406,34 @@
 <arg>headers=${HEADERS}</arg>
 <arg>expected_status=any</arg>
 <doc>Sends a PUT request on a previously created HTTP Session.</doc>
-<msg timestamp="20220422 20:50:49.948" level="INFO">PUT Request : url=http://localhost:3333/partners/62633f5974dbf13b033bdcf0/enable 
- path_url=/partners/62633f5974dbf13b033bdcf0/enable 
+<msg timestamp="20220428 11:55:29.768" level="INFO">PUT Request : url=http://localhost:3333/partners/626aaae19c44ef7af41edc56/enable 
+ path_url=/partners/626aaae19c44ef7af41edc56/enable 
  headers={'User-Agent': 'python-requests/2.27.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'auth_user': 'qa', 'auth_password': 'ninja', 'Content-Length': '123'} 
  body=b'{"name": "Joao dos Venenos", "email": "contato@venenos.com.br", "whatsapp": "11999991007", "business": "Conveni\\u00eancia"}' 
  </msg>
-<msg timestamp="20220422 20:50:49.948" level="INFO">PUT Response : url=http://localhost:3333/partners/62633f5974dbf13b033bdcf0/enable 
+<msg timestamp="20220428 11:55:29.768" level="INFO">PUT Response : url=http://localhost:3333/partners/626aaae19c44ef7af41edc56/enable 
  status=404, reason=Not Found 
- headers={'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Access-Control-Expose-Headers': 'Authorization,auth_user,auth_password', 'Date': 'Fri, 22 Apr 2022 23:50:49 GMT', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=5', 'Content-Length': '0'} 
+ headers={'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Access-Control-Expose-Headers': 'Authorization,auth_user,auth_password', 'Date': 'Thu, 28 Apr 2022 14:55:29 GMT', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=5', 'Content-Length': '0'} 
  body=None 
  </msg>
-<msg timestamp="20220422 20:50:49.948" level="INFO">${Response} = &lt;Response [404]&gt;</msg>
-<status status="PASS" starttime="20220422 20:50:49.914" endtime="20220422 20:50:49.948"/>
+<msg timestamp="20220428 11:55:29.768" level="INFO">${Response} = &lt;Response [404]&gt;</msg>
+<status status="PASS" starttime="20220428 11:55:29.735" endtime="20220428 11:55:29.768"/>
 </kw>
-<msg timestamp="20220422 20:50:49.948" level="INFO">${response} = &lt;Response [404]&gt;</msg>
-<status status="PASS" starttime="20220422 20:50:49.913" endtime="20220422 20:50:49.948"/>
+<msg timestamp="20220428 11:55:29.768" level="INFO">${response} = &lt;Response [404]&gt;</msg>
+<status status="PASS" starttime="20220428 11:55:29.734" endtime="20220428 11:55:29.768"/>
 </kw>
 <kw name="Status Should Be" library="RequestsLibrary">
 <arg>404</arg>
 <doc>Fails if response status code is different than the expected.</doc>
-<status status="PASS" starttime="20220422 20:50:49.949" endtime="20220422 20:50:49.949"/>
+<status status="PASS" starttime="20220428 11:55:29.769" endtime="20220428 11:55:29.769"/>
 </kw>
-<status status="PASS" starttime="20220422 20:50:49.128" endtime="20220422 20:50:49.949"/>
+<status status="PASS" starttime="20220428 11:55:28.842" endtime="20220428 11:55:29.770"/>
 </test>
-<test id="s1-s1-s4-t4" name="Should return 404 on disable a partner">
+<test id="s1-s4-t4" name="Should return 404 on disable a partner" line="36">
 <kw name="Factory 404 Partner" library="partner">
 <var>${partner}</var>
-<msg timestamp="20220422 20:50:49.952" level="INFO">${partner} = {'name': 'Joao dos Venenos', 'email': 'contato@venenos.com.br', 'whatsapp': '11999991007', 'business': 'Conveniência'}</msg>
-<status status="PASS" starttime="20220422 20:50:49.951" endtime="20220422 20:50:49.952"/>
+<msg timestamp="20220428 11:55:29.772" level="INFO">${partner} = {'name': 'Joao dos Venenos', 'email': 'contato@venenos.com.br', 'whatsapp': '11999991007', 'business': 'Conveniência'}</msg>
+<status status="PASS" starttime="20220428 11:55:29.772" endtime="20220428 11:55:29.772"/>
 </kw>
 <kw name="Create a new partner" library="helpers">
 <var>${partner_id}</var>
@@ -1445,27 +1444,27 @@
 <var>${Filter}</var>
 <arg>name=${Partner_name}</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20220422 20:50:49.953" level="INFO">${Filter} = {'name': 'Joao dos Venenos'}</msg>
-<status status="PASS" starttime="20220422 20:50:49.953" endtime="20220422 20:50:49.953"/>
+<msg timestamp="20220428 11:55:29.774" level="INFO">${Filter} = {'name': 'Joao dos Venenos'}</msg>
+<status status="PASS" starttime="20220428 11:55:29.773" endtime="20220428 11:55:29.774"/>
 </kw>
 <kw name="Delete One" library="RobotMongoDBLibrary.Delete">
 <arg>${MONGO_URI}</arg>
 <arg>${Filter}</arg>
-<status status="PASS" starttime="20220422 20:50:49.953" endtime="20220422 20:50:50.424"/>
+<status status="PASS" starttime="20220428 11:55:29.774" endtime="20220428 11:55:30.204"/>
 </kw>
 <kw name="Set Global Variable" library="BuiltIn">
 <arg>${Filter}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20220422 20:50:50.424" level="INFO">${Filter} = {'name': 'Joao dos Venenos'}</msg>
-<status status="PASS" starttime="20220422 20:50:50.424" endtime="20220422 20:50:50.424"/>
+<msg timestamp="20220428 11:55:30.206" level="INFO">${Filter} = {'name': 'Joao dos Venenos'}</msg>
+<status status="PASS" starttime="20220428 11:55:30.204" endtime="20220428 11:55:30.206"/>
 </kw>
 <kw name="Set Global Variable" library="BuiltIn">
 <arg>${Partner_name}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20220422 20:50:50.425" level="INFO">${Partner_name} = Joao dos Venenos</msg>
-<status status="PASS" starttime="20220422 20:50:50.424" endtime="20220422 20:50:50.425"/>
+<msg timestamp="20220428 11:55:30.207" level="INFO">${Partner_name} = Joao dos Venenos</msg>
+<status status="PASS" starttime="20220428 11:55:30.206" endtime="20220428 11:55:30.207"/>
 </kw>
-<status status="PASS" starttime="20220422 20:50:49.952" endtime="20220422 20:50:50.425"/>
+<status status="PASS" starttime="20220428 11:55:29.773" endtime="20220428 11:55:30.207"/>
 </kw>
 <kw name="POST Partner" library="services">
 <var>${response}</var>
@@ -1474,8 +1473,8 @@
 <arg>CreatePartner</arg>
 <arg>${BASE_URL}</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20220422 20:50:50.425" level="INFO">Creating Session using : alias=CreatePartner, url=http://localhost:3333/partners, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20220422 20:50:50.425" endtime="20220422 20:50:50.426"/>
+<msg timestamp="20220428 11:55:30.207" level="INFO">Creating Session using : alias=CreatePartner, url=http://localhost:3333/partners, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220428 11:55:30.207" endtime="20220428 11:55:30.207"/>
 </kw>
 <kw name="POST On Session" library="RequestsLibrary">
 <var>${Response}</var>
@@ -1485,37 +1484,37 @@
 <arg>headers=${HEADERS}</arg>
 <arg>expected_status=any</arg>
 <doc>Sends a POST request on a previously created HTTP Session.</doc>
-<msg timestamp="20220422 20:50:50.465" level="INFO">POST Request : url=http://localhost:3333/partners 
+<msg timestamp="20220428 11:55:30.244" level="INFO">POST Request : url=http://localhost:3333/partners 
  path_url=/partners 
  headers={'User-Agent': 'python-requests/2.27.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'auth_user': 'qa', 'auth_password': 'ninja', 'Content-Length': '123'} 
  body=b'{"name": "Joao dos Venenos", "email": "contato@venenos.com.br", "whatsapp": "11999991007", "business": "Conveni\\u00eancia"}' 
  </msg>
-<msg timestamp="20220422 20:50:50.465" level="INFO">POST Response : url=http://localhost:3333/partners 
+<msg timestamp="20220428 11:55:30.244" level="INFO">POST Response : url=http://localhost:3333/partners 
  status=201, reason=Created 
- headers={'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Access-Control-Expose-Headers': 'Authorization,auth_user,auth_password', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '41', 'ETag': 'W/"29-HOMFQHxWRr6MPVxWp1qox1SI+K8"', 'Date': 'Fri, 22 Apr 2022 23:50:50 GMT', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=5'} 
- body={"partner_id":"62633f5a74dbf13b033bdcf3"} 
+ headers={'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Access-Control-Expose-Headers': 'Authorization,auth_user,auth_password', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '41', 'ETag': 'W/"29-A5r1y9YrJScI3YlGSos8WOKIOjw"', 'Date': 'Thu, 28 Apr 2022 14:55:30 GMT', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=5'} 
+ body={"partner_id":"626aaae29c44ef7af41edc59"} 
  </msg>
-<msg timestamp="20220422 20:50:50.465" level="INFO">${Response} = &lt;Response [201]&gt;</msg>
-<status status="PASS" starttime="20220422 20:50:50.426" endtime="20220422 20:50:50.465"/>
+<msg timestamp="20220428 11:55:30.244" level="INFO">${Response} = &lt;Response [201]&gt;</msg>
+<status status="PASS" starttime="20220428 11:55:30.207" endtime="20220428 11:55:30.244"/>
 </kw>
 <kw name="Set Global Variable" library="BuiltIn">
 <arg>${payload}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20220422 20:50:50.465" level="INFO">${payload} = {'name': 'Joao dos Venenos', 'email': 'contato@venenos.com.br', 'whatsapp': '11999991007', 'business': 'Conveniência'}</msg>
-<status status="PASS" starttime="20220422 20:50:50.465" endtime="20220422 20:50:50.466"/>
+<msg timestamp="20220428 11:55:30.244" level="INFO">${payload} = {'name': 'Joao dos Venenos', 'email': 'contato@venenos.com.br', 'whatsapp': '11999991007', 'business': 'Conveniência'}</msg>
+<status status="PASS" starttime="20220428 11:55:30.244" endtime="20220428 11:55:30.244"/>
 </kw>
-<msg timestamp="20220422 20:50:50.466" level="INFO">${response} = &lt;Response [201]&gt;</msg>
-<status status="PASS" starttime="20220422 20:50:50.425" endtime="20220422 20:50:50.466"/>
+<msg timestamp="20220428 11:55:30.245" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<status status="PASS" starttime="20220428 11:55:30.207" endtime="20220428 11:55:30.245"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${partner_id}</var>
 <arg>${response.json()}[partner_id]</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20220422 20:50:50.466" level="INFO">${partner_id} = 62633f5a74dbf13b033bdcf3</msg>
-<status status="PASS" starttime="20220422 20:50:50.466" endtime="20220422 20:50:50.466"/>
+<msg timestamp="20220428 11:55:30.245" level="INFO">${partner_id} = 626aaae29c44ef7af41edc59</msg>
+<status status="PASS" starttime="20220428 11:55:30.245" endtime="20220428 11:55:30.245"/>
 </kw>
-<msg timestamp="20220422 20:50:50.466" level="INFO">${partner_id} = 62633f5a74dbf13b033bdcf3</msg>
-<status status="PASS" starttime="20220422 20:50:49.952" endtime="20220422 20:50:50.466"/>
+<msg timestamp="20220428 11:55:30.246" level="INFO">${partner_id} = 626aaae29c44ef7af41edc59</msg>
+<status status="PASS" starttime="20220428 11:55:29.773" endtime="20220428 11:55:30.246"/>
 </kw>
 <kw name="Remove Partner By Name" library="database">
 <arg>${partner}[name]</arg>
@@ -1523,27 +1522,27 @@
 <var>${Filter}</var>
 <arg>name=${Partner_name}</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20220422 20:50:50.468" level="INFO">${Filter} = {'name': 'Joao dos Venenos'}</msg>
-<status status="PASS" starttime="20220422 20:50:50.467" endtime="20220422 20:50:50.468"/>
+<msg timestamp="20220428 11:55:30.247" level="INFO">${Filter} = {'name': 'Joao dos Venenos'}</msg>
+<status status="PASS" starttime="20220428 11:55:30.246" endtime="20220428 11:55:30.247"/>
 </kw>
 <kw name="Delete One" library="RobotMongoDBLibrary.Delete">
 <arg>${MONGO_URI}</arg>
 <arg>${Filter}</arg>
-<status status="PASS" starttime="20220422 20:50:50.468" endtime="20220422 20:50:50.821"/>
+<status status="PASS" starttime="20220428 11:55:30.247" endtime="20220428 11:55:30.651"/>
 </kw>
 <kw name="Set Global Variable" library="BuiltIn">
 <arg>${Filter}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20220422 20:50:50.821" level="INFO">${Filter} = {'name': 'Joao dos Venenos'}</msg>
-<status status="PASS" starttime="20220422 20:50:50.821" endtime="20220422 20:50:50.821"/>
+<msg timestamp="20220428 11:55:30.652" level="INFO">${Filter} = {'name': 'Joao dos Venenos'}</msg>
+<status status="PASS" starttime="20220428 11:55:30.651" endtime="20220428 11:55:30.652"/>
 </kw>
 <kw name="Set Global Variable" library="BuiltIn">
 <arg>${Partner_name}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20220422 20:50:50.822" level="INFO">${Partner_name} = Joao dos Venenos</msg>
-<status status="PASS" starttime="20220422 20:50:50.822" endtime="20220422 20:50:50.822"/>
+<msg timestamp="20220428 11:55:30.652" level="INFO">${Partner_name} = Joao dos Venenos</msg>
+<status status="PASS" starttime="20220428 11:55:30.652" endtime="20220428 11:55:30.652"/>
 </kw>
-<status status="PASS" starttime="20220422 20:50:50.467" endtime="20220422 20:50:50.822"/>
+<status status="PASS" starttime="20220428 11:55:30.246" endtime="20220428 11:55:30.652"/>
 </kw>
 <kw name="Disable Partner" library="services">
 <var>${response}</var>
@@ -1552,8 +1551,8 @@
 <arg>CreatePartner</arg>
 <arg>${BASE_URL}/${partner_id}/disable</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20220422 20:50:50.823" level="INFO">Creating Session using : alias=CreatePartner, url=http://localhost:3333/partners/62633f5a74dbf13b033bdcf3/disable, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20220422 20:50:50.823" endtime="20220422 20:50:50.823"/>
+<msg timestamp="20220428 11:55:30.654" level="INFO">Creating Session using : alias=CreatePartner, url=http://localhost:3333/partners/626aaae29c44ef7af41edc59/disable, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220428 11:55:30.654" endtime="20220428 11:55:30.654"/>
 </kw>
 <kw name="PUT On Session" library="RequestsLibrary">
 <var>${Response}</var>
@@ -1563,35 +1562,33 @@
 <arg>headers=${HEADERS}</arg>
 <arg>expected_status=any</arg>
 <doc>Sends a PUT request on a previously created HTTP Session.</doc>
-<msg timestamp="20220422 20:50:50.860" level="INFO">PUT Request : url=http://localhost:3333/partners/62633f5a74dbf13b033bdcf3/disable 
- path_url=/partners/62633f5a74dbf13b033bdcf3/disable 
+<msg timestamp="20220428 11:55:30.687" level="INFO">PUT Request : url=http://localhost:3333/partners/626aaae29c44ef7af41edc59/disable 
+ path_url=/partners/626aaae29c44ef7af41edc59/disable 
  headers={'User-Agent': 'python-requests/2.27.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'auth_user': 'qa', 'auth_password': 'ninja', 'Content-Length': '123'} 
  body=b'{"name": "Joao dos Venenos", "email": "contato@venenos.com.br", "whatsapp": "11999991007", "business": "Conveni\\u00eancia"}' 
  </msg>
-<msg timestamp="20220422 20:50:50.860" level="INFO">PUT Response : url=http://localhost:3333/partners/62633f5a74dbf13b033bdcf3/disable 
+<msg timestamp="20220428 11:55:30.687" level="INFO">PUT Response : url=http://localhost:3333/partners/626aaae29c44ef7af41edc59/disable 
  status=404, reason=Not Found 
- headers={'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Access-Control-Expose-Headers': 'Authorization,auth_user,auth_password', 'Date': 'Fri, 22 Apr 2022 23:50:50 GMT', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=5', 'Content-Length': '0'} 
+ headers={'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Access-Control-Expose-Headers': 'Authorization,auth_user,auth_password', 'Date': 'Thu, 28 Apr 2022 14:55:30 GMT', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=5', 'Content-Length': '0'} 
  body=None 
  </msg>
-<msg timestamp="20220422 20:50:50.860" level="INFO">${Response} = &lt;Response [404]&gt;</msg>
-<status status="PASS" starttime="20220422 20:50:50.823" endtime="20220422 20:50:50.861"/>
+<msg timestamp="20220428 11:55:30.687" level="INFO">${Response} = &lt;Response [404]&gt;</msg>
+<status status="PASS" starttime="20220428 11:55:30.654" endtime="20220428 11:55:30.687"/>
 </kw>
-<msg timestamp="20220422 20:50:50.861" level="INFO">${response} = &lt;Response [404]&gt;</msg>
-<status status="PASS" starttime="20220422 20:50:50.823" endtime="20220422 20:50:50.861"/>
+<msg timestamp="20220428 11:55:30.688" level="INFO">${response} = &lt;Response [404]&gt;</msg>
+<status status="PASS" starttime="20220428 11:55:30.654" endtime="20220428 11:55:30.688"/>
 </kw>
 <kw name="Status Should Be" library="RequestsLibrary">
 <arg>404</arg>
 <doc>Fails if response status code is different than the expected.</doc>
-<status status="PASS" starttime="20220422 20:50:50.861" endtime="20220422 20:50:50.862"/>
+<status status="PASS" starttime="20220428 11:55:30.689" endtime="20220428 11:55:30.689"/>
 </kw>
-<status status="PASS" starttime="20220422 20:50:49.951" endtime="20220422 20:50:50.862"/>
+<status status="PASS" starttime="20220428 11:55:29.771" endtime="20220428 11:55:30.690"/>
 </test>
-<doc>POST /partners</doc>
-<status status="PASS" starttime="20220422 20:50:48.103" endtime="20220422 20:50:50.864"/>
+<doc>PUT /partners</doc>
+<status status="PASS" starttime="20220428 11:55:26.789" endtime="20220428 11:55:30.692"/>
 </suite>
-<status status="PASS" starttime="20220422 20:50:41.528" endtime="20220422 20:50:50.866"/>
-</suite>
-<status status="PASS" starttime="20220422 20:50:41.508" endtime="20220422 20:50:50.868"/>
+<status status="PASS" starttime="20220428 11:55:20.464" endtime="20220428 11:55:30.695"/>
 </suite>
 <statistics>
 <total>
@@ -1602,12 +1599,11 @@
 <stat pass="1" fail="0" skip="0">sad_way</stat>
 </tag>
 <suite>
-<stat pass="10" fail="0" skip="0" id="s1" name="TestsAPI">TestsAPI</stat>
-<stat pass="10" fail="0" skip="0" id="s1-s1" name="Tests">TestsAPI.Tests</stat>
-<stat pass="2" fail="0" skip="0" id="s1-s1-s1" name="Delete">TestsAPI.Tests.Delete</stat>
-<stat pass="2" fail="0" skip="0" id="s1-s1-s2" name="Get">TestsAPI.Tests.Get</stat>
-<stat pass="2" fail="0" skip="0" id="s1-s1-s3" name="Post">TestsAPI.Tests.Post</stat>
-<stat pass="4" fail="0" skip="0" id="s1-s1-s4" name="Put">TestsAPI.Tests.Put</stat>
+<stat pass="10" fail="0" skip="0" id="s1" name="Tests">Tests</stat>
+<stat pass="2" fail="0" skip="0" id="s1-s1" name="Delete">Tests.Delete</stat>
+<stat pass="2" fail="0" skip="0" id="s1-s2" name="Get">Tests.Get</stat>
+<stat pass="2" fail="0" skip="0" id="s1-s3" name="Post">Tests.Post</stat>
+<stat pass="4" fail="0" skip="0" id="s1-s4" name="Put">Tests.Put</stat>
 </suite>
 </statistics>
 <errors>

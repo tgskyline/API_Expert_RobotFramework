@@ -1,0 +1,362 @@
+make.exe all --print-data-base --no-builtin-variables --no-builtin-rules --question
+# GNU Make 3.81
+# Copyright (C) 2006  Free Software Foundation, Inc.
+# This is free software; see the source for copying conditions.
+# There is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A
+# PARTICULAR PURPOSE.
+
+# This program built for i386-pc-mingw32
+ 
+
+# Make data base, printed on Sun May 15 20:11:04 2022
+
+# Variables
+
+# environment
+POWERSHELL_DISTRIBUTION_CHANNEL = MSI:Windows 10 Pro
+# automatic
+?F = $(notdir $?)
+# automatic
+<D = $(patsubst %/,%,$(dir $<))
+# environment
+PROVIDE_FULLSTACK_ACTION = true
+# makefile
+MAKEFLAGS = Rrqp
+# environment
+VSCODE_LOG_NATIVE = false
+# automatic
+?D = $(patsubst %/,%,$(dir $?))
+# automatic
+@D = $(patsubst %/,%,$(dir $@))
+# environment
+HOMEDRIVE = C:
+# automatic
+@F = $(notdir $@)
+# automatic
+^D = $(patsubst %/,%,$(dir $^))
+# makefile
+CURDIR := c:/Users/Tiago Gomes/OneDrive/Documentos/Automa��o de Testes/RobotFramework/API_Expert/buger-eats-partner-ms
+# default
+SHELL := sh.exe
+# environment
+WINDIR = C:\Windows
+# environment
+VSCODE_NLS_CONFIG = {"locale":"pt-br","availableLanguages":{"*":"pt-br"},"_languagePackId":"74ce6549a467d1dfaba55fb5394742c9.pt-br","_translationsConfigFile":"C:\\Users\\Tiago Gomes\\AppData\\Roaming\\Code\\clp\\74ce6549a467d1dfaba55fb5394742c9.pt-br\\tcf.json","_cacheRoot":"C:\\Users\\Tiago Gomes\\AppData\\Roaming\\Code\\clp\\74ce6549a467d1dfaba55fb5394742c9.pt-br","_resolvedLanguagePackCoreLocation":"C:\\Users\\Tiago Gomes\\AppData\\Roaming\\Code\\clp\\74ce6549a467d1dfaba55fb5394742c9.pt-br\\da15b6fd3ef856477bf6f4fb29ba1b7af717770d","_corruptedFile":"C:\\Users\\Tiago Gomes\\AppData\\Roaming\\Code\\clp\\74ce6549a467d1dfaba55fb5394742c9.pt-br\\corrupted.info","_languagePackSupport":true}
+# environment
+ONEDRIVE = C:\Users\Tiago Gomes\OneDrive
+# environment
+PATHEXT = .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.W 
+SF;.WSH;.MSC
+# makefile (from `makefile', line 1)
+MAKEFILE_LIST :=  makefile
+# environment
+TMP = C:\Users\TIAGOG~1\AppData\Local\Temp
+# environment
+VSCODE_VERBOSE_LOGGING = true
+# environment
+PROGRAMW6432 = C:\Program Files
+# environment
+PROGRAMDATA = C:\ProgramData
+# environment
+VSCODE_IPC_HOOK_EXTHOST = \\.\pipe\vscode-ipc-6bfbf044-25dc-4cc5-8706-88879bf068e3-sock
+# environment
+VSCODE_CWD = C:\Users\Tiago Gomes\AppData\Local\Programs\Microsoft VS Code
+# environment
+PATH = C:\Program Files\Eclipse Adoptium\jdk-17.0.1.12-hotspot\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\nodejs\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Microsoft SQL Server\150\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\150\DTS\Binn\;C:\Program Files\Azure Data Studio\bin;C:\Program Files\Java\apache-maven-3.8.4\bin;C:\Program Files\Java\jdk1.8.0_321\bin;C:\Program Files\Java\jre1.8.0_321\bin;C:\Program Files\RedHat\java-11-openjdk-jre-11.0.13-1\bin;C:\Program Files\Java\apache-maven-3.8.4;C:\Program Files\MongoDB\Server\5.0\bin;C:\Users\Tiago Gomes\AppData\Local\Programs\Python\Python310;C:\Users\Tiago Gomes\AppData\Local\Programs\Python\Python310\Scripts;C:\Users\Tiago Gomes\AppData\Roaming\Python\Scripts;C:\ProgramData\chocolatey\bin;C:\Program Files (x86)\GnuWin32\bin;C:\Program Files\Git\cmd;C:\Program Files\PowerShell\7\;C:\Users\Tiago Gomes\.poetry\bin;C:\Users\Tiago Gomes\AppData\Local\Programs\Python\Python310\Scripts\;C:\Users\Tiago Gomes\AppData\Local\Programs\Python\Python310\;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\Tiago Gomes\AppData\Local\Microsoft\WindowsApps;C:\Users\Tiago Gomes\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Tiago Gomes\AppData\Roaming\npm;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.3.2\bin;C:\Users\Tiago Gomes\AppData\Local\Programs\mongosh\
+# environment
+COMMONPROGRAMW6432 = C:\Program Files\Common Files
+# environment
+ZES_ENABLE_SYSMAN = 1
+# environment
+GOLANG_EXECUTABLE = go
+# environment
+CHOCOLATEYLASTPATHUPDATE = 132945887702650594
+# environment
+PROCESSOR_ARCHITECTURE = x86
+# environment
+THREE_SCALE_USER_TOKEN = 207c527cfc2a6b8dcf4fa43ad7a976da
+# environment
+USERPROFILE = C:\Users\Tiago Gomes
+# environment
+CHOCOLATEYINSTALL = C:\ProgramData\chocolatey
+# environment
+ALLUSERSPROFILE = C:\ProgramData
+# environment
+VSCODE_LOG_STACK = false
+# environment
+NUMBER_OF_PROCESSORS = 8
+# environment
+ELECTRON_RUN_AS_NODE = 1
+# default
+.FEATURES := target-specific order-only second-expansion else-if archives
+# environment
+UUID = 3e149fbd-357a-4195-a402-ed860124a4d8
+# automatic
+%F = $(notdir $%)
+# environment
+CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_5412_MOHUEOVJKFHXSNWT
+# environment
+VSCODE_PIPE_LOGGING = true
+# environment
+COMPUTERNAME = TIAGOBOOK
+# env 
+ironment
+PROGRAMFILES = C:\Program Files (x86)
+# environment
+DRIVERDATA = C:\Windows\System32\Drivers\DriverData
+# environment
+ORIGINAL_XDG_CURRENT_DESKTOP = undefined
+# environment
+USERNAME = Tiago Gomes
+# environment
+PUBLIC = C:\Users\Public
+# environment
+VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
+# environment
+VSCODE_CODE_CACHE_PATH = C:\Users\Tiago Gomes\AppData\Roaming\Code\CachedData\da15b6fd3ef856477bf6f4fb29ba1b7af717770d
+# environment
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+# environment
+COMMONPROGRAMFILES = C:\Program Files (x86)\Common Files
+# environment
+LOGONSERVER = \\TIAGOBOOK
+# environment
+TELEMETRY_ID = 378ac372-e4a8-4075-ad4a-093507bded5a
+# environment
+ONEDRIVECONSUMER = C:\Users\Tiago Gomes\OneDrive
+# environment
+VSCODE_HANDLES_UNCAUGHT_ERRORS = true
+# environment
+USERDOMAIN = TiagoBook
+# environment
+INTELLIJ IDEA COMMUNITY EDITION = C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.3.2\bin;
+# default
+MAKE = $(MAKE_COMMAND)
+# default
+MAKECMDGOALS := all
+# environment
+JAVA_HOME = C:\Program Files\Java\jdk1.8.0_321
+# default
+MAKE_VERSION := 3.81
+# makefile
+.DEFAULT_GOAL := Linter
+# environment
+PROGRAMFILES(X86) = C:\Program Files (x86)
+# automatic
+%D = $(patsubst %/,%,$(dir $%))
+# environment
+LOCALAPPDATA = C:\Users\Tiago Gomes\AppData\Local
+# environment
+PSMODULEPATH = C:\Program Files\WindowsPowerShell\Modules;C:\Windows\system32\WindowsPowerShell\v1.0\Modules;C:\Program Files (x86)\Microsoft SQL Server\150\Tools\PowerShell\Modules\
+# default
+MAKE_COMMAND := make.exe
+# environment
+UTM_SOURCE = vscode
+# environment
+PROCESSOR_ARCHITEW6432 = AMD64
+# default
+.VARIABLES := 
+# automatic
+*F = $(notdir $*)
+# environment
+PROCESSOR_IDENTIFIER = Intel64 Family 6 Model 140 Stepping 1, GenuineIntel
+# environment
+OS = Windows_NT
+# environment
+VSCODE_IPC_HOOK = \\.\pipe\bfa1fd8d2077bc7bbb928fbe0a38a466-1.67.1-main-sock
+# environment
+HOMEPATH = \Users\Tiago Gomes
+# environment
+COMMONPROGRAMFILES(X86) = C:\Program Files (x86)\Common Files
+# environment
+PROMPT = $P$G
+# environment
+MFLAGS = -Rrqp
+# automatic
+*D = $(patsubst %/,%,$(dir $*))
+# environment
+SYSTEMROOT = C:\Windows
+# automatic
++D = $(patsubst %/,%,$(dir $+))
+# environment
+RECOMMENDER_API_URL = https://gw.api.openshift.io//api/v2
+# automatic
++F = $(notdir $+)
+# environment
+APPDATA = C:\Users\Tiago Gomes\AppData\Roaming
+# environment
+__COMPAT_LAYER = RunAsAdmin
+# environment
+TEMP = C:\Users\TIAGOG~1\AppData\Local\Temp
+# environment
+COMSPEC = C:\Windows\system32\cmd.exe
+# default
+MAKEFILES := 
+# automatic
+<F = $(notdir $<)
+# environment
+LC_ALL = C
+# automatic
+^F = $(notdir $^)
+# default
+SUFFIXES := 
+# environment
+SYSTEMDRIVE = C:
+# environment
+PROCESSOR_REVISION = 8c01
+# environment
+MAKELEVEL := 0
+# environment
+LANG = C
+# environment
+PROCESSOR_LEVEL = 6
+# environment
+VSCODE_PID = 5412
+# environment
+USERDOMAIN_ROAMINGPROFILE = TiagoBook
+# variable set hash-table stats:
+# Load=100/1024=10%, Rehash=0, Collisions=11/120=9%
+
+# Pattern-specific Variable Values
+
+# No pattern-specific variable values.
+
+# Directories
+
+# C:\Users\Tiago Gomes\.poetry\bin (key C:/Users/Tiago Gomes/.poetry/bin, mtime 1652652835): 4 files, no impossibilities.
+# C:\Users\Tiago Gomes\AppData\Local\Programs\Python\Python310 (key C:/Users/Tiago Gomes/AppData/Local/Programs/Python/Python310, mtime 1646872247): 18 files, no impossibilities.
+# C:\Program Files (x86)\Microsoft SQL Server\150\DTS\Binn\ (key C:/Program Files (x86)/Microsoft SQL Server/150/DTS/Binn/, mtime 1640772167): 4 files, no impossibilities.
+# C:\Program Files\Microsoft SQL Server\150\Tools\Binn\ (key C:/Program Files/Microsoft SQL Server/150/Tools/Binn/, mtime 1640772184): 14 files, no impossibilities.
+# C:\Windows\System32\WindowsPowerShell\v1.0\ (key C:/Windows/System32/WindowsPowerShell/v1.0/, mtime 1622915814): 29 files, no impossibilities.
+# C:\Windows\System32\Wbem (key C:/Windows/System32/Wbem, mtime 1652441157): 170 files, no impossibilities.
+# . (key c:/Users/Tiago Gomes/OneDrive/Documentos/Automa��o de Testes/RobotFramework/API_Expert/buger-eats-partner-ms, mtime 1652655941): 13 files, no impossibilities.
+# C:\Program Files\Java\apache-maven-3.8.4\bin (key C:/Program Files/Java/apache-maven-3.8.4/bin, mtime 1642979900): 8 files, no impossibilities.
+# C:\Users\Tiago Gomes\AppData\Local\Programs\Python\Python310\ (key C:/Users/Tiago Gomes/AppData/Local/Programs/Python/Python310/, mtime 1646872247): 18 files, no impossibilities.
+# C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.3.2\bin: could not be stat'd.
+# C:\Users\Tiago Gomes\AppData\Local\Programs\Python\Python310\Scripts\ (key C:/Users/Tiago Gomes/AppData/Local/Programs/Python/Python310/Scripts/, mtime 1652655029): 12 files, no impossibilities.
+# C:\ProgramData\chocolatey\bin (key C:/ProgramData/chocolatey/bin, mtime 1652649932): 12 files, no impossibilities.
+# C:\Program Files\nodejs\ (key C:/Program Files/nodejs/, mtime 1640742874): 13 files, no impossibilities.
+# C:\Users\Tiago Gomes\AppData\Local\Programs\Microsoft VS Code\bin (key C:/Users/Tiago Gomes/AppData/Local/Programs/Microsoft VS Code/bin, mtime 1652630641): 4 files, no impossibilities.
+# C:\Program Files\Eclipse Adoptium\jdk-17.0.1.12-hotspot\bin: could not be stat'd.
+# C:\Users\Tiago Gomes\AppData\Local\Programs\Python\Python310\Scripts (key C:/Users/Tiago Gomes/AppData/Local/Programs/Python/Python310/Scripts, mtime 1652655029): 12 files, no impossibilities.
+# C:\Users\Tiago Gomes\AppData\Roaming\npm (key C:/Users/Tiago Gomes/AppData/Roaming/npm, mtime 1649890645): 15 files, no impossibilities.
+# C:\Program Files\PowerShell\7\ (key C:/Program Files/PowerShell/7/, mtime 1652527140): 478 files, no impossibilities.
+# C:\Windows\System32\OpenSSH\: could not be stat'd.
+# C:\Program Files\Java\jre1.8.0_321\bin (key C:/Program Files/Java/jre1.8.0_321/bin, mtime 1642976510): 130 files, no impossibilities.
+# C:\Program Files (x86)\Common Files\Oracle\Java\javapath (key C:/Program Files (x86)/Common Files/Oracle/Java/javapath, mtime 1642976512): 5 files, no impossibilities.
+# C:\Program Files\Java\apache-maven-3.8.4 (key C:/Program Files/Java/apache-maven-3.8.4, mtime 1642979900): 9 files, no impossibilities.
+# C:\Windows (key C:/Windows, mtime 1652441233): 117 files, no impossibilities.
+# C:\Program Files (x86)\Microsoft SQL Server\150\Tools\Binn\ (key C:/Program Files (x86)/Microsoft SQL Server/150/Tools/Binn/, mtime 1640772184): 12 files, no impossibilities.
+# C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\ (key C:/Program Files/Microsoft SQL Server/Client SDK/ODBC/170/Tools/Binn/, mtime 1640772184): 6 files, no impossibilities.
+# C:\Prog 
+ram Files\Azure Data Studio\bin (key C:/Program Files/Azure Data Studio/bin, mtime 1640772556): 4 files, no impossibilities.
+# C:\Program Files\Microsoft SQL Server\150\DTS\Binn\ (key C:/Program Files/Microsoft SQL Server/150/DTS/Binn/, mtime 1640772184): 47 files, no impossibilities.
+# C:\Users\Tiago Gomes\AppData\Local\Microsoft\WindowsApps (key C:/Users/Tiago Gomes/AppData/Local/Microsoft/WindowsApps, mtime 1652626505): 36 files, no impossibilities.
+# C:\Program Files\MySQL\MySQL Shell 8.0\bin\ (key C:/Program Files/MySQL/MySQL Shell 8.0/bin/, mtime 1641202345): 8 files, no impossibilities.
+# C:\Program Files\RedHat\java-11-openjdk-jre-11.0.13-1\bin (key C:/Program Files/RedHat/java-11-openjdk-jre-11.0.13-1/bin, mtime 1642981102): 102 files, no impossibilities.
+# C:\Users\Tiago Gomes\AppData\Local\Programs\mongosh\: could not be stat'd.
+# C:\Program Files\Git\cmd (key C:/Program Files/Git/cmd, mtime 1652436358): 8 files, no impossibilities.
+# C:\Windows\system32 (key C:/Windows/system32, mtime 1652651155): 2974 files, no impossibilities.
+# C:\Program Files\Java\jdk1.8.0_321\bin (key C:/Program Files/Java/jdk1.8.0_321/bin, mtime 1642976448): 54 files, no impossibilities.
+# C:\Program Files\MongoDB\Server\5.0\bin (key C:/Program Files/MongoDB/Server/5.0/bin, mtime 1650685302): 8 files, no impossibilities.
+# C:\Users\Tiago Gomes\AppData\Roaming\Python\Scripts (key C:/Users/Tiago Gomes/AppData/Roaming/Python/Scripts, mtime 1650017408): 3 files, no impossibilities.
+# C:\Program Files (x86)\GnuWin32\bin (key C:/Program Files (x86)/GnuWin32/bin, mtime 1650116029): 5 files, no impossibilities.
+
+# 4352 files, no impossibilities in 37 directories.
+
+# Implicit Rules
+
+# No implicit rules.
+
+# Files
+
+# Not a target:
+all:
+#  Command-line target.
+#  Implicit rule search has been done.
+#  File does not exist.
+#  File has not been updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
+.DEFAULT:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+makefile:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-15 19:14:17
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
+.SUFFIXES:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+GitAdd:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `makefile', line 19):
+	@echo *********************************************** RODANDO ROBOTIDY ***********************************************
+	robotidy '$(src)'
+	@echo *********************************************** RODANDO TRANSFORM ***********************************************
+	robotidy --transform AlignTestCases '$(src)'
+	robotidy --configure AlignSettingsSection:up_to_column=10 '$(src)'
+	robotidy --configure AlignSettingsSection:argument_indent=0 '$(src)'
+	robotidy --transform AlignTestCases '$(src)'
+	robotidy --transform OrderTags '$(src)'
+	robotidy --spacecount 4 '$(src)'
+	@echo *********************************************** RODANDO TESTE ***********************************************
+	robot -d './TestsAPI/Logs/' '$(src)'	
+	@echo *********************************************** ADCIONANDO ARQUIVOS NO STAGE ***********************************************
+	git add *
+	
+
+Linter:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been up 
+make.exe: *** No rule to make target `all'.  Stop.
+
+dated.
+#  commands to execute (from `makefile', line 3):
+	@echo *********************************************** RODANDO ROBOTIDY ***********************************************
+	robotidy '$(src)'
+	@echo *********************************************** RODANDO TRANSFORM ***********************************************
+	robotidy --transform AlignTestCases '$(src)'
+	robotidy --configure AlignSettingsSection:up_to_column=10 '$(src)'
+	robotidy --configure AlignSettingsSection:argument_indent=0 '$(src)'
+	robotidy --transform AlignTestCases '$(src)'
+	robotidy --transform OrderTags '$(src)'
+	robotidy --spacecount 4 '$(src)'
+	robotidy --transform InlineIf '$(src)'
+	@echo *********************************************** RODANDO TESTE ***********************************************
+	robot -d './TestsAPI/Logs/' '$(src)'	
+	@echo *********************************************** RELATORIO FINAL DO ROBOCOP ***********************************************
+	robocop '$(src)' --reports all
+	
+
+# files hash-table stats:
+# Load=6/1024=1%, Rehash=0, Collisions=0/17=0%
+# VPATH Search Paths
+
+# No `vpath' search paths.
+
+# No general (`VPATH' variable) search path.
+
+# # of strings in strcache: 1
+# # of strcache buffers: 1
+# strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
+# strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
+
+# Finished Make data base on Sun May 15 20:11:04 2022
+
+ 
